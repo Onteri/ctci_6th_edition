@@ -1,10 +1,9 @@
 # Cracking the Coding Interview 6th Edition
 
-This repository contains my solutions for popular interview questions written in Javascript, Python, C++ and C.
+- This repository contains my solutions for the problems in this book written in Javascript, Python, C++ and C.
+- Per Gayle's request, the files only contain code and not the actual questions. Please support her by purchasing the book!
 
-Per Gayle's request, the files only contain code and not the actual questions. Please support Gayle by purchasing the book.
-
-| Project                                      | Description                        |
+| Chapter                                      | Description                        |
 | :------------------------------------------- | :--------------------------------- |
 | [Chapter 1](./chapter_1_arrays_strings)      | Arrays and Strings                 |
 | [Chapter 2](./chapter_2_linked_lists)        | Linked Lists                       |
