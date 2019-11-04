@@ -1,3 +1,12 @@
+# O(nlog(n)) solution
+
+
+def check_permutation_sort(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    return ''.join(sorted(str1)) == ''.join(sorted(str2))
+
+
 # O(n) solution
 
 

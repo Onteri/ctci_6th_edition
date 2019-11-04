@@ -1,3 +1,16 @@
+// O(nlog(n)) solution
+
+const sorted = str =>
+  str
+    .split("")
+    .sort()
+    .join("")
+
+const checkPermutationSort = (string1, string2) => {
+  if (string1.length != string2.length) return false
+  return sorted(string1) === sorted(string2)
+}
+
 // O(n) solution
 
 const createMap = str => {
