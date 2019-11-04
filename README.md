@@ -1,2 +1,27 @@
-# ctci_6th_edition
-Practice problems and solutions for Cracking the Coding Interview
+# Cracking the Coding Interview 6th Edition
+
+This repository contains my solutions for popular interview questions written in Javascript, Python, C++ and C.
+
+Per Gayle's request, the files only contain code and not the actual questions. Please support Gayle by purchasing the book.
+
+| Project                                      | Description                        |
+| :------------------------------------------- | :--------------------------------- |
+| [Chapter 1](./chapter_1_arrays_strings)      | Arrays and Strings                 |
+| [Chapter 2](./chapter_2_linked_lists)        | Linked Lists                       |
+| [Chapter 3](./chapter_3_stacks_and_queues)   | Stacks and Queues                  |
+| [Chapter 4](./chapter_4_trees_graphs)        | Trees and Graphs                   |
+| [Chapter 5](./chapter_5_bit_manipulation)    | Bit Manipulation                   |
+| [Chapter 6](./chapter_6_math_logic_puzzles)  | Math and Logic Puzzles             |
+| [Chapter 7](./chapter_7_oop_design)          | Object Oriented Programming Design |
+| [Chapter 8](./chapter_8_recursion_dp)        | Recursion and Dynamic Programming  |
+| [Chapter 9](./chapter_9_system_design)       | System Design and Scalability      |
+| [Chapter 10](./chapter_10_sorting_searching) | Sorting and Searching              |
+| [Chapter 11](./chapter_11_testing)           | Testing                            |
+| [Chapter 12](./)                             | Java                               |
+| [Chapter 13](./)                             | C++                                |
+| [Chapter 14](./chapter_14_databases)         | Databases                          |
+| [Chapter 5](./chapter_15_threads_locks)      | Threads and                        |
+
+## Author
+
+- **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
