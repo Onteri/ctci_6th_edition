@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* O(n) solution */
+// O(n) solution
 bool is_unique(string str)
 {
     const int ASCII_LENGTH = 128;

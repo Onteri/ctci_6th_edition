@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* O(n) solution */
+// O(n) solution
 bool check_permutation(string str1, string str2)
 {
     const int ASCII_LENGTH = 128;

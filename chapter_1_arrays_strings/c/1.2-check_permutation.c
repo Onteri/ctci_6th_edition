@@ -3,7 +3,7 @@
 
 #define ASCII_LENGTH 128
 
-/* O(n) solution */
+// O(n) solution
 int check_permutation(char *str1, char *str2)
 {
     int len1, len2, i;

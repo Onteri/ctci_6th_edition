@@ -2,7 +2,7 @@
 
 #define ASCII_LENGTH 128
 
-/* O(n) solution */
+// O(n) solution
 int is_unique(char *str)
 {
     int map[ASCII_LENGTH] = {0};
