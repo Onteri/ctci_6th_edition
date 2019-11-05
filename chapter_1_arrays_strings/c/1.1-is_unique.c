@@ -1,10 +1,13 @@
 #include <stdio.h>
 
+/* O(n) solution */
+
 #define ASCII_LENGTH 128
 
-// O(n) solution
+/* Determines if an ASCII string has all unique characters. */
 int is_unique(char *str)
 {
+    /* array map */
     int map[ASCII_LENGTH] = {0};
     int i, ch;
 
@@ -18,10 +21,11 @@ int is_unique(char *str)
     return 1;
 }
 
-// bit vector solution, will only work for a-z chars
+/* Alternate solution. Uses bit vectors, but will only work for 
+   a-z chars. O(1) space complexity. */
 int is_unique_alpha(char *str)
 {
-    unsigned int bit_map = 0;
+    unsigned int bit_map = 0; /* 32 bits to works with */
     int val, i = 0;
 
     for (i = 0; str[i]; i++)
@@ -47,6 +51,5 @@ int main()
     printf("%i\n", is_unique_alpha("abcdea")); // 0
     printf("%i\n", is_unique_alpha("aa"));     // 0
     printf("%i\n", is_unique_alpha("a"));      // 1
-
     return 0;
 }

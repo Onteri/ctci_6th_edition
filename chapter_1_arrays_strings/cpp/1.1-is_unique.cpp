@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
 
+/* O(n) solution */
+
 using namespace std;
 
-// O(n) solution
+/* Determines if an ASCII string has all unique characters. */
 bool is_unique(string str)
 {
+    /* array map */
     const int ASCII_LENGTH = 128;
     int map[ASCII_LENGTH] = {0};
 
@@ -18,10 +21,11 @@ bool is_unique(string str)
     return true;
 }
 
-// bit vector solution, will only work for a-z chars
+/* Alternate solution. Uses bit vectors, but will only work for 
+   a-z chars. O(1) space complexity. */
 bool is_unique_alpha(string str)
 {
-    unsigned int bit_map = 0;
+    unsigned int bit_map = 0; /* 32 bits to works with */
     int val;
 
     for (auto ch : str)
@@ -47,6 +51,5 @@ int main()
     cout << is_unique_alpha("aa") << endl;     // 0
     cout << is_unique_alpha("a") << endl;      // 1
     cout << is_unique_alpha("") << endl;       // 1
-
     return 0;
 }

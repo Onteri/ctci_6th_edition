@@ -2,6 +2,9 @@
 
 
 def is_unique(string):
+    """
+    Determines if an ASCII string has all unique characters.
+    """
     _dict = {}
     for char in string:
         if char in _dict:
@@ -10,9 +13,10 @@ def is_unique(string):
     return True
 
 
-print(is_unique("abcdef"))  # true
-print(is_unique("abcdea"))  # false
-print(is_unique("aa"))  # false
-print(is_unique("a"))  # true
-print(is_unique("abc123"))  # true
-print(is_unique(""))  # true
+if __name__ == 'main':
+    print(is_unique("abcdef"))  # true
+    print(is_unique("abcdea"))  # false
+    print(is_unique("aa"))  # false
+    print(is_unique("a"))  # true
+    print(is_unique("abc123"))  # true
+    print(is_unique(""))  # true
