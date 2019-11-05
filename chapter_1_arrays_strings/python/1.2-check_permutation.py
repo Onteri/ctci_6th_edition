@@ -1,7 +1,11 @@
-# O(nlog(n)) solution
+# O(nlog(n)) solution due to initial sort
 
 
 def check_permutation_sort(str1, str2):
+    """
+    Determines if two strings are permutations of
+    each other.
+    """
     if len(str1) != len(str2):
         return False
     return ''.join(sorted(str1)) == ''.join(sorted(str2))
@@ -11,6 +15,9 @@ def check_permutation_sort(str1, str2):
 
 
 def create_map(string):
+    """
+    Creates hash table of string
+    """
     obj = {}
     for ch in string:
         if ch in obj:
@@ -21,6 +28,10 @@ def create_map(string):
 
 
 def check_permutation(str1, str2):
+    """
+    Determines if two strings are permutations of
+    each other.
+    """
     if len(str1) != len(str2):
         return False
     str_map = create_map(str1)
@@ -28,13 +39,16 @@ def check_permutation(str1, str2):
         if ch not in str_map:
             return False
         str_map[ch] -= 1
+        # if array map has a negative value, there is
+        # a mismatch in characters
         if str_map[ch] < 0:
             return False
     return True
 
 
-print(check_permutation('dog', 'god'))  # true
-print(check_permutation('dog', 'God'))  # false
-print(check_permutation('dog', 'good'))  # false
-print(check_permutation('mmmmm', 'mmmmm'))  # true
-print(check_permutation('mmmmm', 'mmmmn'))  # true
+if __name__ == 'main':
+    print(check_permutation('dog', 'god'))  # true
+    print(check_permutation('dog', 'God'))  # false
+    print(check_permutation('dog', 'good'))  # false
+    print(check_permutation('mmmmm', 'mmmmm'))  # true
+    print(check_permutation('mmmmm', 'mmmmn'))  # true
