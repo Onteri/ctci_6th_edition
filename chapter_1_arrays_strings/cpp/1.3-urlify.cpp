@@ -1,7 +1,10 @@
 #include <iostream>
 
+/* O(n) solution */
+
 using namespace std;
 
+/* Counts numbers of spaces in string, given a max bound */
 int count_spaces(char *str, int len)
 {
     int i, count;
@@ -14,10 +17,8 @@ int count_spaces(char *str, int len)
     return count;
 }
 
-/* 
-O(n) solution 
-mutates input char array
-*/
+/* Replaces all spaces with "%20"
+   This solution will modify input char array */
 void urlify(char str[], int true_length)
 {
     int spaces, index, i;
@@ -55,6 +56,5 @@ int main()
     urlify(little_friend, 29);
     cout << little_friend << endl;
     // Say%20hello%20to%20my%20little%20friend
-
     return 0;
 }
