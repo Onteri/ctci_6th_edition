@@ -2,6 +2,10 @@
 
 
 def is_pali_permutation(string):
+    """
+    Determines if string or its permutations can
+    be a palindrome
+    """
     _dict = {}
     odds = 0
     for ch in string:
@@ -14,6 +18,8 @@ def is_pali_permutation(string):
                 odds += 1
             else:
                 odds -= 1
+    # Palindrome should have max one odd value at the
+    # end of loop
     return odds <= 1
 
 

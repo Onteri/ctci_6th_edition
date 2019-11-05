@@ -2,9 +2,12 @@
 #include <string>
 #include <ctype.h>
 
+/* O(n) solution */
+
 using namespace std;
 
-// O(n) solution
+/* Determines if string or its permutations can
+   be a palindrome */
 bool is_pali_permutation(string str)
 {
     const int ASCII_LENGTH = 128;
@@ -21,6 +24,8 @@ bool is_pali_permutation(string str)
                 : odds--;
         }
     }
+    /* Palindrome should have max one odd value at the 
+       end of loop */
     return odds <= 1;
 }
 
