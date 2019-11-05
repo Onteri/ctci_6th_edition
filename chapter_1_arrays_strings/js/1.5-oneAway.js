@@ -1,4 +1,7 @@
-// O(n) solution
+/* O(n) solution */
+
+/* Compare two strings to determine if they are one edit
+    away from each other. */
 const isOneEditAway = (str1, str2) => {
   const len1 = str1.length
   const len2 = str2.length
@@ -7,6 +10,9 @@ const isOneEditAway = (str1, str2) => {
   return false
 }
 
+/* Counts the number of differences between two strings
+   of same length. Returns true if the difference is at
+   most one off. */
 const isOneEditReplace = (str1, str2) => {
   let differences = 0
   for (const i in str1) {
@@ -17,6 +23,9 @@ const isOneEditReplace = (str1, str2) => {
   return differences <= 1
 }
 
+/* Determines shorter string and loops from start to finish.
+   If there is a difference, longer string is adjusted. 
+   If there is more than one difference, returns false. */
 const isOneEditInsert = (str1, str2) => {
   const short = str1.length > str2.length ? str2 : str1
   const long = str2.length > str1.length ? str2 : str1
@@ -31,9 +40,9 @@ const isOneEditInsert = (str1, str2) => {
   return true
 }
 
-console.log(isOneEditAway('beal', 'bal')) // true
-console.log(isOneEditAway('val', 'bal')) // true
-console.log(isOneEditAway('val', 'bale')) // false
-console.log(isOneEditAway('mail', 'mailman')) // false
-console.log(isOneEditAway('abc', 'abcde')) // false
-console.log(isOneEditAway('abc', 'abcd')) // true
+console.log(isOneEditAway("beal", "bal")) // true
+console.log(isOneEditAway("val", "bal")) // true
+console.log(isOneEditAway("val", "bale")) // false
+console.log(isOneEditAway("mail", "mailman")) // false
+console.log(isOneEditAway("abc", "abcde")) // false
+console.log(isOneEditAway("abc", "abcd")) // true

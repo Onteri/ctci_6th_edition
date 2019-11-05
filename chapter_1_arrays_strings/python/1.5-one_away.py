@@ -1,4 +1,12 @@
+# O(n) solution
+
+
 def is_one_edit_replace(str1, str2):
+    """
+    Counts the number of differences between two strings
+    of same length. Returns true if the difference is at
+    most one off.
+    """
     differences = 0
     for i, e in enumerate(str1):
         if str1[i] != str2[i]:
@@ -7,6 +15,11 @@ def is_one_edit_replace(str1, str2):
 
 
 def is_one_edit_insert(str1, str2):
+    """
+    Determines shorter string and loops from start to finish.
+    If there is a difference, longer string is adjusted.
+    If there is more than one difference, returns false.
+    """
     if len(str1) > len(str2):
         long, short = str1, str2
     else:
@@ -25,6 +38,10 @@ def is_one_edit_insert(str1, str2):
 
 
 def is_one_edit_away(str1, str2):
+    """
+    Compare two strings to determine if they are one edit
+    away from each other.
+    """
     len1 = len(str1)
     len2 = len(str2)
     if len1 == len2:
@@ -34,9 +51,10 @@ def is_one_edit_away(str1, str2):
     return False
 
 
-print(is_one_edit_away('beal', 'bal'))  # True
-print(is_one_edit_away('val', 'bal'))  # True
-print(is_one_edit_away('val', 'bale'))  # False
-print(is_one_edit_away('mail', 'mailman'))  # False
-print(is_one_edit_away('abc', 'abcde'))  # False
-print(is_one_edit_away('', 'a'))  # True
+if __name__ == 'main':
+    print(is_one_edit_away('beal', 'bal'))  # True
+    print(is_one_edit_away('val', 'bal'))  # True
+    print(is_one_edit_away('val', 'bale'))  # False
+    print(is_one_edit_away('mail', 'mailman'))  # False
+    print(is_one_edit_away('abc', 'abcde'))  # False
+    print(is_one_edit_away('', 'a'))  # True

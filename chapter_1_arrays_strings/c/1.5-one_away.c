@@ -2,6 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+/* O(n) solution */
+
+/* Counts the number of differences between two strings
+   of same length. Returns true if the difference is at
+   most one off. */
 int is_one_edit_replace(char *str1, char *str2)
 {
     int differences = 0, i;
@@ -12,6 +17,9 @@ int is_one_edit_replace(char *str1, char *str2)
     return differences <= 1;
 }
 
+/* Determines shorter string and loops from start to finish.
+   If there is a difference, longer string is adjusted. 
+   If there is more than one difference, returns false. */
 int is_one_edit_insert(char *str1, char *str2)
 {
     char *short_str, *long_str;
@@ -32,6 +40,8 @@ int is_one_edit_insert(char *str1, char *str2)
     return 1;
 }
 
+/* Compare two strings to determine if they are one edit
+    away from each other. */
 int is_one_edit_away(char *str1, char *str2)
 {
     int len1, len2;
