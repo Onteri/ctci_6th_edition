@@ -25,6 +25,14 @@ const rotateMatrixBy90 = matrix => {
   return true
 }
 
+/* prints matrix row by row */
+const printMatrix = matrix => {
+  for (let width of matrix) {
+    console.log(width)
+  }
+  console.log("------------------")
+}
+
 const matrix1 = [[0, 1], [2, 3]]
 const matrix2 = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 const matrix3 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
@@ -35,14 +43,6 @@ const matrix4 = [
   [15, 16, 17, 18, 19],
   [20, 21, 22, 23, 24]
 ]
-
-/* prints matrix row by row */
-const printMatrix = matrix => {
-  for (let width of matrix) {
-    console.log(width)
-  }
-  console.log("------------------")
-}
 
 printMatrix(matrix1)
 rotateMatrixBy90(matrix1)
