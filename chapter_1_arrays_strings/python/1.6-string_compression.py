@@ -2,8 +2,13 @@
 
 
 def string_compression(string):
-    # string concatentation is slow because of immutability
-    # so using a list instead
+    """
+    Compresses consecutive characters into a number and 
+    inserts it into a new string along with character
+
+    String concatentation is slow because of immutability
+    so using a list instead
+    """
     _list = []
     count = 1
     for i, e in enumerate(string):

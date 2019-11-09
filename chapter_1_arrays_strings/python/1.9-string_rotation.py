@@ -3,7 +3,7 @@
 
 def is_rotation(str1, str2):
     """
-    Determines if a string is a rotation of another string.
+    Determines if a string is a rotation of another string
     """
     if len(str1) == len(str2) and len(str1):
         str1str1 = str1 * 2

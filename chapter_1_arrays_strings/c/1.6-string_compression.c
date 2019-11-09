@@ -14,6 +14,7 @@ int get_compress_size(char *str)
 
     for (i = 0; i < str[i]; i++)
         if (str[i] != str[i + 1])
+            /* This assumes number is only one digit */
             count += 2;
     return count;
 }
