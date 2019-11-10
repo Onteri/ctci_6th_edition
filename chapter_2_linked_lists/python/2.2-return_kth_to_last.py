@@ -5,7 +5,7 @@ class SinglyLinkedList_2_2(SinglyLinkedList):
 
     def kth_elem_from_last(self, k):
         """
-        Returns the kth element from last nod
+        Returns the kth element from last node
         O(n) time complexity
         """
         curr = kth = self.head
