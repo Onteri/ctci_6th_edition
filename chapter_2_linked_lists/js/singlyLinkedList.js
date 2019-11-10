@@ -3,7 +3,6 @@ class SinglyLinkedList {
   /* Constructor, instance attributes include head pointer
      and length */
   constructor() {
-    console.log('constructing')
     this.head = null
     this.length = 0
   }
@@ -26,7 +25,7 @@ class SinglyLinkedList {
     /* delete head */
     let curr = this.head
     let prev
-    if (index >= this.length || index < 0) throw new Error('index out of range')
+    if (index >= this.length || index < 0) throw new Error("index out of range")
     if (index === 0) {
       this.head = curr.next
     } else if (index === this.length - 1) {
@@ -49,10 +48,10 @@ class SinglyLinkedList {
   /* Print a linked list */
   printList() {
     let curr = this.head
-    let str = ''
+    let str = ""
     while (curr) {
       str += curr.value
-      str += curr.next ? ' -> ' : ''
+      str += curr.next ? " -> " : ""
       curr = curr.next
     }
     console.log(str)
