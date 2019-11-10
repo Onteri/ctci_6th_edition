@@ -7,9 +7,9 @@ class SinglyLinkedList_2_4 extends SinglyLinkedList {
      This solution is unstable, but performs at
      O(n) time complexity */
   partition(number) {
-    let head,
-      tail,
-      curr = this.head
+    let head = this.head
+    let tail = this.head
+    let curr = this.head
     while (curr) {
       let next_node = curr.next
       if (curr.value < number) {
