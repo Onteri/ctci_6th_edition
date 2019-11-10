@@ -27,6 +27,8 @@ class SinglyLinkedList:
         Deletes a node given the index
         """
         curr = self.head
+        if index < 0 or index >= self.length:
+            raise IndexError
         # delete head
         if index == 0:
             self.head = curr.next
@@ -44,8 +46,6 @@ class SinglyLinkedList:
             prev = curr
             curr = curr.next
             index -= 1
-        if not curr:
-            raise IndexError
         prev.next = curr.next
         del(curr)
 
@@ -64,7 +64,7 @@ class Node:
 
     def __init__(self, value):
         """
-        Constructor, instance attributes include value and 
+        Constructor, instance attributes include value and
         next pointer
         """
         self.value = value
