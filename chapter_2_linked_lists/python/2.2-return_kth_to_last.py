@@ -8,7 +8,7 @@ class SinglyLinkedList_2_2(SinglyLinkedList):
         Returns the kth element from last node
         O(n) time complexity
         """
-        if k < 0 or k >= self.length:
+        if k < 0 or k > self.length:
             raise IndexError
         curr = kth = self.head
         while k != 0:
@@ -26,6 +26,7 @@ sll.add_to_front(2)
 sll.add_to_front(4)
 sll.add_to_front(8)
 sll.add_to_front(16)
+sll.add_to_front(32)
 
 sll.print_linked_list()
 node = sll.kth_elem_from_last(1)  # 1
