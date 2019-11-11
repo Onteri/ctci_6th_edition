@@ -4,7 +4,7 @@ class SinglyLinkedList_2_2 extends SinglyLinkedList {
   /* Returns the kth element from last node
      O(n) time complexity */
   kthToLast(index) {
-    if (index >= this.length || index < 0) throw new Error('index out of range')
+    if (index > this.length || index < 0) throw new Error('index out of range')
     let curr = this.head
     let kth = this.head
     while (index) {

@@ -7,7 +7,7 @@ class SinglyLinkedList_2_6 extends SinglyLinkedList {
     let hare = this.head
     let tortoise = this.head
     let stack = []
-    /* set tortoise to be middle node */
+    /* navigate to middle node */
     while (hare && hare.next) {
       hare = hare.next.next
       stack.push(tortoise.value)
