@@ -29,6 +29,6 @@ sll.addNode(4)
 sll.addNode(8)
 sll.addNode(16)
 sll.addNode(16)
-sll.printList()
+sll.printList() // 16 -> 16 -> 8 -> 4 -> 2 -> 2 -> 1 -> 1
 sll.removeDups()
-sll.printList()
+sll.printList() // 16 -> 8 -> 4 -> 2 -> 1

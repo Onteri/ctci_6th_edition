@@ -25,7 +25,7 @@ class SinglyLinkedList {
     /* delete head */
     let curr = this.head
     let prev
-    if (index >= this.length || index < 0) throw new Error("index out of range")
+    if (index >= this.length || index < 0) throw new Error('index out of range')
     if (index === 0) {
       this.head = curr.next
     } else if (index === this.length - 1) {
@@ -48,13 +48,24 @@ class SinglyLinkedList {
   /* Print a linked list */
   printList() {
     let curr = this.head
-    let str = ""
+    let str = ''
     while (curr) {
       str += curr.value
-      str += curr.next ? " -> " : ""
+      str += curr.next ? ' -> ' : ''
       curr = curr.next
     }
     console.log(str)
+  }
+
+  /* Extends a linked list with input node */
+  extend(node) {
+    let curr = this.head
+    while (curr.next) curr = curr.next
+    curr.next = node
+    while (node) {
+      node = node.next
+      this.length++
+    }
   }
 }
 

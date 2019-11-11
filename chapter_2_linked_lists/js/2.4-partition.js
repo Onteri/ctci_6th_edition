@@ -1,9 +1,9 @@
-const { SinglyLinkedList } = require("./singlyLinkedList")
+const { SinglyLinkedList } = require('./singlyLinkedList')
 
 class SinglyLinkedList_2_4 extends SinglyLinkedList {
-  /* Partitions a linked list according to a number 
-     All values lower than that value go on the left,
-     all values higher and equal go on the right
+  /* Partitions a linked list according to a number
+     All values lower than number will go on the left and 
+     all values higher and equal will go on the right
      This solution is unstable, but performs at
      O(n) time complexity */
   partition(number) {

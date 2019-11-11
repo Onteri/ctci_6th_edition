@@ -1,7 +1,7 @@
 const { SinglyLinkedList } = require('./singlyLinkedList')
 
 class SinglyLinkedList_2_3 extends SinglyLinkedList {
-  /* Returns the kth element from last node
+  /* Deletes the middle input node from the linked list
      O(n) time complexity */
   deleteMiddle(node) {
     const nextNode = node.next
@@ -18,6 +18,6 @@ const node = sll.addNode(8)
 sll.addNode(16)
 sll.addNode(32)
 sll.addNode(64)
-sll.printList()
+sll.printList() // 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1
 sll.deleteMiddle(node)
-sll.printList()
+sll.printList() // 64 -> 32 -> 16 -> 4 -> 2 -> 1

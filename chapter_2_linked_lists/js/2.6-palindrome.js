@@ -1,4 +1,4 @@
-const { SinglyLinkedList } = require("./singlyLinkedList")
+const { SinglyLinkedList } = require('./singlyLinkedList')
 
 class SinglyLinkedList_2_6 extends SinglyLinkedList {
   /* Determines if a linked list is a palindrome
@@ -13,7 +13,7 @@ class SinglyLinkedList_2_6 extends SinglyLinkedList {
       stack.push(tortoise.value)
       tortoise = tortoise.next
     }
-    /* for odd-numbered lists */
+    /* for odd-lengthedlists */
     if (this.length & 1) tortoise = tortoise.next
     while (tortoise) {
       if (tortoise.value != stack.pop()) return false

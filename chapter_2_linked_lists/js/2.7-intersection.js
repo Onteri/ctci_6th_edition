@@ -1,17 +1,7 @@
-const { SinglyLinkedList } = require("./singlyLinkedList")
+const { SinglyLinkedList } = require('./singlyLinkedList')
 
 class SinglyLinkedList_2_7 extends SinglyLinkedList {
-  extend(node) {
-    let curr = this.head
-    while (curr.next) curr = curr.next
-    curr.next = node
-    while (node) {
-      node = node.next
-      this.length++
-    }
-  }
-
-  /* Finds if two linked lists intersect and 
+  /* Finds if two linked lists intersect and returns
      where they first meet
      O(n) time and space complexity */
   findIntersection(otherList) {

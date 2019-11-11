@@ -27,7 +27,7 @@ sll.addNode(8)
 sll.addNode(16)
 sll.addNode(32)
 sll.addNode(64)
-sll.printList()
+sll.printList() // 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1
 
 let node = sll.kthToLast(1)
 console.log(node.value) // 1
