@@ -8,7 +8,6 @@
  * struct sll_node - singly linked list
  * @n: integer
  * @next: points to the next node
- *
  */
 typedef struct sll_node
 {
@@ -128,6 +127,70 @@ void free_listint(node **head)
     }
     *head = NULL;
     head = NULL;
+}
+
+/**
+ * list_len - returns the number of elements in a
+ * linked list
+ * @h: pointer to head of list
+ * Return: number of elements
+ */
+size_t list_len(const node *h)
+{
+    register size_t count = 0;
+
+    while (h)
+    {
+        h = h->next;
+        count++;
+    }
+    return (count);
+}
+
+/**
+ * reverse_linked_list - reverses linked list
+ * @head: double pointer to head of list
+ */
+void reverse_linked_list(node **head)
+{
+    node *prev = NULL;
+    node *current = *head;
+    node *next;
+
+    while (current)
+    {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *head = prev;
+}
+
+/**
+ * compare_linked_list - compares two linked lists
+ * @head1: pointer to head of first list
+ * @head2: pointer to head of second list
+ * Return: 1 if true, 0 if false
+ */
+int compare_linked_list(node *head1, node *head2)
+{
+    node *temp1 = head1;
+    node *temp2 = head2;
+
+    while (temp1 && temp2)
+    {
+        if (temp1->n == temp2->n)
+        {
+            temp1 = temp1->next;
+            temp2 = temp2->next;
+        }
+        else
+            return (0);
+    }
+    if (temp1 == NULL && temp2 == NULL)
+        return (1);
+    return (0);
 }
 
 #endif

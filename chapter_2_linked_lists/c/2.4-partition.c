@@ -1,10 +1,12 @@
 #include "singly_linked_lists.h"
 
-/* Partitions a linked list according to a number
-   All values lower than number will go on the left and 
-   all values higher and equal will go on the right
-   This solution is unstable, but performs at
-   O(n) time complexity */
+/**
+ * Partitions a linked list according to a number
+ * All values lower than number will go on the left and 
+ * all values higher and equal will go on the right
+ * This solution is unstable, but performs at
+ * O(n) time complexity
+ */
 void partition(node **head, int partition)
 {
     node *start, *end, *curr, *next;
