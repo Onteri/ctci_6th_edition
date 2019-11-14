@@ -3,14 +3,14 @@
 class LinkedList2_8 : public LinkedList
 {
 public:
-    bool is_palindrome();
+    bool is_circular();
 };
 
 /** 
  * Determines if linked list is circular
  * O(n) solution
  */
-bool LinkedList2_8::is_palindrome()
+bool LinkedList2_8::is_circular()
 {
     Node *hare, *tortoise;
 
@@ -34,8 +34,8 @@ int main()
     ll->add_node(8);
     ll->add_node(16);
     Node *n32 = ll->add_node(32);
-    ll->print_list();                    // 32-> 16-> 8-> 4-> 2-> 1
-    cout << ll->is_palindrome() << endl; // 0
+    ll->print_list();                  // 32-> 16-> 8-> 4-> 2-> 1
+    cout << ll->is_circular() << endl; // 0
     n1->next = n32;
-    cout << ll->is_palindrome() << endl; // 1
+    cout << ll->is_circular() << endl; // 1
 }
