@@ -28,7 +28,6 @@ public:
     Node *add_node(int value);
     void print_list();
     void delete_node(int index);
-    int get_list_length();
 };
 
 LinkedList::LinkedList()

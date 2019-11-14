@@ -1,7 +1,7 @@
-#include <iostream>
-#include "header.h"
+#include "singly_linked_lists.h"
 
-class LinkedList2_4 : public LinkedList {
+class LinkedList2_4 : public LinkedList
+{
 public:
     void partition(int partition);
 };
@@ -25,7 +25,9 @@ void LinkedList2_4::partition(int partition)
         {
             curr->next = start;
             start = curr;
-        } else {
+        }
+        else
+        {
             end->next = curr;
             end = curr;
         }
@@ -35,16 +37,15 @@ void LinkedList2_4::partition(int partition)
     this->head = start;
 }
 
+int main()
+{
+    LinkedList2_4 *ll = new LinkedList2_4();
+    int keys[] = {1, 100, 101, 2, 3, 103};
+    int i, size = sizeof(keys) / sizeof(int);
 
-int main() {
-  LinkedList2_4 *ll = new LinkedList2_4();
-  ll->add_node(1);
-  ll->add_node(100);
-  ll->add_node(101);
-  ll->add_node(2);
-  ll->add_node(3);
-  ll->add_node(103);
-  ll->print_list(); // 32-> 16-> 8-> 4-> 2-> 1
-  ll->partition(50);
-  ll->print_list(); // 1-> 2-> 3-> 103-> 101-> 100
+    for (i = 0; i < size; i++)
+        ll->add_node(keys[i]);
+    ll->print_list(); // 103 -> 3 -> 2 -> 101 -> 100 -> 1
+    ll->partition(50);
+    ll->print_list(); // 1 -> 2 -> 3 -> 103 -> 101 -> 100
 }

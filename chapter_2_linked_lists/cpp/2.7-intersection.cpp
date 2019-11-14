@@ -1,8 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
-#include "header.h"
+#include "singly_linked_lists.h"
 
-class LinkedList2_7 : public LinkedList {
+class LinkedList2_7 : public LinkedList
+{
 public:
     Node *find_intersection(LinkedList2_7 *other_list);
 };
@@ -25,6 +26,7 @@ Node *LinkedList2_7::find_intersection(LinkedList2_7 *other_list)
     difference = abs(len1 - len2);
     longer_start = longer->head;
     shorter_start = shorter->head;
+
     while (difference)
     {
         longer_start = longer_start->next;
@@ -40,21 +42,21 @@ Node *LinkedList2_7::find_intersection(LinkedList2_7 *other_list)
     return NULL;
 }
 
+int main()
+{
+    LinkedList2_7 *ll = new LinkedList2_7();
+    ll->add_node(1);
+    ll->add_node(2);
+    Node *n4 = ll->add_node(4);
+    ll->add_node(8);
+    ll->add_node(16);
+    ll->add_node(32);
+    ll->print_list(); // 32-> 16-> 8-> 4-> 2-> 1
 
-int main() {
-  LinkedList2_7 *ll = new LinkedList2_7();
-  ll->add_node(1);
-  ll->add_node(2);
-  Node *n4 = ll->add_node(4);
-  ll->add_node(8);
-  ll->add_node(16);
-  ll->add_node(32);
-  ll->print_list(); // 32-> 16-> 8-> 4-> 2-> 1
-
-  LinkedList2_7 *ll2 = new LinkedList2_7();
-  Node *n5 = ll2->add_node(5);
-  n5->next = n4;
-  ll2->length += 3;
-  ll2->print_list();
-  cout << ll->find_intersection(ll2)->value << endl; // 4
+    LinkedList2_7 *ll2 = new LinkedList2_7();
+    Node *n5 = ll2->add_node(5);
+    n5->next = n4;
+    ll2->length += 3;
+    ll2->print_list();
+    cout << ll->find_intersection(ll2)->value << endl; // 4
 }

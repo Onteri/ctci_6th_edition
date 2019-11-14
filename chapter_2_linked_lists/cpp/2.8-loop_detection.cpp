@@ -1,7 +1,7 @@
-#include <iostream>
-#include "header.h"
+#include "singly_linked_lists.h"
 
-class LinkedList2_8 : public LinkedList {
+class LinkedList2_8 : public LinkedList
+{
 public:
     bool is_palindrome();
 };
@@ -25,17 +25,17 @@ bool LinkedList2_8::is_palindrome()
     return false;
 }
 
-
-int main() {
-  LinkedList2_8 *ll = new LinkedList2_8();
-  Node *n1 = ll->add_node(1);
-  ll->add_node(2);
-  ll->add_node(4);
-  ll->add_node(8);
-  ll->add_node(16);
-  Node *n32 = ll->add_node(32);
-  ll->print_list(); // 32-> 16-> 8-> 4-> 2-> 1
-  cout << ll->is_palindrome() << endl; // 0
-  n1->next = n32;
-  cout << ll->is_palindrome() << endl; // 1
+int main()
+{
+    LinkedList2_8 *ll = new LinkedList2_8();
+    Node *n1 = ll->add_node(1);
+    ll->add_node(2);
+    ll->add_node(4);
+    ll->add_node(8);
+    ll->add_node(16);
+    Node *n32 = ll->add_node(32);
+    ll->print_list();                    // 32-> 16-> 8-> 4-> 2-> 1
+    cout << ll->is_palindrome() << endl; // 0
+    n1->next = n32;
+    cout << ll->is_palindrome() << endl; // 1
 }
