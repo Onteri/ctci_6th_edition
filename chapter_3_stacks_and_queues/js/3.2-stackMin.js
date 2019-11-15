@@ -3,6 +3,7 @@ const { Stack } = require("./stack")
 class StackWithMin extends Stack {
   constructor() {
     super()
+    /* new stack with minimums */
     this.s2 = new Stack()
   }
 
@@ -13,6 +14,7 @@ class StackWithMin extends Stack {
 
   pop() {
     const value = super.pop()
+    /* If min is getting popped, remove from second list also */
     if (value == this.min()) this.s2.pop()
     return value
   }

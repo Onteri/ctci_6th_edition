@@ -5,6 +5,7 @@ class StackWithCapacity extends Stack {
     super()
     this.capacity = capacity
   }
+
   push(value) {
     if (this.isFull()) throw new Error("stack is full")
     this.stack.push(value)
@@ -41,6 +42,7 @@ class SetOfStacks {
       /* add to last stack */
       last.push(value)
     } else {
+      /* create new stack */
       const newStack = new StackWithCapacity(this.stackCapacity)
       newStack.push(value)
       this.stacks.push(newStack)
@@ -52,6 +54,7 @@ class SetOfStacks {
     const last = this.getLastStack()
     if (last === null) throw new Error("empty stack of stacks")
     const value = last.pop()
+    /* If stack is empty, remove it from stacks */
     if (last.length === 0) {
       this.stacks.pop()
       this.stacksLength--
@@ -71,9 +74,7 @@ console.log(sos)
 SetOfStacks { stacks: [], stacksLength: 0, stackCapacity: 3 }
 */
 const arr = [1, 2, 3, 4, 5, 6, 7]
-arr.forEach(el => {
-  sos.push(el)
-})
+for (let i of arr) sos.push(i)
 console.log(sos)
 /*
 SetOfStacks {

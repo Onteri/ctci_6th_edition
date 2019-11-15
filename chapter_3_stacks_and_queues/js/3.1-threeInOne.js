@@ -3,6 +3,7 @@ class FixedMultiStack {
     this.numberOfStacks = 3
     this.stackCapacity = stackSize
     this.values = Array(stackSize * 3).fill(0)
+    /* Array of start indexes for sub-arrays */
     this.sizes = Array(3).fill(0)
   }
 

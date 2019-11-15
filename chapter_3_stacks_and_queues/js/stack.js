@@ -1,3 +1,4 @@
+/* first in, last out */
 class Stack {
   constructor() {
     this.stack = []
@@ -15,7 +16,7 @@ class Stack {
   }
 
   isEmpty() {
-    return this.length == 0
+    return this.length === 0
   }
 
   peek() {
