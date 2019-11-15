@@ -8,6 +8,7 @@ class Stack:
         self.length += 1
 
     def pop(self):
+        self.length -= 1
         return self.stack.pop()
 
     def peek(self):
