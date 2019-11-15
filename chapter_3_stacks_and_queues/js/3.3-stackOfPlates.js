@@ -1,7 +1,7 @@
 const { Stack } = require("./stack")
 
 class StackWithCapacity extends Stack {
-  constructor(capacity) {
+  constructor(capacity = 5) {
     super()
     this.capacity = capacity
   }
@@ -30,10 +30,9 @@ StackWithCapacity { stack: [ 1, 1, 1, 1, 1 ], length: 5, capacity: 5 }
 */
 
 class SetOfStacks {
-  constructor(stackCapacity) {
+  constructor() {
     this.stacks = []
     this.stacksLength = 0
-    this.stackCapacity = stackCapacity
   }
 
   push(value) {
@@ -43,7 +42,7 @@ class SetOfStacks {
       last.push(value)
     } else {
       /* create new stack */
-      const newStack = new StackWithCapacity(this.stackCapacity)
+      const newStack = new StackWithCapacity()
       newStack.push(value)
       this.stacks.push(newStack)
       this.stacksLength++
@@ -55,7 +54,7 @@ class SetOfStacks {
     if (last === null) throw new Error("empty stack of stacks")
     const value = last.pop()
     /* If stack is empty, remove it from stacks */
-    if (last.length === 0) {
+    if (last.isEmpty()) {
       this.stacks.pop()
       this.stacksLength--
     }
@@ -71,7 +70,7 @@ class SetOfStacks {
 const sos = new SetOfStacks(3)
 console.log(sos)
 /*
-SetOfStacks { stacks: [], stacksLength: 0, stackCapacity: 3 }
+SetOfStacks { stacks: [], stacksLength: 0 }
 */
 const arr = [1, 2, 3, 4, 5, 6, 7]
 for (let i of arr) sos.push(i)
@@ -79,12 +78,9 @@ console.log(sos)
 /*
 SetOfStacks {
   stacks:
-   [ StackWithCapacity { stack: [Array], length: 3, capacity: 3 },
-     StackWithCapacity { stack: [Array], length: 3, capacity: 3 },
-     StackWithCapacity { stack: [Array], length: 3, capacity: 3 },
-     StackWithCapacity { stack: [Array], length: 1, capacity: 3 } ],
-  stacksLength: 4,
-  stackCapacity: 3 }
+   [ StackWithCapacity { stack: [Array], length: 5, capacity: 5 },
+     StackWithCapacity { stack: [Array], length: 2, capacity: 5 } ],
+  stacksLength: 2 }
 */
 /* remove 4 items */
 for (let i of Array(4)) sos.pop()
@@ -92,7 +88,6 @@ console.log(sos)
 /*
 SetOfStacks {
   stacks:
-   [ StackWithCapacity { stack: [Array], length: 3, capacity: 3 } ],
-  stacksLength: 1,
-  stackCapacity: 3 }
+   [ StackWithCapacity { stack: [Array], length: 3, capacity: 5 } ],
+  stacksLength: 1 }
 */
