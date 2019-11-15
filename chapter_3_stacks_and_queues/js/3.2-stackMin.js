@@ -8,7 +8,7 @@ class StackWithMin extends Stack {
   }
 
   push(value) {
-    if (value <= this.min()) this.s2.push(value)
+    if (value < this.min()) this.s2.push(value)
     super.push(value)
   }
 
