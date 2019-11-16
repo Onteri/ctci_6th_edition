@@ -34,23 +34,24 @@ class FixedMultiStack:
         return offset + index - 1
 
 
-fms = FixedMultiStack(3)
-print(fms.values)  # [0, 0, 0, 0, 0, 0, 0, 0, 0]
-print(fms.index_of_top(0))  # -1
-print(fms.index_of_top(1))  # 2
-print(fms.index_of_top(2))  # 5
-fms.push(0, 5)
-fms.push(0, 10)
-fms.push(0, 15)
-# fms.push(0, 20) exception
-fms.push(1, 6)
-print(fms.values)  # [5, 10, 15, 6, 0, 0, 0, 0, 0]
-print(fms.is_full(0))  # True
-print(fms.is_empty(1))  # False
-print(fms.is_empty(2))  # True
-print(fms.pop(0))  # 15
-print(fms.values)  # [5, 10, 15, 6, 0, 0, 0, 0, 0]
-print(fms.sizes)  # [2, 1, 0]
-fms.push(0, 25)
-print(fms.values)  # [5, 10, 25, 6, 0, 0, 0, 0, 0]
-# fms.pop(2) exception
+if __name__ == "main":
+    fms = FixedMultiStack(3)
+    print(fms.values)  # [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    print(fms.index_of_top(0))  # -1
+    print(fms.index_of_top(1))  # 2
+    print(fms.index_of_top(2))  # 5
+    fms.push(0, 5)
+    fms.push(0, 10)
+    fms.push(0, 15)
+    # fms.push(0, 20) exception
+    fms.push(1, 6)
+    print(fms.values)  # [5, 10, 15, 6, 0, 0, 0, 0, 0]
+    print(fms.is_full(0))  # True
+    print(fms.is_empty(1))  # False
+    print(fms.is_empty(2))  # True
+    print(fms.pop(0))  # 15
+    print(fms.values)  # [5, 10, 15, 6, 0, 0, 0, 0, 0]
+    print(fms.sizes)  # [2, 1, 0]
+    fms.push(0, 25)
+    print(fms.values)  # [5, 10, 25, 6, 0, 0, 0, 0, 0]
+    # fms.pop(2) exception

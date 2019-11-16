@@ -21,12 +21,13 @@ class Stack_3_5(Stack):
             self.push(buffer.pop())
 
 
-s = Stack_3_5()
-arr = [3, 6, 2, 7, 9, 4, 1, 5, 8]
-for i in arr:
-    s.push(i)
-print(s.stack)
-# [3, 6, 2, 7, 9, 4, 1, 5, 8]
-s.sort()
-print(s.stack)
-# [3, 6, 2, 7, 9, 4, 1, 5, 8]
+if __name__ == "main":
+    s = Stack_3_5()
+    arr = [3, 6, 2, 7, 9, 4, 1, 5, 8]
+    for i in arr:
+        s.push(i)
+    print(s.stack)
+    # [3, 6, 2, 7, 9, 4, 1, 5, 8]
+    s.sort()
+    print(s.stack)
+    # [3, 6, 2, 7, 9, 4, 1, 5, 8]

@@ -66,19 +66,20 @@ class AnimalQueue:
         return self.dogs.dequeue()
 
 
-aq = AnimalQueue()
-spot = Dog('spot')
-smokey = Cat('smokey')
-grumpy = Cat('grumpy')
-matador = Dog('matador')
-garfield = Cat('garfield')
-aq.enqueue(spot)
-aq.enqueue(smokey)
-aq.enqueue(grumpy)
-aq.enqueue(matador)
-aq.enqueue(garfield)
-print([x.name for x in aq.cats.queue], [x.name for x in aq.dogs.queue])
-# ['smokey', 'grumpy', 'garfield'] ['spot', 'matador']
-print(aq.dequeue_any().name)  # spot
-print(aq.dequeue_cats().name)  # smokey
-print(aq.dequeue_any().name)  # grumpy
+if __name__ == "main":
+    aq = AnimalQueue()
+    spot = Dog('spot')
+    smokey = Cat('smokey')
+    grumpy = Cat('grumpy')
+    matador = Dog('matador')
+    garfield = Cat('garfield')
+    aq.enqueue(spot)
+    aq.enqueue(smokey)
+    aq.enqueue(grumpy)
+    aq.enqueue(matador)
+    aq.enqueue(garfield)
+    print([x.name for x in aq.cats.queue], [x.name for x in aq.dogs.queue])
+    # ['smokey', 'grumpy', 'garfield'] ['spot', 'matador']
+    print(aq.dequeue_any().name)  # spot
+    print(aq.dequeue_cats().name)  # smokey
+    print(aq.dequeue_any().name)  # grumpy

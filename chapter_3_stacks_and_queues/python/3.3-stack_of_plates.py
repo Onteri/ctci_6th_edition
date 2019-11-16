@@ -49,18 +49,19 @@ class SetOfStacks:
         return self.stacks[self.length - 1]
 
 
-swc = StackWithCapacity(5)
-for i in range(5):
-    swc.push(i)
-print(swc.__dict__)
-# {'stack': [0, 1, 2, 3, 4], 'length': 5, 'capacity': 5}': 5, 'capacity': 5}
+if __name__ == "main":
+    swc = StackWithCapacity(5)
+    for i in range(5):
+        swc.push(i)
+    print(swc.__dict__)
+    # {'stack': [0, 1, 2, 3, 4], 'length': 5, 'capacity': 5}': 5, 'capacity': 5}
 
-sos = SetOfStacks()
-for i in range(11):
-    sos.push(i)
-print([x.stack for x in sos.stacks])
-# [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10]] [10]]
-print(sos.pop())  # 10
-print(sos.pop())  # 9
-print([x.stack for x in sos.stacks])
-# [[0, 1, 2, 3, 4], [5, 6, 7, 8]]
+    sos = SetOfStacks()
+    for i in range(11):
+        sos.push(i)
+    print([x.stack for x in sos.stacks])
+    # [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10]] [10]]
+    print(sos.pop())  # 10
+    print(sos.pop())  # 9
+    print([x.stack for x in sos.stacks])
+    # [[0, 1, 2, 3, 4], [5, 6, 7, 8]]
