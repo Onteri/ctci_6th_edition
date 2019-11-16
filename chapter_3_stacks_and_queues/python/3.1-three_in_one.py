@@ -1,5 +1,5 @@
 class FixedMultiStack:
-    def __init__(self, stack_size=1):
+    def __init__(self, stack_size):
         self.number_of_stacks = 3
         self.stack_capacity = stack_size
         self.values = [0] * stack_size * 3
