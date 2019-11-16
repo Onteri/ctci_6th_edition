@@ -23,7 +23,7 @@ class MyQueue():
         return self.oldest.peek()
 
     def shift_stacks(self):
-        # Push everything from newest to oldest
+        # If oldest is empty, push everything from newest to oldest
         if self.oldest.is_empty():
             while not self.newest.is_empty():
                 self.oldest.push(self.newest.pop())

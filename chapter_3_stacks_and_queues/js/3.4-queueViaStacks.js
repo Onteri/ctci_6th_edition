@@ -16,7 +16,7 @@ class MyQueue {
   }
 
   shiftStacks() {
-    /* Push everything from newest to oldest */
+    /* If oldest is empty, push everything from newest to oldest */
     if (this.oldest.isEmpty()) {
       while (!this.newest.isEmpty()) {
         this.oldest.push(this.newest.pop())
