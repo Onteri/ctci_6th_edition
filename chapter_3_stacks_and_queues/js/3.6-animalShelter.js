@@ -49,8 +49,8 @@ class AnimalQueue {
 
   dequeueAny() {
     /* Look at tops of dog and cat queues, and pop the queue with the oldest value */
-    if (this.cats.length == 0) return this.dequeueDogs()
-    if (this.dogs.length == 0) return this.dequeueCats()
+    if (this.cats.isEmpty()) return this.dequeueDogs()
+    if (this.dogs.isEmpty()) return this.dequeueCats()
     return this.dogs.peek().isOlderThan(this.cats.peek())
       ? this.dequeueDogs()
       : this.dequeueCats()
