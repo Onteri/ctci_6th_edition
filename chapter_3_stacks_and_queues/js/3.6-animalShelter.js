@@ -39,8 +39,8 @@ class AnimalQueue {
   }
 
   enqueue(animal) {
-    /* Order is used as a sort of timestamp, so that we can compare the insertion
-     * order of a dog to a cat */
+    /* Order is used as a sort of timestamp, so that we can compare
+     * the insertion order of a dog to a cat */
     animal.order = this.order
     this.order++
     if (animal instanceof Dog) this.dogs.enqueue(animal)
@@ -48,7 +48,8 @@ class AnimalQueue {
   }
 
   dequeueAny() {
-    /* Look at tops of dog and cat queues, and pop the queue with the oldest value */
+    /* Look at tops of dog and cat queues, and pop the queue
+     * with the oldest value */
     if (this.cats.isEmpty()) return this.dequeueDogs()
     if (this.dogs.isEmpty()) return this.dequeueCats()
     return this.dogs.peek().isOlderThan(this.cats.peek())

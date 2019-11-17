@@ -36,8 +36,8 @@ class AnimalQueue:
 
     def enqueue(self, animal):
         """
-        Order is used as a sort of timestamp, so that we can compare the insertion
-        order of a dog to a cat
+        Order is used as a sort of timestamp, so that we can compare
+        the insertion order of a dog to a cat
         """
         animal.order = self.order
         self.order += 1
@@ -47,7 +47,10 @@ class AnimalQueue:
             self.dogs.enqueue(animal)
 
     def dequeue_any(self):
-        # Look at tops of dog and cat queues, and pop the queue with the oldest value
+        """
+        Look at tops of dog and cat queues, and pop the queue
+        with the oldest value
+        """
         if self.cats.is_empty():
             return self.dequeue_dogs()
         if self.dogs.is_empty():
