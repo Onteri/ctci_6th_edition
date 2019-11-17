@@ -61,6 +61,8 @@ int main()
     /* -3 1 5 */
     print_stack(stack->mins);
     /* -3 1 5 */
-
+    free_stack(stack->values);
+    free_stack(stack->mins);
+    free(stack);
     return 0;
 }

@@ -11,7 +11,7 @@ typedef struct FixedMultiStack
     int sizes[3];
 } fms;
 
-fms *create_fixed_multiStack(int stack_capacity)
+fms *create_fixed_multi_stack(int stack_capacity)
 {
     fms *stack;
     int i;
@@ -84,7 +84,7 @@ int pop_fms(fms *stack, int stack_num)
 
     if (is_fms_empty(stack, stack_num))
     {
-        printf("stack is already empty!\n");
+        printf("stack is empty!\n");
         return INT_MIN;
     }
     index = index_of_top(stack, stack_num);
@@ -103,7 +103,7 @@ void free_fms(fms *stack)
 
 int main()
 {
-    fms *stack = create_fixed_multiStack(4);
+    fms *stack = create_fixed_multi_stack(4);
     print_fms_values(stack);
     /* 0 0 0 0 0 0 0 0 0 0 0 0 */
     print_fms_sizes(stack);
@@ -125,7 +125,7 @@ int main()
     pop_fms(stack, 1); // popping 26...
     pop_fms(stack, 1); // popping 25...
     pop_fms(stack, 1); // popping 24...
-    pop_fms(stack, 1); // stack is already empty!
+    pop_fms(stack, 1); // stack is empty!
     print_fms_values(stack);
     /* 0 0 0 0 0 0 0 0 35 0 0 0 */
     print_fms_sizes(stack);
