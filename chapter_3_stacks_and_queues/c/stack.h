@@ -6,30 +6,30 @@
 #include <stdlib.h>
 
 // A structure to represent a stack
-typedef struct StackNode
+typedef struct stack_node
 {
     int value;
-    struct StackNode *next;
+    struct stack_node *next;
 } node;
 
-node *newNode(int value)
+node *new_node(int value)
 {
-    node *stackNode = malloc(sizeof(node));
-    stackNode->value = value;
-    stackNode->next = NULL;
-    return stackNode;
+    node *stack_node = malloc(sizeof(node));
+    stack_node->value = value;
+    stack_node->next = NULL;
+    return stack_node;
 }
 
-int isEmpty(node *root)
+int is_empty(node *root)
 {
     return !root;
 }
 
 void push(node **root, int value)
 {
-    node *stackNode = newNode(value);
-    stackNode->next = *root;
-    *root = stackNode;
+    node *stack_node = new_node(value);
+    stack_node->next = *root;
+    *root = stack_node;
 }
 
 int pop(node **root)
@@ -37,10 +37,10 @@ int pop(node **root)
     node *temp;
     int popped;
 
-    if (isEmpty(*root))
+    if (is_empty(*root))
     {
         printf("cannot pop...empty stack!\n");
-        return INT_MIN;
+        exit(1);
     }
     temp = *root;
     *root = temp->next;
@@ -52,7 +52,7 @@ int pop(node **root)
 
 int peek(node *root)
 {
-    if (isEmpty(root))
+    if (is_empty(root))
         return INT_MAX;
     return root->value;
 }
@@ -65,6 +65,24 @@ void print_stack(node *root)
         root = root->next;
     }
     printf("\n");
+}
+
+void free_stack(node **root)
+{
+    node *current;
+    node *tmp;
+
+    if (!root)
+        return;
+    current = *root;
+    while (current)
+    {
+        tmp = current;
+        current = tmp->next;
+        free(tmp);
+    }
+    *root = NULL;
+    root = NULL;
 }
 
 #endif

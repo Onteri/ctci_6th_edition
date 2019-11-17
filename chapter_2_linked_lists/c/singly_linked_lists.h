@@ -62,16 +62,16 @@ size_t list_len(const node *h)
  */
 node *add_nodeint(node **head, const int n)
 {
-    node *newNode = (node *)malloc(sizeof(node));
+    node *new_node = (node *)malloc(sizeof(node));
 
-    if (!head || !newNode)
+    if (!head || !new_node)
         return (NULL);
-    newNode->n = n;
-    newNode->next = NULL;
+    new_node->n = n;
+    new_node->next = NULL;
     if (*head)
-        newNode->next = *head;
-    *head = newNode;
-    return (newNode);
+        new_node->next = *head;
+    *head = new_node;
+    return (new_node);
 }
 
 /**
