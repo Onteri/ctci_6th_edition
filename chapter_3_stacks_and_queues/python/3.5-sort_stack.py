@@ -6,7 +6,7 @@ class Stack_3_5(Stack):
     def sort(self):
         """
         Sorts a stack using a secondary stack as a buffer
-        O(n**2) time complexity and O(n) space complexity */
+        O(n**2) time complexity and O(2n) space complexity */
         """
         buffer = Stack()
         while not self.is_empty():

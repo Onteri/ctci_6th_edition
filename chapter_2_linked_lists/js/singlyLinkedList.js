@@ -1,5 +1,5 @@
 class SinglyLinkedList {
-  /* LinkedList constructor */
+  /* Singly linked list constructor */
   constructor() {
     this.head = null
     this.length = 0

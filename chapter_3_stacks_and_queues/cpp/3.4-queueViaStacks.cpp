@@ -17,14 +17,15 @@ public:
     int peek();
 };
 
+/* Adds an element to the front of a queue */
 void MyQueue::enqueue(int value)
 {
     this->newest.push(value);
 }
 
+/* Shift all elements from oldest stack to newest stack */
 void MyQueue::shiftStacks()
 {
-    /* If oldest is empty, push everything from newest to oldest */
     if (this->oldest.empty())
         while (!this->newest.empty())
         {
@@ -33,6 +34,7 @@ void MyQueue::shiftStacks()
         }
 }
 
+/* Pops an element off the front of a queue */
 int MyQueue::dequeue()
 {
     int value;
@@ -43,6 +45,7 @@ int MyQueue::dequeue()
     return value;
 }
 
+/* Peeks at the element at the front of the queue */
 int MyQueue::peek()
 {
     this->shiftStacks();

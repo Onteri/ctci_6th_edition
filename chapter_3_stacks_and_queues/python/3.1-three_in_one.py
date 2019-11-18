@@ -1,5 +1,8 @@
 class FixedMultiStack:
     def __init__(self, stack_size):
+        """
+        Fixed multi-stack constructor
+        """
         self.number_of_stacks = 3
         self.stack_capacity = stack_size
         self.values = [0] * stack_size * 3
@@ -7,6 +10,9 @@ class FixedMultiStack:
         self.sizes = [0] * 3
 
     def push(self, stack_num, value):
+        """
+        Pushes an element into a given stack
+        """
         if self.is_full(stack_num):
             raise Exception("stack is full")
         self.sizes[stack_num] += 1
@@ -14,6 +20,9 @@ class FixedMultiStack:
         self.values[index] = value
 
     def pop(self, stack_num):
+        """
+        Pops the top element off a fixed multi-stack
+        """
         if self.is_empty(stack_num):
             raise Exception("stack is empty")
         index = self.index_of_top(stack_num)
@@ -23,12 +32,21 @@ class FixedMultiStack:
         return value
 
     def is_full(self, stack_num):
+        """
+        Determines if a fixed multi-stack is full or not
+        """
         return self.sizes[stack_num] == self.stack_capacity
 
     def is_empty(self, stack_num):
+        """
+        Determines if a fixed multi-stack is empty or not
+        """
         return self.sizes[stack_num] == 0
 
     def index_of_top(self, stack_num):
+        """
+        Returns the top index of a given stack
+        """
         offset = stack_num * self.stack_capacity
         index = self.sizes[stack_num]
         return offset + index - 1

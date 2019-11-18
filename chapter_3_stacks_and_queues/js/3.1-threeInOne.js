@@ -1,4 +1,5 @@
 class FixedMultiStack {
+  /* Fixed multi-stack constructor */
   constructor(stackSize) {
     this.numberOfStacks = 3
     this.stackCapacity = stackSize
@@ -7,6 +8,7 @@ class FixedMultiStack {
     this.sizes = Array(3).fill(0)
   }
 
+  /* Pushes an element into a given stack */
   push(stackNum, value) {
     if (this.isFull(stackNum)) {
       throw new Error("stack is full")
@@ -16,6 +18,7 @@ class FixedMultiStack {
     this.values[index] = value
   }
 
+  /* Pops the top element off a fixed multi-stack */
   pop(stackNum) {
     if (this.isEmpty(stackNum)) {
       throw new Error("stack is empty")
@@ -27,14 +30,17 @@ class FixedMultiStack {
     return value
   }
 
+  /* Determines if a fixed multi-stack is empty or not */
   isEmpty(stackNum) {
     return this.sizes[stackNum] == 0
   }
 
+  /* Determines if a fixed multi-stack is full or not */
   isFull(stackNum) {
     return this.sizes[stackNum] == this.stackCapacity
   }
 
+  /* Returns the top index of a given stack */
   indexOfTop(stackNum) {
     const offset = stackNum * this.stackCapacity
     const size = this.sizes[stackNum]

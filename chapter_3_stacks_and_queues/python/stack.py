@@ -1,21 +1,36 @@
 # first in, last out
 class Stack:
     def __init__(self):
+        """
+        Stack constructor 
+        """
         self.stack = []
         self.length = 0
 
     def push(self, value):
+        """
+        Pushes an element to the top of the stack
+        """
         self.stack.append(value)
         self.length += 1
 
     def pop(self):
+        """
+        Pops an element off the top of the stack
+        """
         self.length -= 1
         return self.stack.pop()
 
     def peek(self):
+        """
+        Peeks at the element at the top of the stack
+        """
         return self.stack[self.length - 1]
 
     def is_empty(self):
+        """
+        Determines if a stack is empty
+        """
         return self.length == 0
 
 

@@ -5,13 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// A structure to represent a stack
+/* first in, last out */
 typedef struct stack_node
 {
     int value;
     struct stack_node *next;
 } node;
 
+/* Stack constructor */
 node *new_node(int value)
 {
     node *stack_node = malloc(sizeof(node));
@@ -20,11 +21,13 @@ node *new_node(int value)
     return stack_node;
 }
 
+/* Determines if a stack is empty */
 int is_empty(node *root)
 {
     return !root;
 }
 
+/* Pushes an element to the top of the stack */
 void push(node **root, int value)
 {
     node *stack_node = new_node(value);
@@ -32,6 +35,7 @@ void push(node **root, int value)
     *root = stack_node;
 }
 
+/* Pops an element off the top of the stack */
 int pop(node **root)
 {
     node *temp;
@@ -50,6 +54,7 @@ int pop(node **root)
     return popped;
 }
 
+/* Peeks at the element at the top of the stack */
 int peek(node *root)
 {
     if (is_empty(root))
@@ -57,6 +62,7 @@ int peek(node *root)
     return root->value;
 }
 
+/* Prints all elements of a stack */
 void print_stack(node *root)
 {
     while (root)
@@ -67,6 +73,7 @@ void print_stack(node *root)
     printf("\n");
 }
 
+/* Frees a stack */
 void free_stack(node **root)
 {
     node *current;

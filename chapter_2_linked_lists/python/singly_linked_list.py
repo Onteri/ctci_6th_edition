@@ -2,7 +2,7 @@ class SinglyLinkedList:
 
     def __init__(self):
         """
-        /* SinglyLinkedList constructor */
+        /* Singly linked list constructor */
         """
         self.head = None
         self.length = 0

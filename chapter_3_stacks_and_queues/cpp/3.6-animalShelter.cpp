@@ -18,16 +18,19 @@ private:
     int order;
 };
 
+/* Animal constructor */
 Animal::Animal(string name)
 {
     this->name = name;
 }
 
+/* Order setter */
 void Animal::setOrder(int order)
 {
     this->order = order;
 }
 
+/* Determines if this animal is than another */
 bool Animal::isOlderThan(Animal other)
 {
     return this->order < other.order;
@@ -66,6 +69,7 @@ private:
     int order = 0;
 };
 
+/* Add a dog to dog queue */
 void AnimalQueue::enqueueDog(Dog dog)
 {
     dog.setOrder(this->order);
@@ -73,6 +77,7 @@ void AnimalQueue::enqueueDog(Dog dog)
     this->dogs.push(dog);
 }
 
+/* Add a cat to cat queue */
 void AnimalQueue::enqueueCat(Cat cat)
 {
     cat.setOrder(this->order);
@@ -80,10 +85,10 @@ void AnimalQueue::enqueueCat(Cat cat)
     this->cats.push(cat);
 }
 
+/* Look at tops of dog and cat queues, and pops the queue
+ * with the oldest value */
 Animal AnimalQueue::dequeueAny()
 {
-    /* Look at tops of dog and cat queues, and pop the queue
-     * with the oldest value */
     Dog d;
     Cat c;
 
@@ -99,6 +104,7 @@ Animal AnimalQueue::dequeueAny()
         return this->dequeueDog();
 }
 
+/* Pops the oldest dog from dog queue */
 Dog AnimalQueue::dequeueDog()
 {
     Dog d;
@@ -111,6 +117,7 @@ Dog AnimalQueue::dequeueDog()
     return d;
 }
 
+/* Pops the oldest cat from cat queue */
 Cat AnimalQueue::dequeueCat()
 {
     Cat c;

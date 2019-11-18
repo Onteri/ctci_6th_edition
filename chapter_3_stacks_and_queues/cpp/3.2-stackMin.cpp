@@ -8,6 +8,7 @@ class StackWithMin
 {
 public:
     stack<int> s1;
+    /* new stack with minimums */
     stack<int> s2;
 
     StackWithMin(){};
@@ -16,6 +17,7 @@ public:
     int min();
 };
 
+/* Pushes an element to the top of the stack */
 void StackWithMin::push(int value)
 {
     if (value < this->min())
@@ -23,17 +25,20 @@ void StackWithMin::push(int value)
     s1.push(value);
 }
 
+/* Pops an element off the top of the stack */
 int StackWithMin::pop()
 {
     int value;
 
     value = s1.top();
     if (value == this->min())
+        /* If min is getting popped, remove from second list also */
         s2.pop();
     s1.pop();
     return value;
 }
 
+/* Return the minimum value of the stack */
 int StackWithMin::min()
 {
     if (s2.empty())
@@ -52,5 +57,6 @@ int main()
     cout << swm.min() << endl; // -10
     cout << swm.pop() << endl; // -10
     cout << swm.min() << endl; // -5
+
     return 0;
 }

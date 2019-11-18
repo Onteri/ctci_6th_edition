@@ -1,17 +1,20 @@
 const { Stack } = require("./stack")
 
 class StackWithCapacity extends Stack {
+  /* Stack with capacity constructor */
   constructor(capacity = 5) {
     super()
     this.capacity = capacity
   }
 
+  /* Pushes an element to the top of the stack */
   push(value) {
     if (this.isFull()) throw new Error("stack is full")
     this.stack.push(value)
     this.length++
   }
 
+  /* Determines if a stack with capacity is full */
   isFull() {
     return this.length === this.capacity
   }
@@ -30,11 +33,13 @@ StackWithCapacity { stack: [ 1, 1, 1, 1, 1 ], length: 5, capacity: 5 }
 */
 
 class SetOfStacks {
+  /* Set of stacks constructor */
   constructor() {
     this.stacks = []
     this.stacksLength = 0
   }
 
+  /* Pushes an element to the top of the stack */
   push(value) {
     const last = this.getLastStack()
     if (last != null && !last.isFull()) {
@@ -49,6 +54,7 @@ class SetOfStacks {
     }
   }
 
+  /* Pops an element off the top of the stack */
   pop() {
     const last = this.getLastStack()
     if (last === null) throw new Error("empty stack of stacks")
@@ -61,6 +67,7 @@ class SetOfStacks {
     return value
   }
 
+  /* Returns the last stack in set of stacks */
   getLastStack() {
     if (this.stacksLength === 0) return null
     return this.stacks[this.stacksLength - 1]

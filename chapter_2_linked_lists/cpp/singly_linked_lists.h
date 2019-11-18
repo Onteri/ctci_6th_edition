@@ -32,7 +32,7 @@ public:
     void delete_node(int index);
 };
 
-/* LinkedList constructor */
+/* Singly linked list constructor */
 LinkedList::LinkedList()
 {
     this->head = NULL;

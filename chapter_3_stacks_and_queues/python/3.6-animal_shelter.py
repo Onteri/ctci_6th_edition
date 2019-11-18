@@ -3,39 +3,62 @@ Queue = __import__('queue').Queue
 
 class Animal:
     def __init__(self, name):
+        """
+        Animal constructor
+        """
         self.name = name
         self._order = 0
 
     @property
     def order(self):
+        """
+        Order getter
+        """
         return self._order
 
     @order.setter
     def order(self, value):
+        """
+        Order setter
+        """
         self._order = value
 
     def is_older_than(self, animal):
+        """
+        Determines if this animal is than another
+        """
         return self.order < animal.order
 
 
 class Cat(Animal):
     def __init__(self, name):
+        """
+        Cat constructor
+        """
         super().__init__(name)
 
 
 class Dog(Animal):
     def __init__(self, name):
+        """
+        Dog constructor
+        """
         super().__init__(name)
 
 
 class AnimalQueue:
     def __init__(self):
+        """
+        Animal queue constructor
+        """
         self.dogs = Queue()
         self.cats = Queue()
         self.order = 0
 
     def enqueue(self, animal):
         """
+        Add an animal to correct queue
+
         Order is used as a sort of timestamp, so that we can compare
         the insertion order of a dog to a cat
         """
@@ -48,7 +71,7 @@ class AnimalQueue:
 
     def dequeue_any(self):
         """
-        Look at tops of dog and cat queues, and pop the queue
+        Look at tops of dog and cat queues, and pops the queue
         with the oldest value
         """
         if self.cats.is_empty():
@@ -63,9 +86,15 @@ class AnimalQueue:
             return self.dequeue_dogs()
 
     def dequeue_cats(self):
+        """
+        Pops the oldest cat from cat queue
+        """
         return self.cats.dequeue()
 
     def dequeue_dogs(self):
+        """
+        Pops the oldest dog from dog queue
+        """
         return self.dogs.dequeue()
 
 

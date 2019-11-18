@@ -3,24 +3,39 @@ Stack = __import__('stack').Stack
 
 class StackWithCapacity(Stack):
     def __init__(self, capacity=5):
+        """
+        Stack with capacity constructor
+        """
         super().__init__()
         self.capacity = capacity
 
     def push(self, value):
+        """
+        Pushes an element to the top of the stack
+        """
         if self.is_full():
             raise Exception('stack is full')
         super().push(value)
 
     def is_full(self):
+        """
+        Determines if a stack with capacity is full
+        """
         return self.length == self.capacity
 
 
 class SetOfStacks:
     def __init__(self):
+        """
+        Set of stacks constructor
+        """
         self.stacks = []
         self.length = 0
 
     def push(self, value):
+        """
+        Pushes an element to the top of the stack
+        """
         last = self.get_last_stack()
         if last == None or last.is_full():
             # create new stack
@@ -33,6 +48,9 @@ class SetOfStacks:
             last.push(value)
 
     def pop(self):
+        """
+        Pops an element off the top of the stack
+        """
         last = self.get_last_stack()
         if last == None:
             raise Exception('stacks are empty')
@@ -44,6 +62,9 @@ class SetOfStacks:
         return value
 
     def get_last_stack(self):
+        """
+        Returns the last stack in set of stacks
+        """
         if self.length == 0:
             return None
         return self.stacks[self.length - 1]

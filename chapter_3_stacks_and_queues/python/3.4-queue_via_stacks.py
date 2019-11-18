@@ -5,25 +5,42 @@ Stack = __import__('stack').Stack
 
 class MyQueue():
     def __init__(self):
+        """
+        Queue constructor
+        """
         self.newest = Stack()
         self.oldest = Stack()
 
     def size(self):
+        """
+        Returns the size of a queue
+        """
         return self.newest.length + self.oldest.length
 
     def enqueue(self, value):
+        """
+        Adds an element to the front of a queue
+        """
         self.newest.push(value)
 
     def dequeue(self):
+        """
+        Pops an element off the front of a queue
+        """
         self.shift_stacks()
         return self.oldest.pop()
 
     def peek(self):
+        """
+        Peeks at the element at the front of the queue
+        """
         self.shift_stacks()
         return self.oldest.peek()
 
     def shift_stacks(self):
-        # If oldest is empty, push everything from newest to oldest
+        """
+        Shift all elements from oldest stack to newest stack
+        """
         if self.oldest.is_empty():
             while not self.newest.is_empty():
                 self.oldest.push(self.newest.pop())

@@ -1,21 +1,36 @@
 # first in, first out
 class Queue():
     def __init__(self):
+        """
+        Queue constructor
+        """
         self.queue = []
         self.length = 0
 
     def enqueue(self, value):
+        """
+        Adds an element to the front of a queue
+        """
         self.queue.append(value)
         self.length += 1
 
     def dequeue(self):
+        """
+        Pops an element off the front of a queue
+        """
         self.length -= 1
         return self.queue.pop(0)
 
     def peek(self):
+        """
+        Peeks at the element at the front of the queue
+        """
         return self.queue[0]
 
     def is_empty(self):
+        """
+        Determines if a queue is empty
+        """
         return self.length == 0
 
 

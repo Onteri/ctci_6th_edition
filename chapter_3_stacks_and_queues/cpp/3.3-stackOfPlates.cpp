@@ -19,11 +19,13 @@ private:
     vector<stack<int>> stacks;
 };
 
+/* Set of stacks constructor */
 SetOfStacks::SetOfStacks(int capacity)
 {
     this->capacity = capacity;
 }
 
+/* Pushes an element to the top of the stack */
 void SetOfStacks::push(int value)
 {
     stack<int> *last;
@@ -44,6 +46,7 @@ void SetOfStacks::push(int value)
     }
 }
 
+/* Returns the last stack in set of stacks */
 stack<int> *SetOfStacks::getLastStack()
 {
     if (this->length == 0)
@@ -51,6 +54,7 @@ stack<int> *SetOfStacks::getLastStack()
     return &this->stacks.back();
 }
 
+/* Pops an element off the top of the stack */
 int SetOfStacks::pop()
 {
     stack<int> *last;
@@ -83,5 +87,6 @@ int main()
     while (i--)
         sos.pop();
     // sos.pop() exception
+
     return 0;
 }
