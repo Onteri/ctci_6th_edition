@@ -7,7 +7,7 @@ const isAlpha = ch => {
 }
 
 /* Determines if string or its permutations can
-   be a palindrome */
+ * be a palindrome */
 const isPaliPermutation = str => {
   const obj = {}
   let odds = 0
@@ -17,8 +17,8 @@ const isPaliPermutation = str => {
       obj[ch] % 2 != 0 ? odds++ : odds--
     }
   }
-  /* Palindrome should have max one odd value at the 
-       end of loop */
+  /* Palindrome should have max one odd value at the
+   * end of loop */
   return odds <= 1
 }
 

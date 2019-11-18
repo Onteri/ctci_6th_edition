@@ -6,7 +6,7 @@
 using namespace std;
 
 /* Compresses consecutive characters into a number and 
-   inserts it into a new string along with character */
+ * inserts it into a new string along with character */
 string string_compression(string str)
 {
     int i, count = 1;
@@ -32,5 +32,6 @@ int main()
     cout << string_compression("aaabbc") << endl;       //a3b2c1
     cout << string_compression("abc") << endl;          //a1b1c1
     cout << string_compression("lliiiinnnuux") << endl; //l2i4n3u2x1
+
     return 0;
 }

@@ -64,5 +64,6 @@ int main()
     print_matrix((int *)matrix3, 4);
     rotate_matrix(matrix3);
     print_matrix((int *)matrix3, 4);
+
     return 0;
 }

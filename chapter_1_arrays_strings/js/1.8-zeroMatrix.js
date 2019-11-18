@@ -5,11 +5,11 @@ const printMatrix = matrix => {
   for (const width of matrix) {
     console.log(width)
   }
-  console.log('------------------')
+  console.log("------------------")
 }
 
 /* Sets zeros for all values in same row and column
-   as existing zeroes */
+ * as existing zeroes */
 const setZeros = matrix => {
   /* Store all rows and columns where there is a zero in arrays */
   const rows = []

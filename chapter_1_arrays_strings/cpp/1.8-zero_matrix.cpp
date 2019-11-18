@@ -43,7 +43,7 @@ void nullify_column(int matrix[COLUMN_SIZE][ROW_SIZE], int column)
 }
 
 /* Sets zeros for all values in same row and column
-   as existing zeroes */
+ * as existing zeroes */
 void set_zeros(int matrix[COLUMN_SIZE][ROW_SIZE])
 {
     int i, j;

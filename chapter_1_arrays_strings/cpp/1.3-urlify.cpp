@@ -18,7 +18,7 @@ int count_spaces(char *str, int len)
 }
 
 /* Replaces all spaces with "%20"
-   This solution will modify input char array */
+ * This solution will modify input char array */
 void urlify(char str[], int true_length)
 {
     int spaces, index, i;
@@ -56,5 +56,6 @@ int main()
     urlify(little_friend, 29);
     cout << little_friend << endl;
     // Say%20hello%20to%20my%20little%20friend
+
     return 0;
 }

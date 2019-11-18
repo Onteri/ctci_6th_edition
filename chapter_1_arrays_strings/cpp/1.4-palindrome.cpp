@@ -7,7 +7,7 @@
 using namespace std;
 
 /* Determines if string or its permutations can
-   be a palindrome */
+ * be a palindrome */
 bool is_pali_permutation(string str)
 {
     const int ASCII_LENGTH = 128;
@@ -25,7 +25,7 @@ bool is_pali_permutation(string str)
         }
     }
     /* Palindrome should have max one odd value at the 
-       end of loop */
+     * end of loop */
     return odds <= 1;
 }
 
@@ -37,5 +37,6 @@ int main()
     cout << is_pali_permutation("tact coaz") << endl; // 0
     cout << is_pali_permutation("at ta") << endl;     // 1
     cout << is_pali_permutation("t") << endl;         // 1
+
     return 0;
 }

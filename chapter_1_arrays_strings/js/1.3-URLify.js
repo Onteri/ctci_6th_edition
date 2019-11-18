@@ -6,6 +6,6 @@ const urlify = str => {
 }
 
 console.log(urlify("Mr John Smith    "))
-// Mr%20John%20Smith
+/* Mr%20John%20Smith */
 console.log(urlify("Say hello to my little friend          "))
-// Say%20hello%20to%20my%20little%20friend
+/* Say%20hello%20to%20my%20little%20friend */

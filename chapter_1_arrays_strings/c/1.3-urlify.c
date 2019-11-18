@@ -16,7 +16,7 @@ int count_spaces(char *str, int len)
 }
 
 /* Replaces all spaces with "%20"
-   This solution will modify input char array */
+ * This solution will modify input char array */
 void urlify(char str[], int true_length)
 {
     int spaces, index, i;
@@ -47,12 +47,13 @@ int main()
     printf("[%s]\n", john_smith);
     urlify(john_smith, 13);
     printf("[%s]\n", john_smith);
-    // Mr%20John%20Smith
+    /* Mr%20John%20Smith */
 
     char little_friend[] = "Say hello to my little friend          ";
     printf("[%s]\n", little_friend);
     urlify(little_friend, 29);
     printf("[%s]\n", little_friend);
-    // Say%20hello%20to%20my%20little%20friend
+    /* Say%20hello%20to%20my%20little%20friend */
+
     return 0;
 }

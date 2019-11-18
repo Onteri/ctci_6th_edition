@@ -27,5 +27,6 @@ int main(void)
     cout << isRotation("erbottlewa", "waterbottle") << endl;  // 0
     cout << isRotation("bot", "tbo") << endl;                 // 1
     cout << isRotation("bot", "tob") << endl;                 // 0
+
     return 0;
 }

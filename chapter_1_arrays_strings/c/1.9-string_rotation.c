@@ -29,6 +29,7 @@ int isRotation(char *str1, char *str2)
             j++;
         }
         str1str1[j] = '\0';
+        /* Check if str2 is a substring is str1str1 */
         return strstr(str1str1, str2)
                    ? 1
                    : 0;
@@ -42,5 +43,6 @@ int main(void)
     printf("%i\n", isRotation("erbottlewa", "waterbottle"));  // 0
     printf("%i\n", isRotation("bot", "tbo"));                 // 1
     printf("%i\n", isRotation("bot", "tob"));                 // 0
+
     return 0;
 }

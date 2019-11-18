@@ -6,7 +6,7 @@
 #define ASCII_LENGTH 128
 
 /* Determines if string or its permutations can
-   be a palindrome */
+ * be a palindrome */
 int is_pali_permutation(char *str)
 {
     int map[ASCII_LENGTH] = {0};
@@ -24,7 +24,7 @@ int is_pali_permutation(char *str)
         }
     }
     /* Palindrome should have max one odd value at the 
-       end of loop */
+     * end of loop */
     return odds <= 1;
 }
 
@@ -36,5 +36,6 @@ int main()
     printf("%i\n", is_pali_permutation("tact coaz"));
     printf("%i\n", is_pali_permutation("at ta"));
     printf("%i\n", is_pali_permutation("t"));
+
     return 0;
 }

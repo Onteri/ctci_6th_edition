@@ -3,11 +3,11 @@
 #include <stdlib.h>
 
 /* O(2n) solution 
-   One loop to get size
-   One loop to place chars in new string */
+ * One loop to get size
+ * One loop to place chars in new string */
 
 /* Returns number of characters needed for final 
-   compressed string */
+ * compressed string */
 int get_compress_size(char *str)
 {
     int i, count = 0;
@@ -20,7 +20,7 @@ int get_compress_size(char *str)
 }
 
 /* Compresses consecutive characters into a number and 
-   inserts it into a new string along with character */
+ * inserts it into a new string along with character */
 char *string_compression(char *str)
 {
     int i, count = 1;

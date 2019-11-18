@@ -22,7 +22,7 @@ bool is_unique(string str)
 }
 
 /* Alternate solution. Uses bit vectors, but will only work for 
-   a-z chars. O(1) space complexity. */
+ * a-z chars. O(1) space complexity. */
 bool is_unique_alpha(string str)
 {
     unsigned int bit_map = 0; /* 32 bits to works with */
@@ -51,5 +51,6 @@ int main()
     cout << is_unique_alpha("aa") << endl;     // 0
     cout << is_unique_alpha("a") << endl;      // 1
     cout << is_unique_alpha("") << endl;       // 1
+
     return 0;
 }

@@ -1,7 +1,7 @@
 /* O(n) solution */
 
-/* Compresses consecutive characters into a number and 
-   inserts it into a new string along with character */
+/* Compresses consecutive characters into a number and
+ * inserts it into a new string along with character */
 const stringCompression = str => {
   /* string concatentation in JS is highly optimized */
   result_str = ""

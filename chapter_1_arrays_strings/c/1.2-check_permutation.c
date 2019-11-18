@@ -6,7 +6,7 @@
 #define ASCII_LENGTH 128
 
 /* Determines if two strings are permutations of
-   each other. */
+ * each other. */
 int check_permutation(char *str1, char *str2)
 {
     int len1, len2, i;
@@ -24,7 +24,7 @@ int check_permutation(char *str1, char *str2)
     {
         map[str2[i]]--;
         /* if array map has a negative value, there is
-           a mismatch in characters */
+         * a mismatch in characters */
         if (map[str2[i]] < 0)
             return 0;
     }
@@ -38,5 +38,6 @@ int main()
     printf("%i\n", check_permutation("dog", "good"));    // 0
     printf("%i\n", check_permutation("mmmmm", "mmmmm")); // 1
     printf("%i\n", check_permutation("mmmmm", "mmmmn")); // 0
+
     return 0;
 }

@@ -6,7 +6,7 @@
 using namespace std;
 
 /* Determines if two strings are permutations of
-   each other. */
+ * each other. */
 bool check_permutation(string str1, string str2)
 {
     const int ASCII_LENGTH = 128;
@@ -21,7 +21,7 @@ bool check_permutation(string str1, string str2)
     {
         map[ch]--;
         /* if array map has a negative value, there is
-           a mismatch in characters */
+         * a mismatch in characters */
         if (map[ch] < 0)
             return false;
     }
@@ -35,5 +35,6 @@ int main()
     cout << check_permutation("dog", "good") << endl;    // 0
     cout << check_permutation("mmmmm", "mmmmm") << endl; // 1
     cout << check_permutation("mmmmm", "mmmmn") << endl; // 0
+
     return 0;
 }
