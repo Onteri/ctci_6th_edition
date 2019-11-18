@@ -7,10 +7,8 @@ public:
   bool is_palindrome();
 };
 
-/** 
- * Determines if a linked list is a palindrome
- * O(n) time and space complexity
- */
+/* Determines if a linked list is a palindrome
+ * O(n) time and space complexity */
 bool LinkedList2_6::is_palindrome()
 {
   Node *curr;

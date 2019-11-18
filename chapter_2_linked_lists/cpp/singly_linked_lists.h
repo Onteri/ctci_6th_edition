@@ -1,4 +1,5 @@
 #ifndef SINGLY_LINKED_LISTS
+
 #include <iostream>
 
 using namespace std;
@@ -12,6 +13,7 @@ public:
     Node(int value);
 };
 
+/* Node constructor */
 Node::Node(int value)
 {
     this->value = value;
@@ -30,12 +32,14 @@ public:
     void delete_node(int index);
 };
 
+/* LinkedList constructor */
 LinkedList::LinkedList()
 {
     this->head = NULL;
     this->length = 0;
 }
 
+/* Adds a new node to the head of a singly linked list */
 Node *LinkedList::add_node(int value)
 {
     Node *new_node = new Node(value);
@@ -52,6 +56,7 @@ Node *LinkedList::add_node(int value)
     return new_node;
 }
 
+/* Prints all elements of a singly linked list */
 void LinkedList::print_list()
 {
     Node *curr;
@@ -64,6 +69,7 @@ void LinkedList::print_list()
     cout << curr->value << endl;
 }
 
+/* Deletes a node at a given index */
 void LinkedList::delete_node(int index)
 {
     Node *curr, *prev;

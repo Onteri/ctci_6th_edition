@@ -21,17 +21,13 @@ class SinglyLinkedList_2_2(SinglyLinkedList):
 
 
 sll = SinglyLinkedList_2_2()
-sll.add_to_front(1)
-sll.add_to_front(2)
-sll.add_to_front(4)
-sll.add_to_front(8)
-sll.add_to_front(16)
-sll.add_to_front(32)
-
-sll.print_linked_list()
-node = sll.kth_elem_from_last(1)  # 1
-print(node.value)
-node = sll.kth_elem_from_last(3)  # 4
-print(node.value)
-node = sll.kth_elem_from_last(5)  # 16
-print(node.value)
+arr = [1, 2, 4, 8, 16, 32]
+for i in arr:
+    sll.add_to_front(i)
+sll.print_linked_list()  # 32-> 16-> 8-> 4-> 2-> 1
+node = sll.kth_elem_from_last(1)
+print(node.value)  # 1
+node = sll.kth_elem_from_last(3)
+print(node.value)  # 4
+node = sll.kth_elem_from_last(5)
+print(node.value)  # 16

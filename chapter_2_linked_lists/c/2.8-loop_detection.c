@@ -1,16 +1,12 @@
 #include "singly_linked_lists.h"
 
-/** 
- * Determines if linked list is circular
- * O(n) solution
- */
+/* Determines if linked list is circular
+ * O(n) solution */
 int is_circular(node *head)
 {
-    node *hare;
-    node *tortoise;
+    node *hare, *tortoise;
 
-    hare = head;
-    tortoise = head;
+    hare = tortoise = head;
     while (hare && hare->next)
     {
         hare = hare->next->next;
@@ -33,5 +29,6 @@ int main()
     printf("%i\n", is_circular(head)); // 0
     n4->next = n32;
     printf("%i\n", is_circular(head)); // 1
+
     return 0;
 }

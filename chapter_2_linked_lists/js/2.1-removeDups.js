@@ -1,8 +1,8 @@
-const { SinglyLinkedList } = require('./singlyLinkedList')
+const { SinglyLinkedList } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_1 extends SinglyLinkedList {
   /* Delete nodes with duplicate values in a linked list
-     O(n) time complexity */
+   * O(n) time complexity */
   removeDups() {
     const set = new Set()
     let curr = this.head
@@ -21,14 +21,8 @@ class SinglyLinkedList_2_1 extends SinglyLinkedList {
 }
 
 const sll = new SinglyLinkedList_2_1()
-sll.addNode(1)
-sll.addNode(1)
-sll.addNode(2)
-sll.addNode(2)
-sll.addNode(4)
-sll.addNode(8)
-sll.addNode(16)
-sll.addNode(16)
+const arr = [1, 1, 2, 2, 4, 8, 16, 16]
+for (let i of arr) sll.addNode(i)
 sll.printList() // 16 -> 16 -> 8 -> 4 -> 2 -> 2 -> 1 -> 1
 sll.removeDups()
 sll.printList() // 16 -> 8 -> 4 -> 2 -> 1

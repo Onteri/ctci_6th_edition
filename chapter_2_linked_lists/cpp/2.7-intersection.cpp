@@ -1,4 +1,3 @@
-#include <iostream>
 #include <stdlib.h>
 #include "singly_linked_lists.h"
 
@@ -8,11 +7,9 @@ public:
     Node *find_intersection(LinkedList2_7 *other_list);
 };
 
-/** 
- * Finds if two linked lists intersect and returns
- * where they first meet
- * O(n) time and space complexity
- */
+/* Finds if two linked lists intersect and returns
+ * the node where they first meet
+ * O(n) time and space complexity */
 Node *LinkedList2_7::find_intersection(LinkedList2_7 *other_list)
 {
     int len1, len2, difference;
@@ -59,4 +56,6 @@ int main()
     ll2->length += 3;
     ll2->print_list();
     cout << ll->find_intersection(ll2)->value << endl; // 4
+
+    return 0;
 }

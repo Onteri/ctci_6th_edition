@@ -1,9 +1,9 @@
-const { SinglyLinkedList } = require('./singlyLinkedList')
+const { SinglyLinkedList } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_7 extends SinglyLinkedList {
   /* Finds if two linked lists intersect and returns
-     where they first meet
-     O(n) time and space complexity */
+   * the node where they first meet
+   * O(n) time and space complexity */
   findIntersection(otherList) {
     const longer = this.length > otherList.length ? this : otherList
     const shorter = this.length <= otherList.length ? this : otherList
@@ -37,19 +37,14 @@ sll.printList() // 1 -> 2 -> 7 -> 9 -> 5 -> 1 -> 3
 
 const sll2 = new SinglyLinkedList_2_7()
 sll2.addNode(4)
-sll2.addNode(6)
-sll2.extend(n5)
+let n6 = sll2.addNode(6)
+n6.next = n5
 sll2.printList() // 6 -> 4 -> 5 -> 1 -> 3
 
 console.log(sll.findIntersection(sll2)) // Node { value: 5, next: Node }
 
 const sll3 = new SinglyLinkedList_2_7()
-sll3.addNode(3)
-sll3.addNode(1)
-sll3.addNode(5)
-sll3.addNode(9)
-sll3.addNode(7)
-sll3.addNode(2)
-sll3.addNode(8)
+const arr = [3, 1, 5, 9, 7, 2, 8]
+for (let i of arr) sll3.addNode(i)
 sll3.printList() // 1 -> 2 -> 7 -> 9 -> 5 -> 1 -> 3
 console.log(sll.findIntersection(sll3)) // null

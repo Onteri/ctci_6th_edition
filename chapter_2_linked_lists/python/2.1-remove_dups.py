@@ -21,14 +21,9 @@ class SinglyLinkedList_2_1(SinglyLinkedList):
 
 
 sll = SinglyLinkedList_2_1()
-sll.add_to_front(1)
-sll.add_to_front(1)
-sll.add_to_front(2)
-sll.add_to_front(4)
-sll.add_to_front(4)
-sll.add_to_front(8)
-sll.add_to_front(8)
-
+arr = [1, 1, 2, 4, 4, 8, 8]
+for i in arr:
+    sll.add_to_front(i)
 sll.print_linked_list()  # 8-> 8-> 4-> 4-> 2-> 1-> 1
 sll.del_dups()
 sll.print_linked_list()  # 8-> 4-> 2-> 1

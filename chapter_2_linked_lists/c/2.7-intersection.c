@@ -1,10 +1,8 @@
 #include "singly_linked_lists.h"
 
-/** 
- * Finds if two linked lists intersect and returns
- * where they first meet
- * O(n) time and space complexity
- */
+/* Finds if two linked lists intersect and returns
+ * the node where they first meet
+ * O(n) time and space complexity */
 node *find_intersection(node *list1, node *list2)
 {
     int len1, len2, difference;
@@ -56,5 +54,6 @@ int main()
     add_nodeint(&head3, 16);
     node *res2 = find_intersection(head, head3);
     printf("%i\n", res2 ? res2->n : -1); // -1
+
     return 0;
 }

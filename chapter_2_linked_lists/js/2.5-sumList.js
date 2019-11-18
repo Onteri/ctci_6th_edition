@@ -1,8 +1,8 @@
-const { SinglyLinkedList, Node } = require('./singlyLinkedList')
+const { SinglyLinkedList, Node } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_5 extends SinglyLinkedList {
-  /* Adds the values of two linked lists by creating a new list 
-     O(a + b) solution, a and b being lengths of respective lists */
+  /* Adds the values of two linked lists by creating a new list
+   * O(a + b) solution, a and b being lengths of respective lists */
   static sumList(firstNode, secondNode, carry = 0) {
     if (!firstNode && !secondNode && !carry) {
       return null

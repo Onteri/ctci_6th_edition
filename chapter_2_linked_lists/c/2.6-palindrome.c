@@ -1,9 +1,7 @@
 #include "singly_linked_lists.h"
 
-/** 
- * Determines if a linked list is a palindrome
- * O(n) time and space complexity
- */
+/* Determines if a linked list is a palindrome
+ * O(n) time and space complexity */
 int is_palindrome(node **head)
 {
     node *slow = *head, *fast = *head, *prev = *head;
@@ -42,33 +40,28 @@ int is_palindrome(node **head)
 int main()
 {
     node *head = NULL;
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 2);
-    add_nodeint(&head, 4);
-    add_nodeint(&head, 8);
-    add_nodeint(&head, 4);
-    add_nodeint(&head, 2);
-    add_nodeint(&head, 1);
+    int arr[] = {1, 2, 4, 8, 4, 2, 1};
+    int i, size = sizeof(arr) / sizeof(int);
+
+    for (i = 0; i < size; i++)
+        add_nodeint(&head, arr[i]);
     printf("%i\n", is_palindrome(&head)); // 1
 
     node *head2 = NULL;
-    add_nodeint(&head2, 1);
-    add_nodeint(&head2, 2);
-    add_nodeint(&head2, 4);
-    add_nodeint(&head2, 4);
-    add_nodeint(&head2, 2);
-    add_nodeint(&head2, 1);
+    int arr2[] = {1, 2, 4, 4, 2, 1};
+    size = sizeof(arr2) / sizeof(int);
+
+    for (i = 0; i < size; i++)
+        add_nodeint(&head2, arr2[i]);
     printf("%i\n", is_palindrome(&head2)); // 1
 
     node *head3 = NULL;
-    add_nodeint(&head3, 1);
-    add_nodeint(&head3, 2);
-    add_nodeint(&head3, 4);
-    add_nodeint(&head3, 8);
-    add_nodeint(&head3, 16);
-    add_nodeint(&head3, 4);
-    add_nodeint(&head3, 2);
-    add_nodeint(&head3, 1);
+    int arr3[] = {1, 2, 4, 8, 16, 4, 2, 1};
+    size = sizeof(arr3) / sizeof(int);
+
+    for (i = 0; i < size; i++)
+        add_nodeint(&head3, arr3[i]);
     printf("%i\n", is_palindrome(&head3)); // 0
+
     return 0;
 }

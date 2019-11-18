@@ -1,19 +1,15 @@
 #include "singly_linked_lists.h"
 
-/** 
- * Delete nodes with duplicate values in a linked list
- * O(n**2) time complexity 
- */
+/* Delete nodes with duplicate values in a singly linked list
+ * O(n**2) time complexity */
 void remove_dups(node **head)
 {
-    node *slow;
-    node *fast;
-    int slow_index;
-    int fast_index;
+    node *slow, *fast;
+    int slow_index, fast_index;
 
     slow = *head;
     slow_index = 0;
-    while (slow->next)
+    while (slow)
     {
         fast = slow->next;
         fast_index = slow_index + 1;
@@ -34,15 +30,13 @@ void remove_dups(node **head)
 int main()
 {
     node *head = NULL;
-    add_nodeint(&head, 8);
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 4);
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 4);
-    add_nodeint(&head, 8);
-    add_nodeint(&head, 8);
+    int arr[] = {8, 1, 4, 1, 1, 4, 8, 8};
+    int i, size = sizeof(arr) / sizeof(int);
+
+    for (i = 0; i < size; i++)
+        add_nodeint(&head, arr[i]);
     remove_dups(&head);
     print_list(head); // 8 -> 4 -> 1
+
     return 0;
 }

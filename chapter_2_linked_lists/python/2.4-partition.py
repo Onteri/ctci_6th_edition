@@ -26,13 +26,9 @@ class SinglyLinkedList_2_4(SinglyLinkedList):
 
 
 sll = SinglyLinkedList_2_4()
-sll.add_to_front(10)
-sll.add_to_front(30)
-sll.add_to_front(11)
-sll.add_to_front(31)
-sll.add_to_front(12)
-sll.add_to_front(33)
-sll.add_to_front(13)
+arr = [10, 30, 11, 31, 12, 33, 13]
+for i in arr:
+    sll.add_to_front(i)
 sll.print_linked_list()  # 13 -> 33 -> 12 -> 31 -> 11 -> 30 -> 10
 sll.partition(20)
 sll.print_linked_list()  # 10 -> 11 -> 12 -> 13 -> 33 -> 31 -> 30

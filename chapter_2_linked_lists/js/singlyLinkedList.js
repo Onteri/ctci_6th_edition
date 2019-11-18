@@ -1,13 +1,11 @@
-/* A Singly Linked List Class */
 class SinglyLinkedList {
-  /* Constructor, instance attributes include head pointer
-     and length */
+  /* LinkedList constructor */
   constructor() {
     this.head = null
     this.length = 0
   }
 
-  /* Add a node to head of list */
+  /* Adds a new node to the head of a singly linked list */
   addNode(value) {
     const node = new Node(value)
     if (!this.head) {
@@ -20,12 +18,12 @@ class SinglyLinkedList {
     return node
   }
 
-  /* Deletes a node given the index */
+  /* Deletes a node at a given index */
   deleteNode(index) {
     /* delete head */
     let curr = this.head
     let prev
-    if (index >= this.length || index < 0) throw new Error('index out of range')
+    if (index >= this.length || index < 0) throw new Error("index out of range")
     if (index === 0) {
       this.head = curr.next
     } else if (index === this.length - 1) {
@@ -45,34 +43,21 @@ class SinglyLinkedList {
     }
   }
 
-  /* Print a linked list */
+  /* Prints all elements of a singly linked list */
   printList() {
     let curr = this.head
-    let str = ''
+    let str = ""
     while (curr) {
       str += curr.value
-      str += curr.next ? ' -> ' : ''
+      str += curr.next ? " -> " : ""
       curr = curr.next
     }
     console.log(str)
   }
-
-  /* Extends a linked list with input node */
-  extend(node) {
-    let curr = this.head
-    while (curr.next) curr = curr.next
-    curr.next = node
-    while (node) {
-      node = node.next
-      this.length++
-    }
-  }
 }
 
-/* A Node class */
 class Node {
-  /* Constructor, instance attributes include value and
-     next pointer */
+  /* Node constructor */
   constructor(value) {
     this.value = value
     this.next = null

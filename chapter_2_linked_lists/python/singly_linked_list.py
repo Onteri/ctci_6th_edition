@@ -1,17 +1,15 @@
 class SinglyLinkedList:
-    """A Singly Linked List Class"""
 
     def __init__(self):
         """
-        Constructor, instance attributes include head pointer
-        and length
+        /* SinglyLinkedList constructor */
         """
         self.head = None
         self.length = 0
 
     def add_to_front(self, value):
         """
-        Add a node to head of list
+        Adds a new node to the head of a singly linked list
         """
         node = Node(value)
         if self.head is None:
@@ -24,7 +22,7 @@ class SinglyLinkedList:
 
     def delete_node(self, index):
         """
-        Deletes a node given the index
+        Deletes a node at a given index
         """
         curr = self.head
         if index < 0 or index >= self.length:
@@ -51,7 +49,7 @@ class SinglyLinkedList:
 
     def print_linked_list(self):
         """
-        Print a linked list
+        Prints all elements of a singly linked list
         """
         curr = self.head
         while curr:
@@ -60,12 +58,10 @@ class SinglyLinkedList:
 
 
 class Node:
-    """A Node class"""
 
     def __init__(self, value):
         """
-        Constructor, instance attributes include value and
-        next pointer
+        Node constructor
         """
         self.value = value
         self.next = None

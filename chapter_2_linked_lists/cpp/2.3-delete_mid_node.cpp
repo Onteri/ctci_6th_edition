@@ -6,10 +6,8 @@ public:
   void delete_mid_node(Node *mid);
 };
 
-/**
- * Deletes a node in the middle of a linked list
- * O(n) time complexity
- */
+/* Deletes a node in the middle of a linked list
+ * O(n) time complexity */
 void LinkedList2_3::delete_mid_node(Node *mid)
 {
   Node *next_node;
@@ -32,4 +30,6 @@ int main()
   ll->print_list(); // 32 -> 16 -> 8 -> 4 -> 2 -> 1
   ll->delete_mid_node(n8);
   ll->print_list(); // 32 -> 16 -> 4 -> 2 -> 1
+
+  return 0;
 }

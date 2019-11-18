@@ -6,10 +6,8 @@ public:
     static Node *sum_list(Node *first_list, Node *other_list, int carry);
 };
 
-/**
- * Adds the values of two linked lists by creating a new list 
- * O(a + b) solution, a and b being lengths of respective lists
- */
+/* Adds the values of two linked lists by creating a new list 
+ * O(a + b) solution, a and b being lengths of respective lists */
 Node *LinkedList2_5::sum_list(Node *first_list, Node *other_list, int carry)
 {
     int value;
@@ -26,6 +24,7 @@ Node *LinkedList2_5::sum_list(Node *first_list, Node *other_list, int carry)
     new_node->value = value % 10;
     if (first_list || other_list)
     {
+        /* recursive call */
         next_node = sum_list(
             first_list ? first_list->next : NULL,
             other_list ? other_list->next : NULL,
@@ -51,4 +50,6 @@ int main()
     LinkedList2_5 *ll3 = new LinkedList2_5;
     ll3->head = n;
     ll3->print_list(); // 0-> 0-> 0-> 1
+
+    return 0;
 }

@@ -7,10 +7,8 @@ public:
     void remove_dups();
 };
 
-/** 
- * Delete nodes with duplicate values in a linked list
- * O(n) time complexity 
- */
+/* Delete nodes with duplicate values in a linked list
+ * O(n) time complexity */
 void LinkedList2_1::remove_dups()
 {
     unordered_set<int> set;
@@ -49,4 +47,6 @@ int main()
     ll->print_list(); // 32 -> 32 -> 16 -> 8 -> 4 -> 4 -> 2 -> 1 -> 1
     ll->remove_dups();
     ll->print_list(); // 32 -> 16 -> 8 -> 4 -> 2 -> 1
+
+    return 0;
 }
