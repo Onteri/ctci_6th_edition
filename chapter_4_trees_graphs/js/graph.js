@@ -15,25 +15,11 @@ class Graph {
     }
   }
 
-  /* Adds an edge between two vertexes */
-  addEdge(source, destination) {
-    const sourceNode = this.addVertex(source)
-    const destinationNode = this.addVertex(destination)
-
-    /* bi-directional graphs */
-    if (this.edgeDirection === Graph.UNDIRECTED) {
-      destinationNode.addAdjacent(sourceNode)
-    }
-
-    sourceNode.addAdjacent(destinationNode)
-    return [sourceNode, destinationNode]
-  }
-
   /* Removes vertex from graph */
   removeVertex(value) {
     const current = this.nodes[value]
     if (current) {
-      /* Removes add edges connected to vertex */
+      /* Removes edges connected to vertex */
       for (const node of Object.values(this.nodes)) {
         node.removeAdjacent(current)
       }
@@ -42,7 +28,21 @@ class Graph {
     return current
   }
 
-  /* Removes an edge between two nodes */
+  /* Adds an edge between two vertexes */
+  addEdge(source, destination) {
+    const sourceNode = this.addVertex(source)
+    const destinationNode = this.addVertex(destination)
+
+    sourceNode.addAdjacent(destinationNode)
+    /* bi-directional graphs */
+    if (this.edgeDirection === Graph.UNDIRECTED) {
+      destinationNode.addAdjacent(sourceNode)
+    }
+
+    return [sourceNode, destinationNode]
+  }
+
+  /* Removes an edge between two vertexes */
   removeEdge(source, destination) {
     const sourceNode = this.nodes[source]
     const destinationNode = this.nodes[destination]
@@ -59,7 +59,7 @@ class Graph {
   }
 }
 
-class Node {
+class GraphNode {
   /* Node constructor */
   constructor(value) {
     this.value = value
@@ -75,11 +75,10 @@ class Node {
   removeAdjacent(node) {
     const index = this.adjacents.indexOf(node)
     if (index > -1) this.adjacents.splice(index, 1)
-    return node
   }
 }
 
 module.exports = {
   Graph,
-  Node
+  GraphNode
 }
