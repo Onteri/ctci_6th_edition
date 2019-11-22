@@ -1,18 +1,17 @@
 const { TreeNode } = require("./tree")
 
 /* Validates that a binary tree is a binary search tree */
-const checkBST = node => {
-  return checkBSTHelper(node, null, null)
+const validateBST = node => {
+  return validateBSTHelper(node, null, null)
 }
 
 /* Helper */
-const checkBSTHelper = (node, min, max) => {
+const validateBSTHelper = (node, min, max) => {
   if (!node) return true
-  if ((min != null && node.value <= min) || (max != null && node.value > max))
-    return false
+  if ((min && node.value <= min) || (max && node.value > max)) return false
   if (
-    !checkBSTHelper(node.left, min, node.value) ||
-    !checkBSTHelper(node.right, node.value, max)
+    !validateBSTHelper(node.left, min, node.value) ||
+    !validateBSTHelper(node.right, node.value, max)
   )
     return false
   return true
@@ -64,5 +63,5 @@ t4.right = t7
 const t8 = new TreeNode(17)
 t5.right = t8
 
-console.log(checkBST(n1)) // false
-console.log(checkBST(t1)) // true
+console.log(validateBST(n1)) // false
+console.log(validateBST(t1)) // true
