@@ -1,15 +1,17 @@
+const TreeNode = require("./tree")
+
 /* Creates a binary search tree with minimal height */
 const createMinimalBST = arr => {
   return minimalBST(arr, 0, arr.length - 1)
 }
 
 /* helper */
-const minimalBST = (arr, start, end) => {
+const minimalBSTHelper = (arr, start, end) => {
   if (start > end) return null
   const mid = Math.floor((start + end) / 2)
   const node = new TreeNode(arr[mid])
-  n.left = minimalBST(arr, start, mid - 1)
-  n.right = minimalBST(arr, mid + 1, end)
+  node.left = minimalBSTHelper(arr, start, mid - 1)
+  node.right = minimalBSTHelper(arr, mid + 1, end)
   return node
 }
 

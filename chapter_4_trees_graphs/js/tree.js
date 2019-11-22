@@ -24,7 +24,7 @@ const inOrderTraversal = node => {
   inOrderTraversal(node.right)
 }
 
-/* Visits child nodes before curret node */
+/* Visits child nodes before current node */
 const postOrderTraversal = node => {
   if (!node) return
   postOrderTraversal(node.left)
