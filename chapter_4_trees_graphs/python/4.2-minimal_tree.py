@@ -25,13 +25,12 @@ def create_minimal_bst_helper(arr, start, end):
 arr = [1, 4, 6, 8, 9, 12, 19, 21]
 root = create_minimal_bst(arr)
 pre_order_traversal(root)
-"""
-8
-4
-1
-6
-12
-9
-19
-21
+r"""
+      8
+    /   \
+  4       12
+  / \     /  \
+1   6   9    19
+              /
+            21
 """
