@@ -1,8 +1,8 @@
-const TreeNode = require("./tree")
+const { TreeNode, preOrderTraversal } = require("./tree")
 
 /* Creates a binary search tree with minimal height */
 const createMinimalBST = arr => {
-  return minimalBST(arr, 0, arr.length - 1)
+  return minimalBSTHelper(arr, 0, arr.length - 1)
 }
 
 /* helper */

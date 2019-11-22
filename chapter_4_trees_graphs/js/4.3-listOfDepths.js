@@ -1,23 +1,36 @@
-const { SinglyLinkedList } = require('./singlyLinkedList')
-const { TreeNode } = require('./tree')
+const {
+  SinglyLinkedList
+} = require("../../chapter_2_linked_lists/js/singlyLinkedList")
+const { TreeNode } = require("./tree")
 
+/* Creates a linked list out of every level in a binary tree */
 const createLevelLinkedList = root => {
   let result = []
   let current = new SinglyLinkedList()
   if (root) current.addNode(root)
   while (current.length) {
     result.push(current)
-    let parents = current
+    tmp = current.head
     current = new SinglyLinkedList()
-    tmp = parents.head
     /* loop through all nodes in parent */
     while (tmp) {
-      if (tmp.left) current.addNode(tmp.left)
-      if (tmp.right) current.addNode(tmp.right)
+      if (tmp.value.left) current.addNode(tmp.value.left)
+      if (tmp.value.right) current.addNode(tmp.value.right)
       tmp = tmp.next
     }
   }
   return result
+}
+
+const printList = list => {
+  let curr = list.head
+  let str = ""
+  while (curr) {
+    str += curr.value.value
+    str += curr.next ? " -> " : ""
+    curr = curr.next
+  }
+  console.log(str)
 }
 
 const n1 = new TreeNode(1)
@@ -52,7 +65,7 @@ n7.right = n15
 
 let res = createLevelLinkedList(n1)
 for (let r of res) {
-  r.printList()
+  printList(r)
 }
 /*
 1

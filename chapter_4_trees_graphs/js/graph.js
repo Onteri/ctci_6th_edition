@@ -9,7 +9,7 @@ class Graph {
     if (this.nodes[value]) {
       return this.nodes[value]
     } else {
-      const node = new Node(value)
+      const node = new GraphNode(value)
       this.nodes[value] = node
       return node
     }
