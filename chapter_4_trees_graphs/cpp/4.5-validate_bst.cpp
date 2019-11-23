@@ -1,4 +1,4 @@
-#include "tree_node.h"
+#include "tree.h"
 
 /* Helper */
 bool validate_bst_helper(TreeNode *root, int *min, int *max)

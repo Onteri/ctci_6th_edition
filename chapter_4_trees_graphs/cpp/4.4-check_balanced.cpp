@@ -1,4 +1,4 @@
-#include "tree_node.h"
+#include "tree.h"
 #include <climits>
 
 /* Calculates differences between heights of left and right nodes.
