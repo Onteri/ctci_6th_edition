@@ -34,16 +34,11 @@ int main()
 {
     BinarySearchTree bst;
     vector<LinkedList *> v;
+    int arr[] = {20, 10, 30, 5, 3, 7, 15, 17};
+    int size = sizeof(arr) / sizeof(int), i;
 
-    bst.insert(20);
-    bst.insert(10);
-    bst.insert(30);
-    bst.insert(5);
-    bst.insert(3);
-    bst.insert(7);
-    bst.insert(15);
-    bst.insert(17);
-
+    for (i = 0; i < size; i++)
+        bst.insert(arr[i]);
     v = create_level_linked_list(bst.root);
     for (auto ptr : v)
         ptr->print_list();

@@ -15,7 +15,8 @@ TreeNode *create_minimal_bst_helper(int *arr, int start, int end)
     return t;
 }
 
-/* Creates a binary search tree with minimal height */
+/* Creates a binary search tree with minimal height 
+ * out of sorted array */
 TreeNode *create_minimal_bst(int *arr, int size)
 {
     return create_minimal_bst_helper(arr, 0, size - 1);
