@@ -6,7 +6,7 @@ const checkBalanced = root => {
 }
 
 /* Calculates differences between heights of left and right nodes.
- * If difference is greater than 1, will return INT_MIN */
+ * If difference is greater than 1, return INT_MIN */
 const checkHeight = root => {
   if (!root) return -1
   let leftHeight = checkHeight(root.left)

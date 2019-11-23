@@ -11,7 +11,7 @@ def check_balanced(root):
 def check_height(root):
     """
     Calculates differences between heights of left and right nodes.
-    If difference is greater than 1, will return INT_MIN */
+    If difference is greater than 1, return INT_MIN */
     """
     if root == None:
         return -1

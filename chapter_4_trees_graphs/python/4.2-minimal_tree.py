@@ -5,6 +5,7 @@ pre_order_traversal = __import__('tree').pre_order_traversal
 def create_minimal_bst(arr):
     """
     Creates a binary search tree with minimal height
+    out of sorted array
     """
     return create_minimal_bst_helper(arr, 0, len(arr) - 1)
 
