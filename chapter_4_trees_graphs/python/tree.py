@@ -1,7 +1,7 @@
 class TreeNode:
     def __init__(self, value):
         """
-        Tree constructor
+        Tree Node constructor
         """
         self.value = value
         self.parent = None

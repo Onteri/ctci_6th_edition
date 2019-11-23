@@ -1,5 +1,5 @@
 class TreeNode {
-  /* Tree constructor */
+  /* Tree Node constructor */
   constructor(value) {
     this.value = value
     this.left = null

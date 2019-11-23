@@ -14,7 +14,7 @@ public:
     TreeNode(int value);
 };
 
-/* Tree constructor */
+/* Tree Node constructor */
 TreeNode::TreeNode(int value)
 {
     this->value = value;
