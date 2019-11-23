@@ -2,9 +2,9 @@
 #include "binary_search_tree.h"
 
 /* Traverse to most left child node */
-node *left_most_child(node *root)
+tree_node *left_most_child(tree_node *root)
 {
-    node *curr;
+    tree_node *curr;
 
     curr = root;
     while (curr->left)
@@ -13,16 +13,16 @@ node *left_most_child(node *root)
 }
 
 /* Returns the next in-order successive node */
-node *next_successor(node *tree_node)
+tree_node *next_successor(tree_node *node)
 {
-    node *child, *parent;
+    tree_node *child, *parent;
 
-    if (!tree_node)
+    if (!node)
         return NULL;
     /* If node has right child, traverse down and left */
-    if (tree_node->right)
-        return left_most_child(tree_node->right);
-    child = tree_node;
+    if (node->right)
+        return left_most_child(node->right);
+    child = node;
     parent = child->parent;
     /* Traverse up to first parent whose left child
      * is not original node or previous parent */
@@ -36,8 +36,8 @@ node *next_successor(node *tree_node)
 
 int main(void)
 {
-    node *root = NULL;
-    node *n5, *n15;
+    tree_node *root = NULL;
+    tree_node *n5, *n15;
 
     insert(&root, 20);
     insert(&root, 10);

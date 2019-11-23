@@ -1,10 +1,10 @@
 #include "tree.h"
 
 /* helper */
-node *create_minimal_bst_helper(int *arr, int start, int end)
+tree_node *create_minimal_bst_helper(int *arr, int start, int end)
 {
     int mid;
-    node *new_node;
+    tree_node *new_node;
 
     if (start > end)
         return NULL;
@@ -15,15 +15,16 @@ node *create_minimal_bst_helper(int *arr, int start, int end)
     return new_node;
 }
 
-/* Creates a binary search tree with minimal height */
-node *create_minimal_bst(int *arr, int size)
+/* Creates a binary search tree with minimal height 
+ * out of sorted array */
+tree_node *create_minimal_bst(int *arr, int size)
 {
     return create_minimal_bst_helper(arr, 0, size - 1);
 }
 
 int main(void)
 {
-    node *root;
+    tree_node *root;
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int size = sizeof(arr) / sizeof(int);
 

@@ -4,7 +4,7 @@
 #include "tree.h"
 
 /* Inserts a node onto another node */
-void add_node(node *first, node *second)
+void add_node(tree_node *first, tree_node *second)
 {
     /* insert in left side */
     if (first->value < second->value)
@@ -36,9 +36,9 @@ void add_node(node *first, node *second)
 }
 
 /* Inserts a node into a Binary Search Tree */
-node *insert(node **root, int value)
+tree_node *insert(tree_node **root, int value)
 {
-    node *new_node;
+    tree_node *new_node;
 
     new_node = create_node(value);
     if (*root)
