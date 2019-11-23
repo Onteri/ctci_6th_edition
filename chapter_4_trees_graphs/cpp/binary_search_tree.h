@@ -42,12 +42,12 @@ TreeNode *BinarySearchTree::insert(int value)
 /* Inserts a node onto another node */
 void BinarySearchTree::add_node(TreeNode *node, TreeNode *new_node)
 {
-    if (node->value <= new_node->value)
+    if (node->value < new_node->value)
     {
-        /* insert in left side */
+        /* insert in right side */
         if (!node->right)
         {
-            /* if left node does not exist, insert */
+            /* if right node does not exist, insert */
             node->right = new_node;
             new_node->parent = node;
         }
@@ -57,10 +57,10 @@ void BinarySearchTree::add_node(TreeNode *node, TreeNode *new_node)
     }
     else
     {
-        /* insert in right side */
+        /* insert in left side */
         if (!node->left)
         {
-            /* if right node does not exist, insert */
+            /* if left node does not exist, insert */
             node->left = new_node;
             new_node->parent = node;
         }
