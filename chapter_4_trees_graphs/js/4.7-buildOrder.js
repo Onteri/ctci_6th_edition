@@ -1,4 +1,4 @@
-const { Graph } = require("./graph")
+const { Graph } = require('./graph')
 
 class Project {
   /* Project constructor */
@@ -80,7 +80,6 @@ const orderProjects = projects => {
     /* We have a circular dependency since there are no remaining
      * projects with zero dependencies */
     if (!current) return
-    /* Remove myself as a dependency */
     let children = current.children
     for (let child of children) child.decrementDependencies()
     endOfList = addNonDependent(order, children, endOfList)
@@ -90,7 +89,8 @@ const orderProjects = projects => {
   return order
 }
 
-/* A helper function to insert projects with zero dependencies into the  * order array, starting at index offset*/
+/* A helper function to insert projects with zero dependencies into the
+ * order array, starting at index offset */
 const addNonDependent = (order, projects, offset) => {
   for (let project of projects) {
     if (project.dependencies === 0) {
@@ -102,14 +102,14 @@ const addNonDependent = (order, projects, offset) => {
 }
 
 const dependencies = [
-  ["a", "e"],
-  ["b", "a"],
-  ["c", "a"],
-  ["f", "a"],
-  ["f", "b"],
-  ["f", "c"],
-  ["d", "g"],
-  ["b", "e"]
+  ['a', 'e'],
+  ['b', 'a'],
+  ['c', 'a'],
+  ['f', 'a'],
+  ['f', 'b'],
+  ['f', 'c'],
+  ['d', 'g'],
+  ['b', 'e']
 ]
 
 let buildOrder = findBuildOrder(dependencies)
