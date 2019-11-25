@@ -1,7 +1,8 @@
 class Graph {
   /* Graph constructor */
-  constructor(edgeDirection = Graph.DIRECTED) {
+  constructor(directed = true) {
     this.nodes = {}
+    this.directed = directed
   }
 
   /* Adds a new vertex to graph, or return existing one */
@@ -35,7 +36,7 @@ class Graph {
 
     sourceNode.addAdjacent(destinationNode)
     /* bi-directional graphs */
-    if (this.edgeDirection === Graph.UNDIRECTED) {
+    if (!this.directed) {
       destinationNode.addAdjacent(sourceNode)
     }
 
@@ -51,7 +52,7 @@ class Graph {
       sourceNode.removeAdjacent(destinationNode)
     }
 
-    if (this.edgeDirection === Graph.UNDIRECTED) {
+    if (!this.directed) {
       destinationNode.removeAdjacent(sourceNode)
     }
 
