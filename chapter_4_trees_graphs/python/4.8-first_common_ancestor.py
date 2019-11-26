@@ -3,25 +3,25 @@ TreeNode = __import__('tree').TreeNode
 # LINK TO PARENTS EXIST
 
 
-def first_common_ancestor(first_node, second_node):
+def first_common_ancestor(p, q):
     """
     Finds the first common ancestor of two nodes in a binary tree
     if there are links to parents
     """
-    delta = find_depth(first_node) - find_depth(second_node)
+    delta = find_depth(p) - find_depth(q)
     if delta > 0:
-        longer = first_node
-        shorter = second_node
+        first = p
+        second = q
     else:
-        longer = second_node
-        shorter = first_node
-    n_longer = move_up_by(longer, abs(delta))
-    while shorter and n_longer and shorter != n_longer:
-        shorter = shorter.parent
-        n_longer = n_longer.parent
-    if shorter is None or n_longer is None:
-        return None
-    return shorter
+        first = q
+        second = p
+    first = move_up_by(first, abs(delta))
+    while first and second and second != first:
+        second = second.parent
+        first = first.parent
+    if first and second:
+        return first
+    return None
 
 
 def move_up_by(node, delta):
@@ -59,18 +59,18 @@ def common_ancestor(root, first, second):
     return common_ancestor_helper(root, first, second)
 
 
-def common_ancestor_helper(root, first, second):
+def common_ancestor_helper(root, p, q):
     """
     Helper
     """
-    if not root or first == root or second == root:
+    if not root or p == q or q == root:
         return root
-    first_on_left = covers(root.left, first)
-    second_on_left = covers(root.left, second)
+    first_on_left = covers(root.left, p)
+    second_on_left = covers(root.left, q)
     if first_on_left != second_on_left:
         return root
-    side = root.left if first_on_left else root.right
-    return common_ancestor_helper(side, first, second)
+    child_side = root.left if first_on_left else root.right
+    return common_ancestor_helper(child_side, p, q)
 
 
 def covers(root, node):
