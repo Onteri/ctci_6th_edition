@@ -1,5 +1,5 @@
-const { TreeNode } = require('./tree')
-const { BinarySearchTree } = require('./binarySearchTree')
+const { TreeNode } = require("./tree")
+const { BinarySearchTree } = require("./binarySearchTree")
 
 class TreeNode4_11 extends TreeNode {
   constructor(value) {
@@ -37,7 +37,7 @@ class BinarySearchTree4_11 extends BinarySearchTree {
     this.size++
   }
 
-  /* Retrieves random node in Binary Search Tree */
+  /* Retrieves a random node in Binary Search Tree */
   getRandomNode() {
     if (!this.root) return null
     /* Get random index */
@@ -47,17 +47,10 @@ class BinarySearchTree4_11 extends BinarySearchTree {
 }
 
 const bst = new BinarySearchTree4_11()
-bst.insertInOrder(20)
-bst.insertInOrder(10)
-bst.insertInOrder(30)
-bst.insertInOrder(5)
-bst.insertInOrder(3)
-bst.insertInOrder(7)
-bst.insertInOrder(35)
-bst.insertInOrder(15)
-bst.insertInOrder(17)
-const arr = Array(10)
-let string = ''
-for (let i of arr) string += bst.getRandomNode().value + ' '
+const arr = [20, 30, 10, 15, 35, 17, 5, 3, 7]
+arr.forEach(e => bst.push(e))
+const range = Array(10)
+let string = ""
+for (let i in range) string += bst.getRandomNode().value + " "
 console.log(string)
 /* 5 10 35 30 7 20 30 17 10 10 */
