@@ -1,4 +1,4 @@
-class BinarySeachTree {
+class BinarySearchTree {
   /* Binary Search Tree constructor */
   constructor() {
     this.root = null
@@ -40,6 +40,6 @@ class BinarySeachTree {
   }
 }
 
-modules.export = {
-  BinarySeachTree
+module.exports = {
+  BinarySearchTree
 }
