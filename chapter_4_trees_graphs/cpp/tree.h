@@ -12,6 +12,9 @@ public:
     TreeNode *right;
     TreeNode *parent;
     TreeNode(int value);
+
+    TreeNode *addLeft(int value);
+    TreeNode *addRight(int value);
 };
 
 /* Tree Node constructor */
@@ -22,6 +25,26 @@ TreeNode::TreeNode(int value)
     this->right = nullptr;
     this->parent = nullptr;
 };
+
+TreeNode *TreeNode::addLeft(int value)
+{
+    TreeNode *new_node;
+
+    new_node = new TreeNode(value);
+    new_node->parent = this;
+    this->left = new_node;
+    return new_node;
+}
+
+TreeNode *TreeNode::addRight(int value)
+{
+    TreeNode *new_node;
+
+    new_node = new TreeNode(value);
+    new_node->parent = this;
+    this->right = new_node;
+    return new_node;
+}
 
 /* Prints current node before child nodes */
 void pre_order_traversal(TreeNode *root)
