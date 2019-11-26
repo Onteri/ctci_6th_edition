@@ -18,7 +18,7 @@ GraphNode *common_ancestor_helper(GraphNode *root, GraphNode *p, GraphNode *q)
     bool is_p_left, is_q_left;
     GraphNode *child_side;
 
-    if (root == p || root == q)
+    if (!root || root == p || root == q)
         return root;
     is_p_left = covers(root->left, p);
     is_q_left = covers(root->left, q);
