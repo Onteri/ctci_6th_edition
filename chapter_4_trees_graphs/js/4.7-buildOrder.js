@@ -1,5 +1,7 @@
 const { Graph } = require('./graph')
 
+/* TOPOLOGICAL SORT */
+
 class Project {
   /* Project constructor */
   constructor(name) {
