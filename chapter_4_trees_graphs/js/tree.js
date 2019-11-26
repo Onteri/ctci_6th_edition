@@ -6,6 +6,22 @@ class TreeNode {
     this.right = null
     this.parent = null
   }
+
+  addLeft(value) {
+    /* Adds a node to the left */
+    const new_node = new TreeNode(value)
+    new_node.parent = this
+    this.left = new_node
+    return new_node
+  }
+
+  addRight(value) {
+    /* Adds a node to the right */
+    const new_node = new TreeNode(value)
+    new_node.parent = this
+    this.right = new_node
+    return new_node
+  }
 }
 
 /* Prints current node before child nodes */
