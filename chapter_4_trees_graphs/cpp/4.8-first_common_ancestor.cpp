@@ -37,6 +37,8 @@ GraphNode *common_ancestor(GraphNode *root, GraphNode *p, GraphNode *q)
     return common_ancestor_helper(root, p, q);
 }
 
+/* LINK TO PARENTS EXIST */
+
 /* Finds the depth from a node of a binary tree */
 unsigned int find_depth(GraphNode *node)
 {
@@ -62,8 +64,6 @@ GraphNode *move_up_by(GraphNode *node, unsigned int delta)
     }
     return curr;
 }
-
-/* LINK TO PARENTS EXIST */
 
 /* Finds the first common ancestor of two nodes in a binary tree
  * if there are links to parents */
