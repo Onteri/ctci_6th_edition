@@ -1,19 +1,19 @@
-const { TreeNode } = require('./tree')
+const { TreeNode } = require("./tree")
 
 /* LINK TO PARENTS EXIST */
 
 /* Finds the first common ancestor of two nodes in a binary tree
  * if there are links to parents */
-const firstCommonAncestor = (first, second) => {
-  const delta = findDepth(first) - findDepth(second)
-  long = delta > 0 ? first : second
-  short = delta > 0 ? second : first
-  new_long = moveUpBy(long, Math.abs(delta))
-  while (new_long && short && new_long != short) {
-    new_long = new_long.parent
-    short = short.parent
+const firstCommonAncestor = (p, q) => {
+  const delta = findDepth(p) - findDepth(q)
+  p = delta > 0 ? p : q
+  q = delta > 0 ? q : p
+  p = moveUpBy(p, Math.abs(delta))
+  while (p && q && p != q) {
+    p = p.parent
+    q = q.parent
   }
-  return !new_long || !short ? null : short
+  return new_long && short ? short : null
 }
 
 /* Moves a node up by a given number of nodes */
@@ -39,19 +39,19 @@ const findDepth = node => {
 
 /* Finds the first common ancestor of two nodes in a binary tree
  * if there are no links to parents */
-const commonAncestor = (root, first, second) => {
-  if (!covers(root, first) || !covers(root, second)) return null
-  return commonAncestorHelper(root, first, second)
+const commonAncestor = (root, p, q) => {
+  if (!covers(root, p) || !covers(root, q)) return null
+  return commonAncestorHelper(root, p, q)
 }
 
 /* Helper */
-const commonAncestorHelper = (root, first, second) => {
-  if (!root || root === first || root === second) return root
-  is_first_left = covers(root.left, first)
-  is_second_left = covers(root.left, second)
-  if (is_first_left != is_second_left) return root
-  const childSide = is_first_left ? root.left : root.right
-  return commonAncestorHelper(childSide, first, second)
+const commonAncestorHelper = (root, p, q) => {
+  if (!root || root === p || root === q) return root
+  is_p_left = covers(root.left, p)
+  is_q_left = covers(root.left, q)
+  if (is_p_left != is_q_left) return root
+  const childSide = is_p_left ? root.left : root.right
+  return commonAncestorHelper(childSide, p, q)
 }
 
 /* Determines if a node has another node in subtree */
