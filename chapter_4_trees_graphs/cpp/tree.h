@@ -26,6 +26,7 @@ TreeNode::TreeNode(int value)
     this->parent = nullptr;
 };
 
+/* Adds a node to the left */
 TreeNode *TreeNode::addLeft(int value)
 {
     TreeNode *new_node;
@@ -36,6 +37,7 @@ TreeNode *TreeNode::addLeft(int value)
     return new_node;
 }
 
+/* Adds a node to the right */
 TreeNode *TreeNode::addRight(int value)
 {
     TreeNode *new_node;
