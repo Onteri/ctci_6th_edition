@@ -1,4 +1,4 @@
-TreeNode = __import__('binary_search_tree').BinarySearchTree
+TreeNode = __import__('tree').TreeNode
 
 
 class BinarySearchTree:
