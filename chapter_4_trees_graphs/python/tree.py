@@ -8,6 +8,24 @@ class TreeNode:
         self.left = None
         self.right = None
 
+    def add_left(self, value):
+        """
+        Adds a node to the left
+        """
+        new_node = TreeNode(value)
+        new_node.parent = self
+        self.left = new_node
+        return new_node
+
+    def add_right(self, value):
+        """
+        Adds a node to the right
+        """
+        new_node = TreeNode(value)
+        new_node.parent = self
+        self.right = new_node
+        return new_node
+
 
 def pre_order_traversal(node):
     """
