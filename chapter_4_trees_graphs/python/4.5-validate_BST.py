@@ -22,19 +22,14 @@ def validate_bst(root):
     return validate_bst_helper(root, None, None)
 
 
-n15 = TreeNode(15)
-n12 = TreeNode(12)
-n15.left = n12
-n22 = TreeNode(22)
-n15.right = n22
-n11 = TreeNode(11)
-n12.left = n11
-n14 = TreeNode(14)
-n12.right = n14
-n16 = TreeNode(16)
-n30 = TreeNode(30)
-n22.left = n16
-n22.right = n30
-# n22.right = TreeNode(17) # False
+n1 = TreeNode(15)
+n2 = n1.add_left(12)
+n3 = n1.add_right(22)
+n4 = n2.add_left(11)
+n5 = n2.add_right(14)
+n6 = n3.add_left(16)
+n7 = n4.add_right(30)
+
+# n3.add_right(17) # False
 
 print(validate_bst(n15))  # True

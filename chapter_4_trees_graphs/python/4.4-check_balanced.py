@@ -28,30 +28,17 @@ def check_height(root):
 
 
 n1 = TreeNode(1)
-n2 = TreeNode(2)
-n1.left = n2
-n3 = TreeNode(3)
-n1.right = n3
-n4 = TreeNode(4)
-n2.left = n4
-n5 = TreeNode(5)
-n2.right = n5
-n6 = TreeNode(6)
-n7 = TreeNode(7)
-n3.left = n6
-# n3.right = n7 # will make it balanced
-n8 = TreeNode(8)
-n9 = TreeNode(9)
-n4.left = n8
-n4.right = n9
-n10 = TreeNode(10)
-n11 = TreeNode(11)
-n5.left = n10
-n5.right = n11
-n12 = TreeNode(12)
-n13 = TreeNode(13)
-n6.left = n12
-n6.right = n13
-n15 = TreeNode(15)
+n2 = n1.add_left(2)
+n3 = n1.add_right(3)
+n4 = n2.add_left(4)
+n5 = n2.add_right(5)
+n6 = n3.add_left(6)
+# n7 = n3.add_right will make it balanced
+n8 = n4.add_left(8)
+n9 = n4.add_right(9)
+n10 = n5.add_left(10)
+n11 = n5.add_right(11)
+n12 = n6.add_left(12)
+n13 = n6.add_right(13)
 
 print(check_balanced(n1))  # false
