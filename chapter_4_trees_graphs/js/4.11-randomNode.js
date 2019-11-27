@@ -2,14 +2,14 @@ const { TreeNode } = require("./tree")
 const { BinarySearchTree } = require("./binarySearchTree")
 
 class TreeNode4_11 extends TreeNode {
+  /* TreeNode constructor with size attribute */
   constructor(value) {
-    /* TreeNode constructor with size attribute */
     super(value)
     this.size = 1
   }
 
+  /* Inserts a node into correct place in Binary Search Tree */
   insertInOrder(value) {
-    /* Inserts a node into correct place in Binary Search Tree */
     if (value < this.value) {
       if (!this.left) this.left = new TreeNode4_11(value)
       else this.left.insertInOrder(value)
@@ -20,8 +20,8 @@ class TreeNode4_11 extends TreeNode {
     this.size++
   }
 
+  /* Retrieves the node at guven index */
   getIthNode(index) {
-    /* Retrieves the node at guven index */
     const leftSide = this.left == null ? 0 : this.left.size
     if (index < leftSide) return this.left.getIthNode(index)
     else if (index == leftSide) return this
@@ -48,9 +48,9 @@ class BinarySearchTree4_11 extends BinarySearchTree {
 
 const bst = new BinarySearchTree4_11()
 const arr = [20, 30, 10, 15, 35, 17, 5, 3, 7]
-arr.forEach(e => bst.push(e))
-const range = Array(10)
+arr.forEach(e => bst.insertInOrder(e))
+let range = 10
 let string = ""
-for (let i in range) string += bst.getRandomNode().value + " "
+while (range--) string += bst.getRandomNode().value + " "
 console.log(string)
 /* 5 10 35 30 7 20 30 17 10 10 */

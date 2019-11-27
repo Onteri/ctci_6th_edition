@@ -51,13 +51,13 @@ class TreeNode4_11(TreeNode):
         """
         Retrieves the node at guven index
         """
-        left_side = 0 if self.left == None else self.left.size
-        if index < left_side:
+        left_size = 0 if self.left == None else self.left.size
+        if index < left_size:
             return self.left.get_ith_node(index)
-        elif index == left_side:
+        elif index == left_size:
             return self
         else:
-            return self.right.get_ith_node(index - (left_side + 1))
+            return self.right.get_ith_node(index - (left_size + 1))
 
 
 bst = BinarySearchTree4_11()
@@ -65,7 +65,7 @@ arr = [20, 30, 10, 15, 35, 17, 5, 3, 7]
 for i in arr:
     bst.insert_in_order(i)
 string = []
-for i in range(20):
+for i in range(10):
     string.append(str(bst.get_random_node().value))
 print(" ".join(string))
-# 10 15 7 15 30 3 15 15 5 15 10 7 35 20 7 5 35 7 5 3
+# 10 15 7 15 30 3 15 15 5 15
