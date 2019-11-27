@@ -13,8 +13,8 @@ public:
     TreeNode *parent;
     TreeNode(int value);
 
-    TreeNode *addLeft(int value);
-    TreeNode *addRight(int value);
+    TreeNode *add_left(int value);
+    TreeNode *add_right(int value);
 };
 
 /* Tree Node constructor */
@@ -27,7 +27,7 @@ TreeNode::TreeNode(int value)
 };
 
 /* Adds a node to the left */
-TreeNode *TreeNode::addLeft(int value)
+TreeNode *TreeNode::add_left(int value)
 {
     TreeNode *new_node;
 
@@ -38,7 +38,7 @@ TreeNode *TreeNode::addLeft(int value)
 }
 
 /* Adds a node to the right */
-TreeNode *TreeNode::addRight(int value)
+TreeNode *TreeNode::add_right(int value)
 {
     TreeNode *new_node;
 

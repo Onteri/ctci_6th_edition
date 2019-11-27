@@ -30,25 +30,17 @@ bool check_balanced(TreeNode *root)
 int main()
 {
     TreeNode *t1 = new TreeNode(1);
-    TreeNode *t2 = new TreeNode(2);
-    TreeNode *t3 = new TreeNode(3);
-    t1->left = t2;
-    t1->right = t3;
-    TreeNode *t4 = new TreeNode(4);
-    TreeNode *t5 = new TreeNode(5);
-    t2->left = t4;
-    t2->right = t5;
-    TreeNode *t6 = new TreeNode(6);
-    TreeNode *t7 = new TreeNode(7);
-    t3->left = t6;
-    t3->right = t7;
+    TreeNode *t2 = t1->add_left(2);
+    TreeNode *t3 = t1->add_right(3);
+    TreeNode *t4 = t2->add_left(4);
+    TreeNode *t5 = t2->add_right(5);
+    TreeNode *t6 = t3->add_left(6);
+    TreeNode *t7 = t3->add_right(7);
 
     cout << check_balanced(t1) << endl; // 1
 
-    TreeNode *t8 = new TreeNode(8);
-    TreeNode *t9 = new TreeNode(9);
-    t6->right = t8;
-    t8->right = t9;
+    TreeNode *t8 = t6->add_right(8);
+    TreeNode *t9 = t8->add_right(9);
 
     cout << check_balanced(t1) << endl; // 0
 
