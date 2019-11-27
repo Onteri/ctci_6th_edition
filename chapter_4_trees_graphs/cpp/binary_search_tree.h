@@ -1,6 +1,7 @@
 #ifndef BINARY_SEARCH_TREE
 
 #include <iostream>
+#include "tree.h"
 
 using namespace std;
 
