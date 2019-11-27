@@ -19,27 +19,16 @@ const checkHeight = root => {
 }
 
 const n1 = new TreeNode(1)
-const n2 = new TreeNode(2)
-n1.left = n2
-const n3 = new TreeNode(3)
-n1.right = n3
-const n4 = new TreeNode(4)
-n2.left = n4
-const n5 = new TreeNode(5)
-n2.right = n5
-const n6 = new TreeNode(6)
-n3.left = n6
-const n8 = new TreeNode(8)
-const n9 = new TreeNode(9)
-n4.left = n8
-n4.right = n9
-const n10 = new TreeNode(10)
-const n11 = new TreeNode(11)
-n5.left = n10
-n5.right = n11
-const n12 = new TreeNode(12)
-const n13 = new TreeNode(13)
-n6.left = n12
-n6.right = n13
+const n2 = n1.addLeft(2)
+const n3 = n1.addRight(3)
+const n4 = n2.addLeft(4)
+const n5 = n2.addRight(5)
+const n6 = n3.addLeft(6)
+const n8 = n4.addLeft(8)
+const n9 = n4.addRight(9)
+const n10 = n5.addLeft(10)
+const n11 = n5.addRight(11)
+const n12 = n6.addLeft(12)
+const n13 = n6.addRight(13)
 
 console.log(checkBalanced(n1)) // false

@@ -36,21 +36,13 @@ const modifyHashTable = (hashTable, key, delta) => {
 }
 
 const n1 = new TreeNode(10)
-const n2 = new TreeNode(5)
-const n3 = new TreeNode(-3)
-n1.left = n2
-n1.right = n3
-const n4 = new TreeNode(3)
-const n5 = new TreeNode(1)
-n2.left = n4
-n2.right = n5
-const n7 = new TreeNode(11)
-n3.right = n7
-const n8 = new TreeNode(3)
-const n9 = new TreeNode(-2)
-n4.left = n8
-n4.right = n9
-const n11 = new TreeNode(2)
-n5.right = n11
+const n2 = n1.addLeft(5)
+const n3 = n1.addRight(-3)
+const n4 = n2.addLeft(3)
+const n5 = n2.addRigh(1)
+const n7 = n3.addRight(11)
+const n8 = n4.addLeft(3)
+const n9 = n4.addRight(-2)
+const n11 = n5.addRight(2)
 
 console.log(countPathsWithSum(n1, 8)) // 3
