@@ -1,4 +1,4 @@
-const BinarySeachTree = require("./binarySearchTree")
+const BinarySearchTree = require("./binarySearchTree")
 
 /* Returns the next in-order successive node */
 const nextSuccessor = node => {
@@ -21,7 +21,7 @@ const leftMostChild = node => {
   return node
 }
 
-bst = new BinarySeachTree()
+bst = new BinarySearchTree()
 bst.insert(20)
 bst.insert(10)
 bst.insert(30)
