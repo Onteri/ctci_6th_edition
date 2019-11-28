@@ -10,9 +10,9 @@ const updateBits = (n, m, i, j) => {
   const right = (1 << i) - 1
   const mask = left | right
   /* Clear bits j through i then put m in there */
-  const n_cleared = n & mask
-  const m_shifted = m << i
-  return n_cleared | m_shifted
+  const nCleared = n & mask
+  const mShifted = m << i
+  return nCleared | mShifted
 }
 
 let n = 0b1000000000000000
