@@ -1,6 +1,6 @@
 const { BinarySearchTree } = require("./bst")
 
-/* Finds all possible arrays that could led to BST */
+/* Finds all possible arrays that could lead to BST */
 const allSequences = node => {
   const result = []
 
@@ -27,9 +27,12 @@ const allSequences = node => {
   return result
 }
 
-/* Weave lists together in all possible ways. This algorithm works by removing the head from one list, recursing, and then doing the same thing with the other list. */
+/* Weave lists together in all possible ways. This algorithm
+ * works by removing the head from one list, recursing, and
+ * then doing the same thing with the other list. */
 const weaveLists = (first, second, results, prefix) => {
-  /* One list is empty. Add remainder to [a cloned] prefix and store result. */
+  /* One list is empty. Add remainder to [a cloned] prefix and
+   * store result. */
   if (!first.length || !second.length) {
     const result = prefix.slice(0)
     result.push(...first)
@@ -38,14 +41,17 @@ const weaveLists = (first, second, results, prefix) => {
     return
   }
 
-  /* Recurse with head of first added to the prefix. Removing the head will damage first, so we'll need to put it back where we found it afterwards. */
+  /* Recurse with head of first added to the prefix. Removing the
+   * head will damage first, so we'll need to put it back where
+   * we found it afterwards. */
   let headFirst = first.shift()
   prefix.push(headFirst)
   weaveLists(first, second, results, prefix)
   prefix.pop()
   first.unshift(headFirst)
 
-  /* Do the same thing with the second, damaging and then restoring the list. */
+  /* Do the same thing with the second, damaging and then
+   * restoring the list. */
   let headSecond = second.shift()
   prefix.push(headSecond)
   weaveLists(first, second, results, prefix)
