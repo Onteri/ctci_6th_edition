@@ -1,23 +1,4 @@
-#include <stdio.h>
-
-/* Prints the binary presentation of an integer */
-void bin(int n)
-{
-    int flag = 0;
-    // Size of an integer is assumed to be 32 bits
-    for (int i = 31; i >= 0; i--)
-    {
-        int k = n >> i;
-        if (k & 1)
-        {
-            printf("1");
-            flag = 1;
-        }
-        else if (flag)
-            printf("0");
-    }
-    printf("\n");
-}
+#include "helper.h"
 
 /* Gets next biggest integer with same amount of 1s in
  * binary representation */
@@ -38,9 +19,33 @@ int get_next(int n)
     return n;
 }
 
+/* Get next smallest integer with same amount of 1s in
+ * binary representation */
+int get_prev(int n)
+{
+    int c, c0, c1, p;
+
+    c = n;
+    for (c1 = 0; (c & 1); c >>= 1, c1++)
+        ;
+    if (!c)
+        return -1;
+    for (c0 = 0; !(c & 1) && c; c >>= 1, c0++)
+        ;
+    /* Position of rightmost non-trailing one */
+    p = c0 + c1;
+    /* Clears from bit p onwards */
+    n &= (~0) << (p + 1);
+    /* Sequence of (c1 + 1) ones */
+    n |= ((1 << (c1 + 1)) - 1) << (c0 - 1);
+    return n;
+}
+
 int main()
 {
     bin(get_next(0b11011001111100));
     /* 11011010001111 */
+    bin(get_prev(0b10011110000011));
+    /* 10011101110000 */
     return 0;
 }
