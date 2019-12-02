@@ -2,7 +2,7 @@
 
 /**
  * Prints matrix row by row.
- * @param   {number[]} matrix
+ * @param   {number[][]} matrix
  * @returns {undefined}
  */
 const printMatrix = matrix => {
@@ -14,7 +14,7 @@ const printMatrix = matrix => {
 
 /**
  * Sets zeros for all values in same row and column as existing zeroes.
- * @param   {number[]} matrix
+ * @param   {number[][]} matrix
  * @returns {undefined}
  */
 const setZeros = matrix => {
@@ -35,7 +35,7 @@ const setZeros = matrix => {
 
 /**
  * Set zeros for all values in a given row of a matrix.
- * @param   {number[]} matrix
+ * @param   {number[][]} matrix
  * @param   {number}   row
  * @returns {undefined}
  */
@@ -45,7 +45,7 @@ const nullifyRow = (matrix, row) => {
 
 /**
  * Set zeros for all values in a given column of a matrix.
- * @param   {number[]} matrix
+ * @param   {number[][]} matrix
  * @param   {number}   column
  * @returns {undefined}
  */

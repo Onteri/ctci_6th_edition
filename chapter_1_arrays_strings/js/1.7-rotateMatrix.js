@@ -2,7 +2,7 @@
 
 /**
  * Rotates a NxN matrix 90 degrees in place.
- * @param   {number[]} matrix
+ * @param   {number[][]} matrix
  * @returns {boolean}
  */
 const rotateMatrixBy90 = matrix => {
@@ -31,7 +31,7 @@ const rotateMatrixBy90 = matrix => {
 
 /**
  * Prints matrix row by row.
- * @param   {number[]} matrix
+ * @param   {number[][]} matrix
  * @returns {undefined}
  */
 const printMatrix = matrix => {
