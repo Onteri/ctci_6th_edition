@@ -1,21 +1,23 @@
+from typing import List
 Graph = __import__('graph').Graph
+
 
 # TOPOLOGICAL SORT
 
 
 class Project:
-    def __init__(self, value):
+    def __init__(self, value: int):
         """
-        Project constructor
+        Project constructor.
         """
         self.value = value
         self.map = set()
         self.dependencies = 0
         self.adjacent_list = []
 
-    def add_adjacent(self, node):
+    def add_adjacent(self, node: Project):
         """
-        Adds an adjacent node
+        Adds an adjacent node.
         """
         if node.value not in self.map:
             self.adjacent_list.append(node)
@@ -24,19 +26,19 @@ class Project:
 
     def increase_dependencies(self):
         """
-        Increases dependencies by 1
+        Increases dependencies by 1.
         """
         self.dependencies += 1
 
     def decrease_dependencies(self):
         """
-        Decreases dependencies by 1
+        Decreases dependencies by 1.
         """
         self.dependencies -= 1
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
-        String representation
+        String representation.
         """
         string = "Project = {\n" +\
                  f"\tvalue: {self.value}\n" +\
@@ -48,16 +50,16 @@ class Project:
 
 
 class Graph4_7(Graph):
-    def __init__(self, directed=True):
+    def __init__(self, directed: bool = True):
         """
-        Graph constructor
+        Graph constructor.
         """
         super().__init__()
         self.nodes_arr = []
 
-    def add_vertex(self, value):
+    def add_vertex(self, value: int) -> Project:
         """
-        Adds a new vertex to graph, or return existing one
+        Adds a new vertex to graph, or return existing one.
         """
         if value in self.nodes:
             return self.nodes[value]
@@ -67,9 +69,9 @@ class Graph4_7(Graph):
             self.nodes_arr.append(new_vertex)
             return new_vertex
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
-        String representation
+        String representation.
         """
         string = "Graph = {\n" +\
                  f"\tdirected: {self.directed}\n" +\
@@ -79,18 +81,18 @@ class Graph4_7(Graph):
         return string
 
 
-def find_build_order(dependencies):
+def find_build_order(dependencies: List[List[str]]) -> List[Project]:
     """
-    Finds a correct build order
+    Finds a correct build order.
     """
     graph = build_graph(dependencies)
     return order_projects(graph.nodes_arr)
 
 
-def build_graph(dependencies):
+def build_graph(dependencies: List[List[str]]) -> Graph4_7:
     """
-    Builds the graph, adding the edge (a, b) if b is dependent on a.
-    Assumes a pair is listed in "build order". The pair (a, b) in dependencies
+    Builds the graph, adding the edge (a, b) if b is dependent on a. Assumes
+    a pair is listed in "build order". The pair (a, b) in dependencies
     indicates that b depends on a and a must be built before b.
     """
     graph = Graph4_7()
@@ -101,18 +103,18 @@ def build_graph(dependencies):
     return graph
 
 
-def order_projects(projects):
+def order_projects(projects: List[Project]) -> List[Project]:
     """
-    Returns a list of the projects in a correct build order
+    Returns a list of the projects in a correct build order.
     """
     order = [None] * len(projects)
     to_be_processed = 0
-    # Add roots to the build order first
+    # Add roots to the build order first.
     end_of_list = add_non_dependent(order, projects, 0)
     while to_be_processed < len(order):
         curr = order[to_be_processed]
         # We have a circular dependency since there are no remaining
-        # projects with zero dependencies
+        # projects with zero dependencies.
         if not curr:
             return
         children = curr.adjacent_list
@@ -123,10 +125,10 @@ def order_projects(projects):
     return order
 
 
-def add_non_dependent(order, projects, offset):
+def add_non_dependent(order: List[Project], projects: List[Project], offset: int) -> int:
     """
     A helper function to insert projects with zero dependencies into the
-    order array, starting at index offset
+    order array, starting at index offset.
     """
     for project in projects:
         if project.dependencies == 0:
@@ -146,6 +148,5 @@ if __name__ == "main":
         ["d", "g"],
         ["b", "e"]
     ]
-
     print([p.value for p in find_build_order(dependencies)])
     # ['f', 'd', 'b', 'c', 'g', 'a', 'e']

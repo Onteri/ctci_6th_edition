@@ -1,18 +1,19 @@
+from typing import List
 TreeNode = __import__('tree').TreeNode
 pre_order_traversal = __import__('tree').pre_order_traversal
 
 
-def create_minimal_bst(arr):
+def create_minimal_bst(arr: List[int]) -> TreeNode:
     """
     Creates a binary search tree with minimal height
-    out of sorted array
+    out of sorted array.
     """
     return create_minimal_bst_helper(arr, 0, len(arr) - 1)
 
 
-def create_minimal_bst_helper(arr, start, end):
+def create_minimal_bst_helper(arr: List[int], start: int, end: int) -> TreeNode:
     """
-    Helper 
+    Helper.
     """
     if start > end:
         return None
@@ -23,15 +24,16 @@ def create_minimal_bst_helper(arr, start, end):
     return node
 
 
-arr = [1, 4, 6, 8, 9, 12, 19, 21]
-root = create_minimal_bst(arr)
-pre_order_traversal(root)
-r"""
-      8
-    /   \
-  4       12
-  / \     /  \
-1   6   9    19
-              /
-            21
-"""
+if __name__ == "main":
+    arr = [1, 4, 6, 8, 9, 12, 19, 21]
+    root = create_minimal_bst(arr)
+    pre_order_traversal(root)
+    r"""
+        8
+      /   \
+    4       12
+    / \     /  \
+  1   6   9    19
+                /
+              21
+  """

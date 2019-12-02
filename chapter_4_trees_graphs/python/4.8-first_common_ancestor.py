@@ -3,10 +3,10 @@ TreeNode = __import__('tree').TreeNode
 # LINK TO PARENTS EXIST
 
 
-def first_common_ancestor(p, q):
+def first_common_ancestor(p: TreeNode, q: TreeNode) -> TreeNode:
     """
     Finds the first common ancestor of two nodes in a binary tree
-    if there are links to parents
+    if there are links to parents.
     """
     delta = find_depth(p) - find_depth(q)
     if delta > 0:
@@ -24,9 +24,9 @@ def first_common_ancestor(p, q):
     return None
 
 
-def move_up_by(node, delta):
+def move_up_by(node: TreeNode, delta: int) -> TreeNode:
     """
-    Moves a node up by a given number of nodes
+    Moves a node up by a given number of nodes.
     """
     curr = node
     while delta > 0 and curr:
@@ -35,9 +35,9 @@ def move_up_by(node, delta):
     return curr
 
 
-def find_depth(node):
+def find_depth(node: TreeNode) -> int:
     """
-    Finds the depth from a node of a binary tree
+    Finds the depth from a node of a binary tree.
     """
     depth = 0
     while node:
@@ -48,20 +48,20 @@ def find_depth(node):
 # LINK TO PARENTS DOES NOT EXIST
 
 
-def common_ancestor(root, first, second):
+def common_ancestor(root: TreeNode, first: TreeNode, second: TreeNode) -> TreeNode:
     """
     Finds the first common ancestor of two nodes in a binary tree
-    if there are no links to parents
+    if there are no links to parents.
     """
-    # Error check - if one node is not in the tree
+    # Error check - if one node is not in the tree.
     if not covers(root, first) or not covers(root, second):
         return None
     return common_ancestor_helper(root, first, second)
 
 
-def common_ancestor_helper(root, p, q):
+def common_ancestor_helper(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
     """
-    Helper
+    Helper.
     """
     if not root or p == q or q == root:
         return root
@@ -73,9 +73,9 @@ def common_ancestor_helper(root, p, q):
     return common_ancestor_helper(child_side, p, q)
 
 
-def covers(root, node):
+def covers(root: TreeNode, node: TreeNode) -> bool:
     """
-    Determines if a node has another node in subtree
+    Determines if a node has another node in subtree.
     """
     if not root:
         return False
@@ -84,24 +84,24 @@ def covers(root, node):
     return covers(root.left, node) or covers(root.right, node)
 
 
-n1 = TreeNode(1)
-n2 = n1.add_left(2)
-n3 = n1.add_right(3)
-n4 = n2.add_left(4)
-n5 = n2.add_right(5)
-n6 = n3.add_left(6)
-n7 = n3.add_right(7)
-n8 = n4.add_left(8)
-n9 = n4.add_right(9)
-n10 = n5.add_left(10)
-n11 = n5.add_right(11)
-n12 = n6.add_left(12)
-n13 = n6.add_right(13)
+if __name__ == "main":
+    n1 = TreeNode(1)
+    n2 = n1.add_left(2)
+    n3 = n1.add_right(3)
+    n4 = n2.add_left(4)
+    n5 = n2.add_right(5)
+    n6 = n3.add_left(6)
+    n7 = n3.add_right(7)
+    n8 = n4.add_left(8)
+    n9 = n4.add_right(9)
+    n10 = n5.add_left(10)
+    n11 = n5.add_right(11)
+    n12 = n6.add_left(12)
+    n13 = n6.add_right(13)
+    n15 = TreeNode(15)
 
-n15 = TreeNode(15)
+    print(first_common_ancestor(n9, n5))  # n2
+    print(first_common_ancestor(n9, n15))  # None
 
-print(first_common_ancestor(n9, n5))  # n2
-print(first_common_ancestor(n9, n15))  # None
-
-print(common_ancestor(n1, n9, n5))  # n2
-print(common_ancestor(n1, n9, n15))  # None
+    print(common_ancestor(n1, n9, n5))  # n2
+    print(common_ancestor(n1, n9, n15))  # None

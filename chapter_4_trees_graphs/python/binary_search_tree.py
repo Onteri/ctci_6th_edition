@@ -4,14 +4,14 @@ TreeNode = __import__('tree').TreeNode
 class BinarySearchTree:
     def __init__(self):
         """
-        Binary Search Tree constructor
+        Binary Search Tree constructor.
         """
         self.root = None
         self.size = 0
 
-    def insert(self, value):
+    def insert(self, value: int) -> TreeNode:
         """
-        Inserts a node into a Binary Search Tree
+        Inserts a node into a Binary Search Tree.
         """
         node = TreeNode(value)
         if not self.root:
@@ -21,25 +21,25 @@ class BinarySearchTree:
         self.size += 1
         return node
 
-    def add_node(self, node, new_node):
+    def add_node(self, node: TreeNode, new_node: TreeNode):
         """
-        Inserts a node onto another node
+        Inserts a node onto another node.
         """
         if new_node.value <= node.value:
-            # insert in left side
+            # Insert in left side.
             if not node.left:
-                # if left node does not exist, insert
+                # If left node does not exist, insert.
                 node.left = new_node
                 new_node.parent = node
             else:
-                # recurse
+                # Recurse.
                 self.add_node(node.left, new_node)
         else:
-            # insert in right side
+            # Insert in right side.
             if not node.right:
-                # if right node does not exist, insert
+                # If right node does not exist, insert.
                 node.right = new_node
                 new_node.parent = node
             else:
-                # recurse
+                # Recurse.
                 self.add_node(node.right, new_node)

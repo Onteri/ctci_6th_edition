@@ -1,11 +1,12 @@
+from typing import List
 SinglyLinkedList = __import__(
     '../../chapter_2_linked_lists/python/singly_linked_list').SinglyLinkedList
 TreeNode = __import__('tree').TreeNode
 
 
-def list_of_depths(root):
+def list_of_depths(root: TreeNode) -> List[SinglyLinkedList]:
     """
-    Creates a linked list out of every level in a binary tree
+    Creates a linked list out of every level in a binary tree.
     """
     res = []
     current = SinglyLinkedList()
@@ -16,7 +17,7 @@ def list_of_depths(root):
         tmp = current.head
         current = SinglyLinkedList()
         while tmp:
-            # loop through all nodes in parent
+            # Loop through all nodes in parent.
             if tmp.value.left:
                 current.add_to_front(tmp.value.left)
             if tmp.value.right:
@@ -25,9 +26,9 @@ def list_of_depths(root):
     return res
 
 
-def print_linked_list(linked_list):
+def print_linked_list(linked_list: SinglyLinkedList):
     """
-    Prints all elements of a singly linked list
+    Prints all elements of a singly linked list.
     """
     curr = linked_list.head
     while curr:
@@ -35,20 +36,20 @@ def print_linked_list(linked_list):
         curr = curr.next
 
 
-n1 = TreeNode(1)
-n2 = n1.add_left(2)
-n3 = n1.add_right(3)
-n4 = n2.add_left(4)
-n5 = n2.add_right(5)
-n6 = n3.add_left(6)
-n7 = n3.add_right(7)
+if __name__ == "main":
+    n1 = TreeNode(1)
+    n2 = n1.add_left(2)
+    n3 = n1.add_right(3)
+    n4 = n2.add_left(4)
+    n5 = n2.add_right(5)
+    n6 = n3.add_left(6)
+    n7 = n3.add_right(7)
 
-res = list_of_depths(n1)
-for linked_list in res:
-    print_linked_list(linked_list)
-
-"""
-1
-3-> 2
-5-> 4-> 7-> 6
-"""
+    res = list_of_depths(n1)
+    for linked_list in res:
+        print_linked_list(linked_list)
+    """
+    1
+    3-> 2
+    5-> 4-> 7-> 6
+    """

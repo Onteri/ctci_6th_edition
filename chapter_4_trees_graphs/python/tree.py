@@ -1,25 +1,25 @@
 class TreeNode:
-    def __init__(self, value):
+    def __init__(self, value: int):
         """
-        Tree Node constructor
+        Tree Node constructor.
         """
         self.value = value
         self.parent = None
         self.left = None
         self.right = None
 
-    def add_left(self, value):
+    def add_left(self, value: int):
         """
-        Adds a node to the left
+        Adds a node to the left.
         """
         new_node = TreeNode(value)
         new_node.parent = self
         self.left = new_node
         return new_node
 
-    def add_right(self, value):
+    def add_right(self, value: int):
         """
-        Adds a node to the right
+        Adds a node to the right.
         """
         new_node = TreeNode(value)
         new_node.parent = self
@@ -27,9 +27,9 @@ class TreeNode:
         return new_node
 
 
-def pre_order_traversal(node):
+def pre_order_traversal(node: TreeNode):
     """
-    Prints current node before child nodes
+    Prints current node before child nodes.
     """
     if not node:
         return
@@ -38,9 +38,9 @@ def pre_order_traversal(node):
     pre_order_traversal(node.right)
 
 
-def in_order_traversal(node):
+def in_order_traversal(node: TreeNode):
     """
-    Prints left nodes, current node, and then right nodes
+    Prints left nodes, current node, and then right nodes.
     """
     if not node:
         return
@@ -49,9 +49,9 @@ def in_order_traversal(node):
     in_order_traversal(node.right)
 
 
-def post_order_traversal(node):
+def post_order_traversal(node: TreeNode):
     """
-    Visits child nodes before current node
+    Visits child nodes before current node.
     """
     if not node:
         return
