@@ -25,7 +25,7 @@ class Animal:
 
     def is_older_than(self, animal: Cat or Dog) -> bool:
         """
-        Determines if this animal is than another.
+        Determines if this animal's order is earlier than another.
         """
         return self.order < animal.order
 
