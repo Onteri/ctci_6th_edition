@@ -1,8 +1,10 @@
 const { SinglyLinkedList } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_1 extends SinglyLinkedList {
-  /* Delete nodes with duplicate values in a linked list
-   * O(n) time complexity */
+  /**
+   * Delete nodes with duplicate values in a linked list.
+   * O(n) time complexity.
+   */
   removeDups() {
     const set = new Set()
     let curr = this.head

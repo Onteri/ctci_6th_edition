@@ -1,8 +1,11 @@
-const { SinglyLinkedList } = require("./singlyLinkedList")
+const { SinglyLinkedList, Node } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_3 extends SinglyLinkedList {
-  /* Deletes a node in the middle of a linked list
-   * O(n) time complexity */
+  /**
+   * Deletes a node in the middle of a linked list.
+   * O(n) time complexity.
+   * @param   {Node}  node
+   */
   deleteMiddle(node) {
     const nextNode = node.next
     node.value = nextNode.value

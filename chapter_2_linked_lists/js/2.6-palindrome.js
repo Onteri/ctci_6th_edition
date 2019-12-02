@@ -1,19 +1,22 @@
 const { SinglyLinkedList } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_6 extends SinglyLinkedList {
-  /* Determines if a linked list is a palindrome
-   * O(n) time and space complexity */
+  /**
+   * Determines if a linked list is a palindrome.
+   * O(n) time and space complexity.
+   * @returns   {boolean}
+   */
   isPalindrome() {
     let hare = this.head
     let tortoise = this.head
     let stack = []
-    /* navigate to middle node */
+    /* Navigate to middle node. */
     while (hare && hare.next) {
       hare = hare.next.next
       stack.push(tortoise.value)
       tortoise = tortoise.next
     }
-    /* for odd-lengthedlists */
+    /* For odd-lengthed lists. */
     if (this.length & 1) tortoise = tortoise.next
     while (tortoise) {
       if (tortoise.value != stack.pop()) return false

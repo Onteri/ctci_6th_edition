@@ -1,9 +1,13 @@
-const { SinglyLinkedList } = require("./singlyLinkedList")
+const { SinglyLinkedList, Node } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_7 extends SinglyLinkedList {
-  /* Finds if two linked lists intersect and returns
-   * the node where they first meet
-   * O(n) time and space complexity */
+  /**
+   * Finds if two linked lists intersect and returns the node where they first
+   * meet.
+   * O(n) time and space complexity.
+   * @param   {SinglyLinkedList_2_7}  otherList
+   * @returns {(Node|null)}
+   */
   findIntersection(otherList) {
     const longer = this.length > otherList.length ? this : otherList
     const shorter = this.length <= otherList.length ? this : otherList

@@ -1,11 +1,17 @@
 class SinglyLinkedList {
-  /* Singly linked list constructor */
+  /**
+   * Singly linked list constructor.
+   */
   constructor() {
     this.head = null
     this.length = 0
   }
 
-  /* Adds a new node to the head of a singly linked list */
+  /**
+   * Adds a new node to the head of a singly linked list.
+   * @param   {number}  value
+   * @returns {Node}
+   */
   addNode(value) {
     const node = new Node(value)
     if (!this.head) {
@@ -18,7 +24,10 @@ class SinglyLinkedList {
     return node
   }
 
-  /* Deletes a node at a given index */
+  /**
+   * Deletes a node at a given index.
+   * @param   {number}  index
+   */
   deleteNode(index) {
     /* delete head */
     let curr = this.head
@@ -43,7 +52,9 @@ class SinglyLinkedList {
     }
   }
 
-  /* Prints all elements of a singly linked list */
+  /**
+   * Prints all elements of a singly linked list.
+   */
   printList() {
     let curr = this.head
     let str = ""
@@ -57,7 +68,9 @@ class SinglyLinkedList {
 }
 
 class Node {
-  /* Node constructor */
+  /**
+   * Node constructor.
+   */
   constructor(value) {
     this.value = value
     this.next = null

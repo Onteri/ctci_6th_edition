@@ -1,8 +1,11 @@
 const { SinglyLinkedList } = require("./singlyLinkedList")
 
 class SinglyLinkedList_2_8 extends SinglyLinkedList {
-  /* Determines if linked list is circular
-   * O(n) solution */
+  /**
+   * Determines if linked list is circular.
+   * O(n) solution.
+   * @returns   {boolean}
+   */
   isCircular() {
     let hare = this.head
     let tortoise = this.head
@@ -26,7 +29,6 @@ sll.addNode(8)
 sll.printList() // 8 -> 2 -> 7 -> 9 -> 5 -> 1 -> 3
 console.log(sll.isCircular()) // false
 
-/* making this circular */
+/* Making this circular. */
 s3.next = s2
-
 console.log(sll.isCircular()) // true
