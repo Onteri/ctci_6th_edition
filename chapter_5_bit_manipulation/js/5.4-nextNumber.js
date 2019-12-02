@@ -15,9 +15,7 @@ const getNext = n => {
     c1++
     c >>= 1
   }
-  /**
-   * Position of rightmost non-trailing zero.
-   */
+  /* Position of rightmost non-trailing zero. */
   const p = c0 + c1
   n |= 1 << p // Flip rightmost non-trailing zero.
   n &= ~((1 << p) - 1) // Clear all bits to the right of p.
