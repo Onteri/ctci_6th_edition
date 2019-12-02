@@ -5,11 +5,12 @@
 
 using namespace std;
 
-/* Determines if an ASCII string has all unique characters. */
+/**
+ * Determines if an ASCII string has all unique characters.
+ */
 bool is_unique(string str)
 {
-    /* array map */
-    const int ASCII_LENGTH = 128;
+    const int ASCII_LENGTH = 128; // array map
     int map[ASCII_LENGTH] = {0};
 
     for (auto ch : str)
@@ -21,16 +22,17 @@ bool is_unique(string str)
     return true;
 }
 
-/* Alternate solution. Uses bit vectors, but will only work for 
- * a-z chars. O(1) space complexity. */
+/**
+ * Alternate solution. Uses bit vectors, but will only work for a-z chars.
+ * O(1) space complexity.
+ */
 bool is_unique_alpha(string str)
 {
-    unsigned int bit_map = 0; /* 32 bits to works with */
-    int val;
+    unsigned int bit_map = 0; // 32 bits to works with.
 
     for (auto ch : str)
     {
-        val = ch - 'a';
+        int val = ch - 'a';
         if ((bit_map & (1 << val)) > 0)
             return false;
         bit_map |= (1 << val);

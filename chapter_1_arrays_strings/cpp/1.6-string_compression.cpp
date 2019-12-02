@@ -5,15 +5,17 @@
 
 using namespace std;
 
-/* Compresses consecutive characters into a number and 
- * inserts it into a new string along with character */
+/**
+ * Compresses consecutive characters into a number and inserts it into a new
+ * string along with character.
+ */
 string string_compression(string str)
 {
-    int i, count = 1;
-    /* In C++, strings are mutable and dynamically sizeable */
+    int count = 1;
+    /* In C++, strings are mutable and dynamically sizeable. */
     string result_str = "";
 
-    for (i = 0; str[i]; i++)
+    for (int i = 0; str[i]; i++)
     {
         if (str[i] != str[i + 1])
         {

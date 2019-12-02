@@ -6,16 +6,17 @@
 
 using namespace std;
 
-/* Determines if a string is a rotation of another string. */
+/**
+ * Determines if a string is a rotation of another string.
+ */
 bool isRotation(string str1, string str2)
 {
-    int len1, len2, i = 0, j = 0;
     string str1str1 = "";
 
     if (str1.length() == str2.length() && str1.length())
     {
         str1str1 += str1 + str1;
-        /* have to convert to c strings to use strstr */
+        /* Have to convert to c strings to use strstr. */
         return strstr(str1str1.c_str(), str2.c_str());
     }
     return 0;

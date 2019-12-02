@@ -5,16 +5,16 @@
 
 using namespace std;
 
-/* need to set macro for matrix size */
+/* Need to set macro for matrix size. */
 #define MATRIX_SIZE 4
 
-/* prints matrix row by row */
+/**
+ * Prints matrix row by row.
+ */
 void print_matrix(int *matrix, int length)
 {
-    int i, j;
-
-    for (i = 0; i < length; i++)
-        for (j = 0; j < length; j++)
+    for (int i = 0; i < length; i++)
+        for (int j = 0; j < length; j++)
         {
             printf("%02i", *(matrix + (i * length) + j));
             j == length - 1
@@ -24,21 +24,22 @@ void print_matrix(int *matrix, int length)
     cout << "===============\n";
 }
 
-/* rotates a NxN matrix 90 degrees in place */
+/**
+ * Rotates a NxN matrix 90 degrees in place.
+ */
 void rotate_matrix(int (*matrix)[MATRIX_SIZE])
 {
-    int layer, first, last, n, i, offset, top;
+    int n = MATRIX_SIZE;
 
-    n = MATRIX_SIZE;
-    for (layer = 0; layer < n / 2; layer++)
+    for (int layer = 0; layer < n / 2; layer++)
     {
-        first = layer;
-        last = n - 1 - layer;
-        offset = 0;
-        for (i = first; i < last; i++)
+        int first = layer;
+        int last = n - 1 - layer;
+        int offset = 0;
+        for (int i = first; i < last; i++)
         {
             // /* remove top */
-            top = matrix[first][i];
+            int top = matrix[first][i];
             // /* left -> top */
             matrix[first][i] = matrix[last - offset][first];
             // /* bottom -> left */
