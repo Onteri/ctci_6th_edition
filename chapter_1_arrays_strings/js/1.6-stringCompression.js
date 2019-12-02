@@ -1,9 +1,13 @@
 /* O(n) solution */
 
-/* Compresses consecutive characters into a number and
- * inserts it into a new string along with character */
+/**
+ * Compresses consecutive characters into a number and inserts it into a new
+ * string along with character.
+ * @param   {string}  str
+ * @returns {string}
+ */
 const stringCompression = str => {
-  /* string concatentation in JS is highly optimized */
+  /* String concatentation in JS is highly optimized. */
   result_str = ""
   let count = 1
   for (let i = 0; i < str.length; i++) {

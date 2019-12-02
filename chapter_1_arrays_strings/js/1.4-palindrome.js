@@ -1,13 +1,20 @@
 /* O(n) solution */
 
-/* Determines if character is in the alphabet */
+/**
+ * Determines if character is in the alphabet.
+ * @param   {string}  ch
+ * @returns {boolean}
+ */
 const isAlpha = ch => {
   /* case insensitive regex */
   return /^[A-Z]$/i.test(ch)
 }
 
-/* Determines if string or its permutations can
- * be a palindrome */
+/**
+ * Determines if string or its permutations can be a palindrome.
+ * @param   {string}  str
+ * @param   {boolean}
+ */
 const isPaliPermutation = str => {
   const obj = {}
   let odds = 0
@@ -17,8 +24,7 @@ const isPaliPermutation = str => {
       obj[ch] % 2 != 0 ? odds++ : odds--
     }
   }
-  /* Palindrome should have max one odd value at the
-   * end of loop */
+  /* Palindrome should have max one odd value at the end of loop. */
   return odds <= 1
 }
 

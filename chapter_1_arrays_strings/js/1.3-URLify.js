@@ -1,6 +1,10 @@
 /* O(n) solution */
 
-/* Replaces all spaces with "%20" */
+/**
+ * Replaces all spaces with "%20".
+ * @param   {string}  str
+ * @returns {string}
+ */
 const urlify = str => {
   return str.trim().replace(/ /g, "%20")
 }

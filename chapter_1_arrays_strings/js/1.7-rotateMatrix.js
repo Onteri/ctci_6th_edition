@@ -1,6 +1,10 @@
 /* O(n**2) solution, best case scenario  */
 
-/* rotates a NxN matrix 90 degrees in place */
+/**
+ * Rotates a NxN matrix 90 degrees in place.
+ * @param   {number[]} matrix
+ * @returns {boolean}
+ */
 const rotateMatrixBy90 = matrix => {
   if (!matrix.length || matrix.length != matrix[0].length) return false
   const n = matrix.length
@@ -25,7 +29,11 @@ const rotateMatrixBy90 = matrix => {
   return true
 }
 
-/* prints matrix row by row */
+/**
+ * Prints matrix row by row.
+ * @param   {number[]} matrix
+ * @returns {undefined}
+ */
 const printMatrix = matrix => {
   for (let width of matrix) {
     console.log(width)
@@ -33,9 +41,21 @@ const printMatrix = matrix => {
   console.log("------------------")
 }
 
-const matrix1 = [[0, 1], [2, 3]]
-const matrix2 = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
-const matrix3 = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]]
+const matrix1 = [
+  [0, 1],
+  [2, 3]
+]
+const matrix2 = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8]
+]
+const matrix3 = [
+  [0, 1, 2, 3],
+  [4, 5, 6, 7],
+  [8, 9, 10, 11],
+  [12, 13, 14, 15]
+]
 const matrix4 = [
   [0, 1, 2, 3, 4],
   [5, 6, 7, 8, 9],

@@ -1,6 +1,10 @@
 /* O(n) solution */
 
-/* Determines if an ASCII string has all unique characters. */
+/**
+ * Determines if an ASCII string has all unique characters.
+ * @param   {string}  str
+ * @returns {boolean}
+ */
 const isUnique = str => {
   const map = {}
   for (let char of str) {

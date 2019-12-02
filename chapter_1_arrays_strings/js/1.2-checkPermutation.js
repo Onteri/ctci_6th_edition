@@ -1,22 +1,34 @@
 /* O(nlog(n)) solution due to initial sort */
 
-/* Sorts string */
+/**
+ * Sorts string.
+ * @param   {string}  str
+ * @returns {string}
+ */
 const sorted = str =>
   str
     .split("")
     .sort()
     .join("")
 
-/* Determines if two strings are permutations of
- * each other. */
-const checkPermutationSort = (string1, string2) => {
-  if (string1.length != string2.length) return false
-  return sorted(string1) === sorted(string2)
+/**
+ * Determines if two strings are permutations of each other.
+ * @param   {string}  str1
+ * @param   {string}  str2
+ * @returns {boolean}
+ */
+const checkPermutationSort = (str1, str2) => {
+  if (str1.length != str2.length) return false
+  return sorted(str1) === sorted(str2)
 }
 
 /* O(n) solution */
 
-/* Creates hash table of string */
+/**
+ * Creates hash table of string.
+ * @param   {string}  str
+ * @returns {object}
+ */
 const createMap = str => {
   return str.split("").reduce((a, b) => {
     a[b] ? a[b]++ : (a[b] = 1)
@@ -24,16 +36,19 @@ const createMap = str => {
   }, {})
 }
 
-/* Determines if two strings are permutations of
- * each other. */
-const checkPermutation = (string1, string2) => {
-  if (string1.length != string2.length) return false
-  const map = createMap(string1)
-  for (let ch of string2) {
+/**
+ * Determines if two strings are permutations of each other.
+ * @param   {string}  str1
+ * @param   {string}  str2
+ */
+const checkPermutation = (str1, str2) => {
+  if (str1.length != str2.length) return false
+  const map = createMap(str1)
+  for (let ch of str2) {
     if (!map[ch]) return false
     map[ch]--
-    /* if array map has a negative value, there is
-     * a mismatch in characters */
+    /* If array map has a negative value, there is
+     * a mismatch in characters. */
     if (map[ch] < 0) return false
   }
   return true
