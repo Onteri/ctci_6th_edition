@@ -1,7 +1,9 @@
 #include "stack.h"
 
-/* Sorts a stack using a secondary stack as a buffer
- * O(n**2) time complexity and O(2n) space complexity */
+/**
+ * Sorts a stack using a secondary stack as a buffer.
+ * O(n**2) time complexity and O(n) space complexity.
+ */
 void sort_stack(node *stack)
 {
     int temp;
@@ -11,11 +13,11 @@ void sort_stack(node *stack)
     {
         temp = pop(&stack);
         while (!is_empty(buffer) && peek(buffer) > temp)
-            /* If peeked value in buffer is less than temp, place back in stack */
+            /* If peeked value in buffer is less than temp, place back in stack. */
             push(&stack, pop(&buffer));
         push(&buffer, temp);
     }
-    /* Place everything in buffer back into stack */
+    /* Place everything in buffer back into stack. */
     while (!is_empty(buffer))
         push(&stack, pop(&buffer));
 }

@@ -11,7 +11,9 @@ typedef struct FixedMultiStack
     int sizes[3];
 } fms;
 
-/* Fixed multi-stack constructor */
+/**
+ * Fixed multi-stack constructor.
+ */
 fms *create_fixed_multi_stack(int stack_capacity)
 {
     fms *stack;
@@ -27,7 +29,9 @@ fms *create_fixed_multi_stack(int stack_capacity)
     return stack;
 }
 
-/* Prints all elements of a fixed multi-stack */
+/**
+ * Prints all elements of a fixed multi-stack.
+ */
 void print_fms_values(fms *stack)
 {
     int i;
@@ -37,7 +41,9 @@ void print_fms_values(fms *stack)
     printf("\n");
 }
 
-/* Prints all sizes of a fixed multi-stack */
+/**
+ * Prints all sizes of a fixed multi-stack.
+ */
 void print_fms_sizes(fms *stack)
 {
     int i;
@@ -47,7 +53,9 @@ void print_fms_sizes(fms *stack)
     printf("\n");
 }
 
-/* Returns the top index of a given stack */
+/**
+ * Returns the top index of a given stack.
+ */
 int index_of_top(fms *stack, int stack_num)
 {
     int offset, index;
@@ -57,19 +65,25 @@ int index_of_top(fms *stack, int stack_num)
     return offset + index - 1;
 }
 
-/* Determines if a fixed multi-stack is full or not */
+/**
+ * Determines if a fixed multi-stack is full or not.
+ */
 int is_fms_full(fms *stack, int stack_num)
 {
     return stack->sizes[stack_num] == stack->stack_capacity;
 }
 
-/* Determines if a fixed multi-stack is empty or not */
+/**
+ * Determines if a fixed multi-stack is empty or not.
+ */
 int is_fms_empty(fms *stack, int stack_num)
 {
     return stack->sizes[stack_num] == 0;
 }
 
-/* Pushes an element into a given stack */
+/**
+ * Pushes an element into a given stack.
+ */
 void push_fms(fms *stack, int stack_num, int value)
 {
     int index;
@@ -85,7 +99,9 @@ void push_fms(fms *stack, int stack_num, int value)
     printf("pushing %i...\n", value);
 }
 
-/* Pops the top element off a fixed multi-stack */
+/**
+ * Pops the top element off a fixed multi-stack.
+ */
 int pop_fms(fms *stack, int stack_num)
 {
     int index, temp;
@@ -103,7 +119,9 @@ int pop_fms(fms *stack, int stack_num)
     return temp;
 }
 
-/* Frees a fixed multi-stack */
+/**
+ * Frees a fixed multi-stack.
+ */
 void free_fms(fms *stack)
 {
     free(stack->values);

@@ -6,7 +6,9 @@ typedef struct stack_with_min
     node *mins;
 } swm;
 
-/* Stack with minimum constructor */
+/**
+ * Stack with minimum constructor.
+ */
 swm *create_swm()
 {
     swm *stack = malloc(sizeof(swm));
@@ -16,13 +18,17 @@ swm *create_swm()
     return stack;
 }
 
-/* Return the minimum value of the stack */
+/**
+ * Return the minimum value of the stack.
+ */
 int min_swm(swm *stack)
 {
     return peek(stack->mins);
 }
 
-/* Pushes an element to the top of the stack */
+/**
+ * Pushes an element to the top of the stack.
+ */
 void push_swm(swm *stack, int value)
 {
     if (value < min_swm(stack))
@@ -30,14 +36,16 @@ void push_swm(swm *stack, int value)
     push(&stack->values, value);
 }
 
-/* Pops an element off the top of the stack */
+/**
+ * Pops an element off the top of the stack.
+ */
 int pop_swm(swm *stack)
 {
     int value;
 
     value = pop(&stack->values);
     if (value == min_swm(stack))
-        /* If min is getting popped, remove from second list also */
+        /* If min is getting popped, remove from second list also. */
         pop(&stack->mins);
     return value;
 }

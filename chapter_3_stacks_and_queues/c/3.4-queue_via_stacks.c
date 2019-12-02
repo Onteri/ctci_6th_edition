@@ -1,19 +1,23 @@
 #include "stack.h"
 
-/* first in, first out*/
+/* First in, first out. */
 typedef struct queue
 {
     node *oldest;
     node *newest;
 } qq;
 
-/* Adds an element to the front of a queue */
+/**
+ * Adds an element to the front of a queue.
+ */
 void enqueue(qq *q, int value)
 {
     push(&q->newest, value);
 }
 
-/* Shift all elements from oldest stack to newest stack */
+/**
+ * Shift all elements from oldest stack to newest stack.
+ */
 void shift_stacks(qq *q)
 {
     if (is_empty(q->oldest))
@@ -21,14 +25,18 @@ void shift_stacks(qq *q)
             push(&q->oldest, pop(&q->newest));
 }
 
-/* Pops an element off the front of a queue */
+/**
+ * Pops an element off the front of a queue.
+ */
 int dequeue(qq *q)
 {
     shift_stacks(q);
     return pop(&q->oldest);
 }
 
-/* Peeks at the element at the front of the queue */
+/**
+ * Peeks at the element at the front of the queue.
+ */
 int peek_queue(qq *q)
 {
     shift_stacks(q);
