@@ -1,6 +1,6 @@
-def swap_odd_even_bits(n):
+def swap_odd_even_bits(n: int) -> int:
     """
-    Swap odd and even bits with as few instructions as possible
+    Swap odd and even bits with as few instructions as possible.
     """
     # 0xaaaaaaaa = 10101010101010101010101010101010
     # 0x55555555 = 01010101010101010101010101010101

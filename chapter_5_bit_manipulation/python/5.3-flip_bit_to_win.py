@@ -1,7 +1,6 @@
-def flip_bit(n):
+def flip_bit(n: int) -> int:
     """
-    Calculates number of consecutive 1s if user if able to flip
-    1 bit to 1
+    Calculates number of consecutive 1s if user is able to flip 1 bit to 1.
     """
     prev_len = curr_len = max_len = 0
     while (n):
@@ -15,6 +14,7 @@ def flip_bit(n):
     return max_len
 
 
-print(flip_bit(0b11011101111))  # 8
-print(flip_bit(0b11111101111))  # 11
-print(flip_bit(0b10101010101))  # 3
+if __name__ == "main":
+    print(flip_bit(0b11011101111))  # 8
+    print(flip_bit(0b11111101111))  # 11
+    print(flip_bit(0b10101010101))  # 3
