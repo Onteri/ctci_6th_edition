@@ -1,9 +1,9 @@
 # O(n) solution
 
 
-def is_rotation(str1, str2):
+def is_rotation(str1: str, str2: str) -> bool:
     """
-    Determines if a string is a rotation of another string
+    Determines if a string is a rotation of another string.
     """
     if len(str1) == len(str2) and len(str1):
         str1str1 = str1 * 2
@@ -11,7 +11,8 @@ def is_rotation(str1, str2):
     return False
 
 
-print(is_rotation("erbottlewat", "waterbottle"))  # true
-print(is_rotation("erbottlewa", "waterbottle"))  # false
-print(is_rotation("bot", "tbo"))  # true
-print(is_rotation("bot", "tob"))  # false
+if __name__ == "main":
+    print(is_rotation("erbottlewat", "waterbottle"))  # true
+    print(is_rotation("erbottlewa", "waterbottle"))  # false
+    print(is_rotation("bot", "tbo"))  # true
+    print(is_rotation("bot", "tob"))  # false

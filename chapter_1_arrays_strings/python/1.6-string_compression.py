@@ -1,13 +1,13 @@
 # O(n) solution
 
 
-def string_compression(string):
+def string_compression(string: str) -> str:
     """
-    Compresses consecutive characters into a number and 
-    inserts it into a new string along with character
+    Compresses consecutive characters into a number and inserts it into a new
+    string along with character.
 
-    String concatentation is slow because of immutability
-    so using a list instead
+    String concatentation is slow because of immutability so using a list
+    instead.
     """
     _list = []
     count = 1

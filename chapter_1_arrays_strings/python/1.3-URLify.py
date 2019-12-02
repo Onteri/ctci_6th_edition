@@ -1,9 +1,9 @@
 # O(n) solution
 
 
-def urlify(string):
+def urlify(string: str) -> str:
     """
-    Replaces all spaces with "%20"
+    Replaces all spaces with "%20".
     """
     return string.strip().replace(' ', '%20')
 

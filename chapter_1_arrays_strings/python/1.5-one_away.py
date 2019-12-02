@@ -1,24 +1,23 @@
 # O(n) solution
 
 
-def is_one_edit_replace(str1, str2):
+def is_one_edit_replace(str1: str, str2: str) -> bool:
     """
-    Counts the number of differences between two strings
-    of same length. Returns true if the difference is at
-    most one off.
+    Counts the number of differences between two strings of same length.
+    Returns true if the difference is at most one off.
     """
     differences = 0
-    for i, e in enumerate(str1):
+    for i in range(len(str1)):
         if str1[i] != str2[i]:
             differences += 1
     return differences <= 1
 
 
-def is_one_edit_insert(str1, str2):
+def is_one_edit_insert(str1: str, str2: str) -> bool:
     """
-    Determines shorter string and loops from start to finish.
-    If there is a difference, longer string is adjusted.
-    If there is more than one difference, returns false.
+    Determines shorter string and loops from start to finish. If there is a
+    difference, longer string is adjusted. If there is more than one
+    difference, returns false.
     """
     if len(str1) > len(str2):
         long, short = str1, str2
@@ -37,10 +36,10 @@ def is_one_edit_insert(str1, str2):
     return True
 
 
-def is_one_edit_away(str1, str2):
+def is_one_edit_away(str1: str, str2: str) -> bool:
     """
-    Compare two strings to determine if they are one edit
-    away from each other.
+    Compare two strings to determine if they are one edit away from each
+    other.
     """
     len1 = len(str1)
     len2 = len(str2)

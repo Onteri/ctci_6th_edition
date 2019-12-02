@@ -1,7 +1,7 @@
 # O(n) solution
 
 
-def is_unique(string):
+def is_unique(string: str) -> bool:
     """
     Determines if an ASCII string has all unique characters.
     """

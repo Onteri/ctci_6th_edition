@@ -1,10 +1,9 @@
 # O(nlog(n)) solution due to initial sort
 
 
-def check_permutation_sort(str1, str2):
+def check_permutation_sort(str1: str, str2: str) -> bool:
     """
-    Determines if two strings are permutations of
-    each other.
+    Determines if two strings are permutations of each other.
     """
     if len(str1) != len(str2):
         return False
@@ -14,9 +13,9 @@ def check_permutation_sort(str1, str2):
 # O(n) solution
 
 
-def create_map(string):
+def create_map(string: str) -> dict:
     """
-    Creates hash table of string
+    Creates hash table of string.
     """
     obj = {}
     for ch in string:
@@ -27,10 +26,9 @@ def create_map(string):
     return obj
 
 
-def check_permutation(str1, str2):
+def check_permutation(str1: str, str2: str) -> bool:
     """
-    Determines if two strings are permutations of
-    each other.
+    Determines if two strings are permutations of each other.
     """
     if len(str1) != len(str2):
         return False
@@ -39,8 +37,8 @@ def check_permutation(str1, str2):
         if ch not in str_map:
             return False
         str_map[ch] -= 1
-        # if array map has a negative value, there is
-        # a mismatch in characters
+        # if array map has a negative value, there is a mismatch in
+        # characters.
         if str_map[ch] < 0:
             return False
     return True

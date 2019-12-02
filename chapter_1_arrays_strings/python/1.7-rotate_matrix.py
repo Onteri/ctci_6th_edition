@@ -1,6 +1,9 @@
-def rotate_matrix_by_90(matrix):
+from typing import List
+
+
+def rotate_matrix_by_90(matrix: List[List[int]]) -> bool:
     """ 
-    Rotates a NxN matrix 90 degrees in place
+    Rotates a NxN matrix 90 degrees in place.
     """
     if not len(matrix) or len(matrix) != len(matrix[0]):
         return False
@@ -24,9 +27,9 @@ def rotate_matrix_by_90(matrix):
     return True
 
 
-def print_matrix(matrix):
+def print_matrix(matrix: List[List[int]]):
     """
-    Prints matrix row by row
+    Prints matrix row by row.
     """
     for m in matrix:
         print(m)

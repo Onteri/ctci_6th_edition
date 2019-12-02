@@ -1,10 +1,12 @@
+from typing import List
+
 # O(n**2) solution
 
 
-def find_pair_bf(arr, num):
+def find_pair_bf(arr: List[int], num: int) -> bool:
     """
-    Determines if two numbers in a sorted array add
-    up to given number using brute force
+    Determines if two numbers in a sorted array add up to given number using
+    brute force.
     """
     for i in range(len(arr)):
         for j in arr[i + 1:]:
@@ -15,10 +17,10 @@ def find_pair_bf(arr, num):
 # O(nlog(n)) solution
 
 
-def find_pair_binary_search(arr, num):
+def find_pair_binary_search(arr: List[int], num: int) -> bool:
     """
-    Determines if two numbers in a sorted array add
-    up to given number using binary search
+    Determines if two numbers in a sorted array add up to given number using
+    binary search.
     """
     for i in range(len(arr)):
         if binary_search(arr[i + 1:], num - arr[i]):
@@ -26,9 +28,9 @@ def find_pair_binary_search(arr, num):
     return False
 
 
-def binary_search(arr, num):
+def binary_search(arr: List[int], num: int) -> bool:
     """
-    Performs binary search of a number in a sorted array
+    Performs binary search of a number in a sorted array.
     """
     start = 0
     end = len(arr) - 1
@@ -45,10 +47,10 @@ def binary_search(arr, num):
 # O(n) solution average, best case O(1)
 
 
-def find_pair_pointers(arr, num):
+def find_pair_pointers(arr: List[int], num: int) -> bool:
     """
-    Determines if two numbers in a sorted array add
-    up to given number using two pointers
+    Determines if two numbers in a sorted array add up to given number using
+    two pointers.
     """
     start = 0
     end = len(arr) - 1
@@ -64,10 +66,10 @@ def find_pair_pointers(arr, num):
 # O(n) solution
 
 
-def find_pair_unsorted(arr, num):
+def find_pair_unsorted(arr: List[int], num: int) -> bool:
     """
-    Determines if two numbers in an unsorted array add
-    up to given number using a hash table
+    Determines if two numbers in an unsorted array add up to given number
+    using a hash table.
     """
     obj = {}
     for i in arr:
@@ -78,8 +80,9 @@ def find_pair_unsorted(arr, num):
     return False
 
 
-ex = [-20, -16, -16, -11, 1, 3, 4, 6, 7, 17]
-print(find_pair_bf(ex, 10))  # True
-print(find_pair_binary_search(ex, 10))  # True
-print(find_pair_pointers(ex, 10))  # True
-print(find_pair_unsorted(ex, 10))  # True
+if __name__ == "main":
+    ex = [-20, -16, -16, -11, 1, 3, 4, 6, 7, 17]
+    print(find_pair_bf(ex, 10))  # True
+    print(find_pair_binary_search(ex, 10))  # True
+    print(find_pair_pointers(ex, 10))  # True
+    print(find_pair_unsorted(ex, 10))  # True
