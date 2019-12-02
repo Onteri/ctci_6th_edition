@@ -5,8 +5,8 @@ class SinglyLinkedList_2_1(SinglyLinkedList):
 
     def del_dups(self):
         """
-        Delete nodes with duplicate values in a linked list
-        O(n) time complexity
+        Delete nodes with duplicate values in a linked list.
+        O(n) time complexity.
         """
         curr = self.head
         _set = set()
@@ -20,10 +20,11 @@ class SinglyLinkedList_2_1(SinglyLinkedList):
             curr = curr.next
 
 
-sll = SinglyLinkedList_2_1()
-arr = [1, 1, 2, 4, 4, 8, 8]
-for i in arr:
-    sll.add_to_front(i)
-sll.print_linked_list()  # 8-> 8-> 4-> 4-> 2-> 1-> 1
-sll.del_dups()
-sll.print_linked_list()  # 8-> 4-> 2-> 1
+if __name__ == 'main':
+    sll = SinglyLinkedList_2_1()
+    arr = [1, 1, 2, 4, 4, 8, 8]
+    for i in arr:
+        sll.add_to_front(i)
+    sll.print_linked_list()  # 8-> 8-> 4-> 4-> 2-> 1-> 1
+    sll.del_dups()
+    sll.print_linked_list()  # 8-> 4-> 2-> 1
