@@ -4,7 +4,7 @@ from typing import List
 class Bottle:
     def __init__(self, id: int):
         """
-        Bottle construtor
+        Bottle constructor.
         """
         self.poisoned = False
         self.__id = id
@@ -12,26 +12,26 @@ class Bottle:
     @property
     def id(self) -> int:
         """
-        Id getter
+        Id getter.
         """
         return self.__id
 
     @id.setter
     def id(self, id: int):
         """
-        Id setter
+        Id setter.
         """
         self.__id = id
 
     def set_as_poisoned(self):
         """
-        Set a bottle as poisoned
+        Set a bottle as poisoned.
         """
         self.poisoned = True
 
     def is_poisoned(self) -> bool:
         """
-        Determines if a bottle is poisoned or not
+        Determines if a bottle is poisoned or not.
         """
         return self.poisoned
 
@@ -39,7 +39,7 @@ class Bottle:
 class TestStrip:
     def __init__(self, id: int):
         """
-        TestStrip constructor
+        TestStrip constructor.
         """
         self.DAYS_FOR_RESULT = 7
         self.__drops_by_day = []
@@ -48,27 +48,27 @@ class TestStrip:
     @property
     def id(self) -> int:
         """
-        Id getter
+        Id getter.
         """
         return self.__id
 
     @id.setter
     def id(self):
         """
-        Id setter
+        Id setter.
         """
         self.__id = id
 
     def size_drops_for_day(self, day: int):
         """
-        Resize list of days/drops to be large enough
+        Resize list of days/drops to be large enough.
         """
         while len(self.__drops_by_day) <= day:
             self.__drops_by_day.append([])
 
     def add_drop_on_day(self, day: int, bottle: Bottle):
         """
-        Add drop from bottle on specific day
+        Add drop from bottle on specific day.
         """
         self.size_drops_for_day(day)
         drops = self.__drops_by_day[day]
@@ -83,9 +83,9 @@ class TestStrip:
                 return True
         return False
 
-    def is_positive_on_day(self, day: int):
+    def is_positive_on_day(self, day: int) -> bool:
         """
-        Checks for poisoned bottles since before DAYS_FOR_RESULT
+        Checks for poisoned bottles since before DAYS_FOR_RESULT.
         """
         test_day = day - self.DAYS_FOR_RESULT
         if test_day < 0 or test_day > len(self.__drops_by_day):
@@ -100,7 +100,8 @@ class TestStrip:
 def find_poisoned_bottle(bottles: List[Bottle], strips: List[TestStrip]) -> int:
     """
     Finds the poisoned bottle in the minimum amount of days.
-    Will work as long as 2**T >= B, where T is the number of test strips and B is the number of bottles
+    Will work as long as 2**T >= B, where T is the number of test strips and
+    B is the number of bottles.
     """
     run_tests(bottles, strips)
     positive = get_positive_on_day(strips, 7)
@@ -109,7 +110,7 @@ def find_poisoned_bottle(bottles: List[Bottle], strips: List[TestStrip]) -> int:
 
 def run_tests(bottles: List[Bottle], test_strips: List[TestStrip]):
     """
-    Add bottle contents to test strips
+    Add bottle contents to test strips.
     """
     for b in bottles:
         bit_index = 0
@@ -133,7 +134,7 @@ def get_positive_on_day(test_strips: List[TestStrip], day: int) -> List[int]:
 
 def set_bits(positive: List[int]) -> int:
     """
-    Create number by setting bits with indices specified in positive
+    Create number by setting bits with indices specified in positive.
     """
     id = 0
     for bit_index in positive:
@@ -141,16 +142,17 @@ def set_bits(positive: List[int]) -> int:
     return id
 
 
-bottles = []
-for i in range(0, 1000):
-    b = Bottle(i)
-    # set poisoned bottle
-    if i == 995:
-        b.set_as_poisoned()
-    bottles.append(b)
-test_strips = []
-for i in range(0, 10):
-    t = TestStrip(i)
-    test_strips.append(t)
+if __name__ == "main":
+    bottles = []
+    for i in range(0, 1000):
+        b = Bottle(i)
+        # set poisoned bottle
+        if i == 995:
+            b.set_as_poisoned()
+        bottles.append(b)
+    test_strips = []
+    for i in range(0, 10):
+        t = TestStrip(i)
+        test_strips.append(t)
 
-print(find_poisoned_bottle(bottles, test_strips))  # 995
+    print(find_poisoned_bottle(bottles, test_strips))  # 995

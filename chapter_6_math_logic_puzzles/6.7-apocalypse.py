@@ -1,10 +1,11 @@
 import random
+from typing import Tuple
 
 
-def run_one_family():
+def run_one_family() -> Tuple(int):
     """
-    Will generate boys until a girl is reached.
-    Returns tuple of girls to boys.
+    Will generate boys until a girl is reached. Returns tuple of girls
+    to boys.
     """
     boys = girls = 0
     while not girls:
@@ -16,9 +17,9 @@ def run_one_family():
     return genders
 
 
-def run_n_families(n):
+def run_n_families(n: int) -> float:
     """
-    Given a sample size, will generate the ratio of boys to girls
+    Takes a sample size and generates a ratio of boys to girls.
     """
     boys = girls = 0
     for i in range(n):
@@ -28,4 +29,5 @@ def run_n_families(n):
     return girls / (boys + girls)
 
 
-print(run_n_families(100000))  # ~0.5
+if __name__ == "main":
+    print(run_n_families(100000))  # ~0.5

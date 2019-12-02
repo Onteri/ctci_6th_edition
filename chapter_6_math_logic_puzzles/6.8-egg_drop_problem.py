@@ -3,12 +3,13 @@ import math
 
 breaking_point = 99
 count_drops = 0
-# worst case is 14 drops
+
+# Worst case is 14 drops for this solution.
 
 
-def quadratic_formula(a, b, c):
+def quadratic_formula(a: int, b: int, c: int) -> int:
     """
-    Finds the roots of a quadratic equation
+    Finds the roots of a quadratic equation.
     """
     d = (b**2) - (4 * a * c)
     if d > 0:
@@ -18,7 +19,7 @@ def quadratic_formula(a, b, c):
     return math.ceil(max(x1.real, x2.real))
 
 
-def drop(floor):
+def drop(floor: int) -> bool:
     """
     Determines if egg will break at this floor.
     Increases count of drops each time it is ran.
@@ -29,9 +30,10 @@ def drop(floor):
     return floor >= breaking_point
 
 
-def find_breaking_point(floors):
+def find_breaking_point(floors: int) -> int:
     """
-    Finds breaking point by increasing egg1 at decreasing intervals and egg2 at steady interval.
+    Finds breaking point by increasing egg1 at decreasing intervals and egg2
+    at steady interval.
     """
     # To calculate interval, use:
     # x + (x - 1) + (x + 2) ... = floors
@@ -41,13 +43,13 @@ def find_breaking_point(floors):
     previous_floor = 0
     egg1 = interval
 
-    # Drop egg1 at decreasing intervals
+    # Drop egg1 at decreasing intervals.
     while not drop(egg1) and egg1 <= floors:
         interval -= 1
         previous_floor = egg1
         egg1 += interval
 
-    # Drop egg2 at 1 unit increments
+    # Drop egg2 at 1 unit increments.
     egg2 = previous_floor + 1
     while egg2 < egg1 and egg2 <= floors and not drop(egg2):
         egg2 += 1
@@ -57,5 +59,6 @@ def find_breaking_point(floors):
     return egg2
 
 
-print("breaking point = " + str(find_breaking_point(100)))
-print("drops = " + str(count_drops))
+if __name__ == "main":
+    print("breaking point = " + str(find_breaking_point(100)))  # 99
+    print("drops = " + str(count_drops))  # 14
