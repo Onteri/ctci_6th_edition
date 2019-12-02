@@ -1,7 +1,9 @@
 #include "singly_linked_lists.h"
 
-/* Determines if linked list is circular
- * O(n) solution */
+/**
+ * Determines if linked list is circular.
+ * O(n) solution.
+ */
 int is_circular(node *head)
 {
     node *hare, *tortoise;

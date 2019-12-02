@@ -1,7 +1,9 @@
 #include "singly_linked_lists.h"
 
-/* Deletes a node in the middle of a linked list
- * O(n) time complexity */
+/**
+ * Deletes a node in the middle of a linked list.
+ * O(n) time complexity.
+ */
 void delete_mid_node(node *mid)
 {
     node *next;

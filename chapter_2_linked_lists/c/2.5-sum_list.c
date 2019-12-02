@@ -1,7 +1,9 @@
 #include "singly_linked_lists.h"
 
-/* Adds the values of two linked lists by creating a new list 
- * O(a + b) solution, a and b being lengths of respective lists */
+/**
+ * Adds the values of two linked lists by creating a new list.
+ * O(a + b) solution, with a and b being lengths of respective lists.
+ */
 node *sum_list(node *list1, node *list2, int carry)
 {
     int value;

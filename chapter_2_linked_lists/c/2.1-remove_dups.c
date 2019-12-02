@@ -1,7 +1,9 @@
 #include "singly_linked_lists.h"
 
-/* Delete nodes with duplicate values in a singly linked list
- * O(n**2) time complexity */
+/**
+ * Delete nodes with duplicate values in a linked list.
+ * O(n) time complexity.
+ */
 void remove_dups(node **head)
 {
     node *slow, *fast;

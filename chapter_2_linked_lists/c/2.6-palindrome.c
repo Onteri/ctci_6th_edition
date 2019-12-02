@@ -1,7 +1,9 @@
 #include "singly_linked_lists.h"
 
-/* Determines if a linked list is a palindrome
- * O(n) time and space complexity */
+/**
+ * Determines if a linked list is a palindrome.
+ * O(n) time and space complexity.
+ */
 int is_palindrome(node **head)
 {
     node *slow = *head, *fast = *head, *prev = *head;

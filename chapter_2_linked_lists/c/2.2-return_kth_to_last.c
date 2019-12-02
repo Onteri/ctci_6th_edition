@@ -1,7 +1,9 @@
 #include "singly_linked_lists.h"
 
-/* Returns the kth element from last node
- * O(n) time complexity */
+/**
+ * Returns the kth element from last node.
+ * O(n) time complexity.
+ */
 node *kth_to_last(node *head, int index)
 {
     node *curr, *kth;

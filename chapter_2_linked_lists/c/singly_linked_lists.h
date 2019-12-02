@@ -4,14 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Singly linked list node */
+/**
+ * Singly linked list node.
+ */
 typedef struct sll_node
 {
     int n;
     struct sll_node *next;
 } node;
 
-/* Prints all the elements of a singly linked list */
+/**
+ * Prints all elements of a singly linked list.
+ */
 size_t print_list(const node *h)
 {
     size_t count = 0;
@@ -28,7 +32,9 @@ size_t print_list(const node *h)
     return (count);
 }
 
-/* Returns the number of elements in a singly linked list */
+/**
+ * Returns the number of elements in a singly linked list.
+ */
 size_t list_len(const node *h)
 {
     size_t count = 0;
@@ -41,7 +47,9 @@ size_t list_len(const node *h)
     return (count);
 }
 
-/* Adds a new node to the head of a singly linked list */
+/**
+ * Adds a new node to the head of a singly linked list.
+ */
 node *add_nodeint(node **head, const int n)
 {
     node *new_node = (node *)malloc(sizeof(node));
@@ -56,7 +64,9 @@ node *add_nodeint(node **head, const int n)
     return (new_node);
 }
 
-/* Deletes a node at a given index */
+/**
+ * Deletes a node at a given index.
+ */
 int delete_nodeint_at_index(node **head, unsigned int index)
 {
     node *current;
@@ -83,7 +93,9 @@ int delete_nodeint_at_index(node **head, unsigned int index)
     return (-1);
 }
 
-/* Frees a singly linked list */
+/**
+ * Frees a singly linked list.
+ */
 void free_listint(node **head)
 {
     node *current;
@@ -102,7 +114,9 @@ void free_listint(node **head)
     head = NULL;
 }
 
-/* Reverses a singly linked list */
+/**
+ * Reverses a singly linked list.
+ */
 void reverse_linked_list(node **head)
 {
     node *prev = NULL;
@@ -119,7 +133,9 @@ void reverse_linked_list(node **head)
     *head = prev;
 }
 
-/* Compares two singly linked lists for differences */
+/**
+ * Compares two singly linked lists for differences.
+ */
 int compare_linked_list(node *head1, node *head2)
 {
     node *temp1 = head1;
