@@ -2,21 +2,22 @@
 
 /* O(n) solution */
 
-/* Counts numbers of spaces in string, given a max bound */
+/**
+ * Counts numbers of spaces in string, given a max bound.
+ */
 int count_spaces(char *str, int len)
 {
     int i, count;
 
     for (i = 0; i < len; i++)
-    {
         if (str[i] == ' ')
             count++;
-    }
     return count;
 }
 
-/* Replaces all spaces with "%20"
- * This solution will modify input char array */
+/** 
+ * Replaces all spaces with "%20". This solution will modify input char array.
+ */
 void urlify(char str[], int true_length)
 {
     int spaces, index, i;

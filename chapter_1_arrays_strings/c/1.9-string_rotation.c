@@ -4,7 +4,9 @@
 
 /* O(n) solution */
 
-/* Determines if a string is a rotation of another string. */
+/**
+ * Determines if a string is a rotation of another string.
+ */
 int isRotation(char *str1, char *str2)
 {
     int len1, len2, i = 0, j = 0;
@@ -29,7 +31,7 @@ int isRotation(char *str1, char *str2)
             j++;
         }
         str1str1[j] = '\0';
-        /* Check if str2 is a substring is str1str1 */
+        /* Check if str2 is a substring is str1str1. */
         return strstr(str1str1, str2)
                    ? 1
                    : 0;

@@ -2,10 +2,12 @@
 
 /* O(n**2) solution, best case scenario  */
 
-/* need to set macro for matrix size */
+/* Need to set macro for matrix size. */
 #define MATRIX_SIZE 4
 
-/* prints matrix row by row */
+/**
+ * Prints matrix row by row.
+ */
 void print_matrix(int *matrix, int length)
 {
     int i, j;
@@ -21,7 +23,9 @@ void print_matrix(int *matrix, int length)
     printf("===============\n");
 }
 
-/* rotates a NxN matrix 90 degrees in place */
+/**
+ * Rotates a NxN matrix 90 degrees in place.
+ */
 void rotate_matrix(int (*matrix)[MATRIX_SIZE])
 {
     int layer, first, last, n, i, offset, top;

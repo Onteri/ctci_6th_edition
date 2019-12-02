@@ -4,12 +4,13 @@
 
 #define ASCII_LENGTH 128
 
-/* Determines if an ASCII string has all unique characters. */
+/**
+ * Determines if an ASCII string has all unique characters.
+ */
 int is_unique(char *str)
 {
-    /* array map */
-    int map[ASCII_LENGTH] = {0};
     int i, ch;
+    int map[ASCII_LENGTH] = {0}; // Array map
 
     for (i = 0; str[i]; i++)
     {
@@ -21,11 +22,13 @@ int is_unique(char *str)
     return 1;
 }
 
-/* Alternate solution. Uses bit vectors, but will only work for 
- * a-z chars. O(1) space complexity. */
+/**
+ * Alternate solution. Uses bit vectors, but will only work for a-z chars.
+ * O(1) space complexity.
+ */
 int is_unique_alpha(char *str)
 {
-    unsigned int bit_map = 0; /* 32 bits to works with */
+    unsigned int bit_map = 0; // 32 bits to works with
     int val, i = 0;
 
     for (i = 0; str[i]; i++)

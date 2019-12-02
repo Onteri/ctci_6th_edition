@@ -5,7 +5,9 @@
 #define COLUMN_SIZE 3
 #define ROW_SIZE 4
 
-/* Prints matrix row by row */
+/** 
+ * Prints matrix row by row. 
+ */
 void print_matrix(int matrix[COLUMN_SIZE][ROW_SIZE])
 {
     int i, j;
@@ -21,7 +23,9 @@ void print_matrix(int matrix[COLUMN_SIZE][ROW_SIZE])
     printf("===============\n");
 }
 
-/* Set zeros for all values in a given row of a matrix */
+/**
+ * Set zeros for all values in a given row of a matrix.
+ */
 void nullify_row(int matrix[COLUMN_SIZE][ROW_SIZE], int row)
 {
     int i;
@@ -30,7 +34,9 @@ void nullify_row(int matrix[COLUMN_SIZE][ROW_SIZE], int row)
         matrix[row][i] = 0;
 }
 
-/* Set zeros for all values in a given column of a matrix */
+/**
+ * Set zeros for all values in a given column of a matrix.
+ */
 void nullify_column(int matrix[COLUMN_SIZE][ROW_SIZE], int column)
 {
     int i;
@@ -39,8 +45,9 @@ void nullify_column(int matrix[COLUMN_SIZE][ROW_SIZE], int column)
         matrix[i][column] = 0;
 }
 
-/* Sets zeros for all values in same row and column
- * as existing zeroes */
+/**
+ * Sets zeros for all values in same row and column as existing zeroes.
+ */
 void set_zeros(int matrix[COLUMN_SIZE][ROW_SIZE])
 {
     int i, j;

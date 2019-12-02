@@ -3,24 +3,27 @@
 #include <stdlib.h>
 
 /* O(2n) solution 
- * One loop to get size
- * One loop to place chars in new string */
+ * One loop to get size.
+ * One loop to place chars in new string. */
 
-/* Returns number of characters needed for final 
- * compressed string */
+/**
+ * Returns number of characters needed for final compressed string.
+ */
 int get_compress_size(char *str)
 {
     int i, count = 0;
 
     for (i = 0; i < str[i]; i++)
         if (str[i] != str[i + 1])
-            /* This assumes number is only one digit */
+            /* This assumes number is only one digit. */
             count += 2;
     return count;
 }
 
-/* Compresses consecutive characters into a number and 
- * inserts it into a new string along with character */
+/**
+ * Compresses consecutive characters into a number and inserts it into a new
+ * string along with character.
+ */
 char *string_compression(char *str)
 {
     int i, count = 1;
@@ -28,7 +31,6 @@ char *string_compression(char *str)
 
     result_str = malloc(get_compress_size(str) + 1);
     start = result_str;
-
     for (i = 0; str[i]; i++)
     {
         if (str[i] != str[i + 1])
