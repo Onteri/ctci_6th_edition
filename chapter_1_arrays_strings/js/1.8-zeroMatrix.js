@@ -3,7 +3,6 @@
 /**
  * Prints matrix row by row.
  * @param   {number[][]} matrix
- * @returns {undefined}
  */
 const printMatrix = matrix => {
   for (const width of matrix) {
@@ -15,7 +14,6 @@ const printMatrix = matrix => {
 /**
  * Sets zeros for all values in same row and column as existing zeroes.
  * @param   {number[][]} matrix
- * @returns {undefined}
  */
 const setZeros = matrix => {
   /* Store all rows and columns where there is a zero in arrays. */
@@ -37,7 +35,6 @@ const setZeros = matrix => {
  * Set zeros for all values in a given row of a matrix.
  * @param   {number[][]} matrix
  * @param   {number}   row
- * @returns {undefined}
  */
 const nullifyRow = (matrix, row) => {
   for (let i = 0; i < matrix[0].length; i++) matrix[row][i] = 0
@@ -47,7 +44,6 @@ const nullifyRow = (matrix, row) => {
  * Set zeros for all values in a given column of a matrix.
  * @param   {number[][]} matrix
  * @param   {number}   column
- * @returns {undefined}
  */
 const nullifyColumn = (matrix, column) => {
   for (let i = 0; i < matrix.length; i++) matrix[i][column] = 0

@@ -32,7 +32,6 @@ const rotateMatrixBy90 = matrix => {
 /**
  * Prints matrix row by row.
  * @param   {number[][]} matrix
- * @returns {undefined}
  */
 const printMatrix = matrix => {
   for (let width of matrix) {
