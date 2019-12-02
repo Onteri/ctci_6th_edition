@@ -7,20 +7,19 @@ public:
     void remove_dups();
 };
 
-/* Delete nodes with duplicate values in a linked list
- * O(n) time complexity */
+/**
+ * Delete nodes with duplicate values in a linked list.
+ * O(n) time complexity.
+ */
 void LinkedList2_1::remove_dups()
 {
     unordered_set<int> set;
-    int index;
-    Node *curr, *prev;
-
-    curr = this->head;
-    prev = nullptr;
+    Node *curr = this->head;
+    Node *prev = nullptr;
 
     while (curr)
     {
-        /* if found in set */
+        /* If found in set... */
         if (set.find(curr->value) != set.end())
         {
             prev->next = curr->next;
@@ -28,7 +27,7 @@ void LinkedList2_1::remove_dups()
         }
         else
         {
-            /* add to set */
+            /* Add to set. */
             set.insert(curr->value);
             prev = curr;
         }
@@ -47,6 +46,7 @@ int main()
     ll->print_list(); // 32 -> 32 -> 16 -> 8 -> 4 -> 4 -> 2 -> 1 -> 1
     ll->remove_dups();
     ll->print_list(); // 32 -> 16 -> 8 -> 4 -> 2 -> 1
+    delete ll;
 
     return 0;
 }

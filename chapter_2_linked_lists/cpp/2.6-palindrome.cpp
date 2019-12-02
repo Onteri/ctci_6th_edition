@@ -7,16 +7,16 @@ public:
   bool is_palindrome();
 };
 
-/* Determines if a linked list is a palindrome
- * O(n) time and space complexity */
+/**
+ * Determines if a linked list is a palindrome.
+ * O(n) time and space complexity.
+ */
 bool LinkedList2_6::is_palindrome()
 {
-  Node *curr;
-  int mid;
   vector<int> stack;
+  Node *curr = this->head;
+  int mid = this->length / 2;
 
-  mid = this->length / 2;
-  curr = this->head;
   while (mid)
   {
     stack.push_back(curr->value);
@@ -24,7 +24,7 @@ bool LinkedList2_6::is_palindrome()
     mid--;
   }
   if (this->length & 1)
-    /* move pointer one node if list length is odd */
+    /* Move pointer one node if list length is odd. */
     curr = curr->next;
   while (curr)
   {
@@ -61,6 +61,9 @@ int main()
     ll3->add_node(keys3[i]);
   ll3->print_list();                    // 1 -> 2 -> 4 -> 6 -> 5 -> 4 -> 2 -> 1
   cout << ll3->is_palindrome() << endl; // 0
+  delete ll;
+  delete ll2;
+  delete ll3;
 
   return 0;
 }

@@ -6,19 +6,20 @@ public:
     void partition(int partition);
 };
 
-/* Partitions a linked list according to a number
- * All values lower than number will go on the left and 
- * all values higher and equal will go on the right
- * This solution is unstable, but performs at
- * O(n) time complexity */
+/**
+ * Partitions a linked list according to a number. All values lower than
+ * number will go on the left and all values higher and equal will go on
+ * the right.
+ * This solution is unstable, but performs at O(n) time complexity.
+ */
 void LinkedList2_4::partition(int partition)
 {
-    Node *start, *end, *curr, *next;
+    Node *start, *end, *curr;
 
     start = end = curr = this->head;
     while (curr)
     {
-        next = curr->next;
+        Node *next = curr->next;
         if (curr->value < partition)
         {
             curr->next = start;
@@ -46,6 +47,7 @@ int main()
     ll->print_list(); // 103 -> 3 -> 2 -> 101 -> 100 -> 1
     ll->partition(50);
     ll->print_list(); // 1 -> 2 -> 3 -> 103 -> 101 -> 100
+    delete ll;
 
     return 0;
 }

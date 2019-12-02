@@ -6,8 +6,10 @@ public:
     Node *kth_to_last(int index);
 };
 
-/* Returns the kth element from last node
- * O(n) time complexity */
+/**
+ * Returns the kth element from last node.
+ * O(n) time complexity.
+ */
 Node *LinkedList2_2::kth_to_last(int index)
 {
     Node *curr, *kth;
@@ -37,6 +39,7 @@ int main()
     ll->print_list(); // 32-> 16-> 8-> 4-> 2-> 1
     Node *ptr = ll->kth_to_last(2);
     cout << ptr->value << endl; // 2
+    delete ll;
 
     return 0;
 }

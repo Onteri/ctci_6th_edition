@@ -7,22 +7,20 @@ public:
     Node *find_intersection(LinkedList2_7 *other_list);
 };
 
-/* Finds if two linked lists intersect and returns
- * the node where they first meet
- * O(n) time and space complexity */
+/**
+ * Finds if two linked lists intersect and returns the node where they first
+ * meet.
+ * O(n) time and space complexity.
+ */
 Node *LinkedList2_7::find_intersection(LinkedList2_7 *other_list)
 {
-    int len1, len2, difference;
-    LinkedList2_7 *longer, *shorter;
-    Node *longer_start, *shorter_start;
-
-    len1 = this->length;
-    len2 = other_list->length;
-    longer = len1 > len2 ? this : other_list;
-    shorter = len1 > len2 ? other_list : this;
-    difference = abs(len1 - len2);
-    longer_start = longer->head;
-    shorter_start = shorter->head;
+    int len1 = this->length;
+    int len2 = other_list->length;
+    LinkedList2_7 *longer = len1 > len2 ? this : other_list;
+    LinkedList2_7 *shorter = len1 > len2 ? other_list : this;
+    int difference = abs(len1 - len2);
+    Node *longer_start = longer->head;
+    Node *shorter_start = shorter->head;
 
     while (difference)
     {
@@ -56,6 +54,8 @@ int main()
     ll2->length += 3;
     ll2->print_list();
     cout << ll->find_intersection(ll2)->value << endl; // 4
+    delete ll;
+    delete ll2;
 
     return 0;
 }

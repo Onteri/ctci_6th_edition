@@ -13,7 +13,9 @@ public:
     Node(int value);
 };
 
-/* Node constructor */
+/**
+ * Node constructor.
+ */
 Node::Node(int value)
 {
     this->value = value;
@@ -32,14 +34,18 @@ public:
     void delete_node(int index);
 };
 
-/* Singly linked list constructor */
+/**
+ * Singly linked list constructor.
+ */
 LinkedList::LinkedList()
 {
     this->head = NULL;
     this->length = 0;
 }
 
-/* Adds a new node to the head of a singly linked list */
+/**
+ * Adds a new node to the head of a singly linked list.
+ */
 Node *LinkedList::add_node(int value)
 {
     Node *new_node = new Node(value);
@@ -56,11 +62,12 @@ Node *LinkedList::add_node(int value)
     return new_node;
 }
 
-/* Prints all elements of a singly linked list */
+/**
+ * Prints all elements of a singly linked list.
+ */
 void LinkedList::print_list()
 {
-    Node *curr;
-    curr = this->head;
+    Node *curr = this->head;
     while (curr->next)
     {
         cout << curr->value << " -> ";
@@ -69,14 +76,16 @@ void LinkedList::print_list()
     cout << curr->value << endl;
 }
 
-/* Deletes a node at a given index */
+/**
+ * Deletes a node at a given index.
+ */
 void LinkedList::delete_node(int index)
 {
-    Node *curr, *prev;
     if (index < 0 || index >= this->length)
         throw;
 
-    curr = this->head;
+    Node *prev = nullptr;
+    Node *curr = this->head;
     if (index == 0)
     {
         this->head = this->head->next;

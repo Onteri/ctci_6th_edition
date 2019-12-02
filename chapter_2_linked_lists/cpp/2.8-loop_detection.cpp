@@ -6,8 +6,10 @@ public:
     bool is_circular();
 };
 
-/* Determines if linked list is circular
- * O(n) solution */
+/**
+ * Determines if linked list is circular.
+ * O(n) solution.
+ */
 bool LinkedList2_8::is_circular()
 {
     Node *hare, *tortoise;
@@ -36,6 +38,7 @@ int main()
     cout << ll->is_circular() << endl; // 0
     n1->next = n32;
     cout << ll->is_circular() << endl; // 1
+    delete ll;
 
     return 0;
 }
