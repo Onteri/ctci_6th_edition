@@ -1,17 +1,17 @@
 class FixedMultiStack:
-    def __init__(self, stack_size):
+    def __init__(self, stack_size: int):
         """
-        Fixed multi-stack constructor
+        Fixed multi-stack constructor.
         """
         self.number_of_stacks = 3
         self.stack_capacity = stack_size
         self.values = [0] * stack_size * 3
-        # Array of sizes of sub-arrays
+        # Array of sizes of sub-arrays.
         self.sizes = [0] * 3
 
-    def push(self, stack_num, value):
+    def push(self, stack_num: int, value: int):
         """
-        Pushes an element into a given stack
+        Pushes an element into a given stack.
         """
         if self.is_full(stack_num):
             raise Exception("stack is full")
@@ -19,9 +19,9 @@ class FixedMultiStack:
         index = self.index_of_top(stack_num)
         self.values[index] = value
 
-    def pop(self, stack_num):
+    def pop(self, stack_num: int) -> int:
         """
-        Pops the top element off a fixed multi-stack
+        Pops the top element off a fixed multi-stack.
         """
         if self.is_empty(stack_num):
             raise Exception("stack is empty")
@@ -31,21 +31,21 @@ class FixedMultiStack:
         self.sizes[stack_num] -= 1
         return value
 
-    def is_full(self, stack_num):
+    def is_full(self, stack_num: int) -> bool:
         """
-        Determines if a fixed multi-stack is full or not
+        Determines if a fixed multi-stack is full or not.
         """
         return self.sizes[stack_num] == self.stack_capacity
 
-    def is_empty(self, stack_num):
+    def is_empty(self, stack_num: int) -> bool:
         """
-        Determines if a fixed multi-stack is empty or not
+        Determines if a fixed multi-stack is empty or not.
         """
         return self.sizes[stack_num] == 0
 
-    def index_of_top(self, stack_num):
+    def index_of_top(self, stack_num: int) -> int:
         """
-        Returns the top index of a given stack
+        Returns the top index of a given stack.
         """
         offset = stack_num * self.stack_capacity
         index = self.sizes[stack_num]
