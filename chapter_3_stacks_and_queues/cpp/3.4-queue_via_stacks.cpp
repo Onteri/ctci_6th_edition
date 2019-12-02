@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* first in, first out*/
+/* First in, first out. */
 class MyQueue
 {
 public:
@@ -17,13 +17,17 @@ public:
     int peek();
 };
 
-/* Adds an element to the front of a queue */
+/**
+ * Adds an element to the front of a queue.
+ */
 void MyQueue::enqueue(int value)
 {
     this->newest.push(value);
 }
 
-/* Shift all elements from oldest stack to newest stack */
+/**
+ * Shift all elements from oldest stack to newest stack.
+ */
 void MyQueue::shiftStacks()
 {
     if (this->oldest.empty())
@@ -34,18 +38,20 @@ void MyQueue::shiftStacks()
         }
 }
 
-/* Pops an element off the front of a queue */
+/**
+ * Pops an element off the front of a queue.
+ */
 int MyQueue::dequeue()
 {
-    int value;
-
     this->shiftStacks();
-    value = this->oldest.top();
+    int value = this->oldest.top();
     this->oldest.pop();
     return value;
 }
 
-/* Peeks at the element at the front of the queue */
+/**
+ * Peeks at the element at the front of the queue.
+ */
 int MyQueue::peek()
 {
     this->shiftStacks();

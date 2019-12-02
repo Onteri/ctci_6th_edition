@@ -19,21 +19,23 @@ private:
     vector<stack<int>> stacks;
 };
 
-/* Set of stacks constructor */
+/**
+ * Set of stacks constructor.
+ */
 SetOfStacks::SetOfStacks(int capacity)
 {
     this->capacity = capacity;
 }
 
-/* Pushes an element to the top of the stack */
+/**
+ * Pushes an element to the top of the stack.
+ */
 void SetOfStacks::push(int value)
 {
-    stack<int> *last;
-
-    last = this->getLastStack();
+    stack<int> *last = this->getLastStack();
     if (!last || last->size() >= this->capacity)
     {
-        /* create new stack */
+        /* Create new stack. */
         stack<int> newStack;
         newStack.push(value);
         this->stacks.push_back(newStack);
@@ -41,12 +43,14 @@ void SetOfStacks::push(int value)
     }
     else
     {
-        /* add to last stack */
+        /* Add to last stack. */
         last->push(value);
     }
 }
 
-/* Returns the last stack in set of stacks */
+/**
+ * Returns the last stack in set of stacks.
+ */
 stack<int> *SetOfStacks::getLastStack()
 {
     if (this->length == 0)
@@ -54,20 +58,19 @@ stack<int> *SetOfStacks::getLastStack()
     return &this->stacks.back();
 }
 
-/* Pops an element off the top of the stack */
+/**
+ * Pops an element off the top of the stack.
+ */
 int SetOfStacks::pop()
 {
-    stack<int> *last;
-    int value;
-
-    last = this->getLastStack();
+    stack<int> *last = this->getLastStack();
     if (!last)
         throw runtime_error("stacks are empty");
-    value = last->top();
+    int value = last->top();
     last->pop();
     if (last->empty())
     {
-        /* If stack is empty, remove it from stacks */
+        /* If stack is empty, remove it from stacks. */
         this->stacks.pop_back();
         this->length--;
     }
@@ -86,7 +89,7 @@ int main()
     i = 7;
     while (i--)
         sos.pop();
-    // sos.pop() exception
+    /* sos.pop() exception */
 
     return 0;
 }

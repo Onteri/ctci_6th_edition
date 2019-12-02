@@ -3,26 +3,27 @@
 
 using namespace std;
 
-/* Sorts a stack using a secondary stack as a buffer
- * O(n**2) time complexity and O(2n) space complexity */
+/**
+ * Sorts a stack using a secondary stack as a buffer.
+ * O(n**2) time complexity and O(n) space complexity.
+ */
 void sortStack(stack<int> *s1)
 {
     stack<int> s2;
-    int temp;
 
     while (!s1->empty())
     {
-        temp = s1->top();
+        int temp = s1->top();
         s1->pop();
         while (!s2.empty() && temp < s2.top())
         {
-            /* If peeked value in buffer is less than temp, place back in stack */
+            /* If peeked value in buffer is less than temp, place back in stack. */
             s1->push(s2.top());
             s2.pop();
         }
         s2.push(temp);
     }
-    /* Place everything in buffer back into stack */
+    /* Place everything in buffer back into stack. */
     while (!s2.empty())
     {
         s1->push(s2.top());

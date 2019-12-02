@@ -18,19 +18,25 @@ private:
     int order;
 };
 
-/* Animal constructor */
+/**
+ * Animal constructor.
+ */
 Animal::Animal(string name)
 {
     this->name = name;
 }
 
-/* Order setter */
+/**
+ * Order setter.
+ */
 void Animal::setOrder(int order)
 {
     this->order = order;
 }
 
-/* Determines if this animal is than another */
+/**
+ * Determines if this animal's order is earlier than another.
+ */
 bool Animal::isOlderThan(Animal other)
 {
     return this->order < other.order;
@@ -64,12 +70,14 @@ public:
     Cat dequeueCat();
 
 private:
-    /* Order is used as a sort of timestamp, so that we can compare
-     * the insertion order of a dog to a cat */
+    /* Order is used as a sort of timestamp, so that we can compare the
+     * insertion order of a dog to a cat. */
     int order = 0;
 };
 
-/* Add a dog to dog queue */
+/**
+ * Add a dog to dog queue.
+ */
 void AnimalQueue::enqueueDog(Dog dog)
 {
     dog.setOrder(this->order);
@@ -77,7 +85,9 @@ void AnimalQueue::enqueueDog(Dog dog)
     this->dogs.push(dog);
 }
 
-/* Add a cat to cat queue */
+/**
+ * Add a cat to cat queue.
+ */
 void AnimalQueue::enqueueCat(Cat cat)
 {
     cat.setOrder(this->order);
@@ -85,46 +95,45 @@ void AnimalQueue::enqueueCat(Cat cat)
     this->cats.push(cat);
 }
 
-/* Look at tops of dog and cat queues, and pops the queue
- * with the oldest value */
+/**
+ * Look at tops of dog and cat queues, and pops the queue with the
+ * oldest value.
+ */
 Animal AnimalQueue::dequeueAny()
 {
-    Dog d;
-    Cat c;
-
     if (this->dogs.empty())
         return this->dequeueCat();
     else if (this->cats.empty())
         return this->dequeueDog();
-    c = this->cats.front();
-    d = this->dogs.front();
+    Cat c = this->cats.front();
+    Dog d = this->dogs.front();
     if (c.isOlderThan(d))
         return this->dequeueCat();
     else
         return this->dequeueDog();
 }
 
-/* Pops the oldest dog from dog queue */
+/**
+ * Pops the oldest dog from dog queue.
+ */
 Dog AnimalQueue::dequeueDog()
 {
-    Dog d;
-
     if (this->dogs.empty())
         throw runtime_error("empty queue");
-    d = this->dogs.front();
+    Dog d = this->dogs.front();
     this->dogs.pop();
     cout << "dequeing " << d.name << "!\n";
     return d;
 }
 
-/* Pops the oldest cat from cat queue */
+/**
+ * Pops the oldest cat from cat queue.
+ */
 Cat AnimalQueue::dequeueCat()
 {
-    Cat c;
-
     if (this->cats.empty())
         throw runtime_error("empty queue");
-    c = this->cats.front();
+    Cat c = this->cats.front();
     this->cats.pop();
     cout << "dequeing " << c.name << "!\n";
     return c;

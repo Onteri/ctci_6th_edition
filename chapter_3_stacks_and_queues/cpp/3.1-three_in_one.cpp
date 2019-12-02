@@ -9,7 +9,7 @@ public:
   int stackCapacity;
   int *values;
   int size;
-  /* Array of sizes of sub-arrays */
+  /* Array of sizes of sub-arrays. */
   int sizes[3] = {0};
 
   FixedMultiStack(int stackSize);
@@ -21,7 +21,9 @@ public:
   bool isFull(int stackNum);
 };
 
-/* Fixed multi-stack constructor */
+/**
+ * Fixed multi-stack constructor.
+ */
 FixedMultiStack::FixedMultiStack(int stackSize)
 {
   this->stackCapacity = stackSize;
@@ -29,62 +31,67 @@ FixedMultiStack::FixedMultiStack(int stackSize)
   this->values = new int[size]{0};
 };
 
-/* Prints a given stack in a fixed multi-stack */
+/**
+ * Prints a given stack in a fixed multi-stack.
+ */
 void FixedMultiStack::printStack(int *arr, int len)
 {
-  int i;
-  for (i = 0; i < len - 1; i++)
+  for (int i = 0; i < len - 1; i++)
     cout << arr[i] << ", ";
   cout << arr[i] << endl;
 }
 
-/* Pushes an element into a given stack */
+/**
+ * Pushes an element into a given stack.
+ */
 void FixedMultiStack::push(int stackNum, int value)
 {
-  int index;
-
   if (stackNum < 0 || stackNum > 2)
     throw runtime_error("invalid index");
   if (this->isFull(stackNum))
     throw runtime_error("stack is full");
   this->sizes[stackNum]++;
-  index = this->indexOfTop(stackNum);
+  int index = this->indexOfTop(stackNum);
   this->values[index] = value;
 }
 
-/* Pops the top element off a fixed multi-stack */
+/**
+ * Pops the top element off a fixed multi-stack.
+ */
 int FixedMultiStack::pop(int stackNum)
 {
-  int index, value;
-
   if (stackNum < 0 || stackNum > 2)
     throw runtime_error("invalid index");
   if (this->isEmpty(stackNum))
     throw runtime_error("stack is empty");
-  index = this->indexOfTop(stackNum);
-  value = this->values[index];
+  int index = this->indexOfTop(stackNum);
+  int value = this->values[index];
   this->values[index] = 0;
   this->sizes[stackNum]--;
   return value;
 }
 
-/* Returns the top index of a given stack */
+/**
+ * Returns the top index of a given stack.
+ */
 int FixedMultiStack::indexOfTop(int stackNum)
 {
-  int offset, index;
-
-  offset = stackNum * this->stackCapacity;
-  index = this->sizes[stackNum];
+  int offset = stackNum * this->stackCapacity;
+  int index = this->sizes[stackNum];
   return offset + index - 1;
 }
 
-/* Determines if a fixed multi-stack is empty or not */
+/**
+ * Determines if a fixed multi-stack is empty or not.
+ */
 bool FixedMultiStack::isEmpty(int stackNum)
 {
   return this->sizes[stackNum] == 0;
 }
 
-/* Determines if a fixed multi-stack is full or not */
+/**
+ * Determines if a fixed multi-stack is full or not.
+ */
 bool FixedMultiStack::isFull(int stackNum)
 {
   return this->sizes[stackNum] == this->stackCapacity;
@@ -120,7 +127,6 @@ int main()
   /* 0, 0, 0, 0, 32, 64, 128, 0, 0, 0, 0, 0 */
   fms->printStack(fms->sizes, fms->numOfStacks);
   /* 0, 3, 0 */
-
   delete fms->values;
   delete fms;
 
