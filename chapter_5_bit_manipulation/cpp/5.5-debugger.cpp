@@ -2,7 +2,9 @@
 
 using namespace std;
 
-/* Determines if a number is a power of two */
+/**
+ * Determines if a number is a power of two.
+ */
 bool is_power_of_two(unsigned int n)
 {
     return n && !(n & (n - 1));

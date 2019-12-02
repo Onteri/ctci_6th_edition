@@ -3,8 +3,10 @@
 
 using namespace std;
 
-/* Prints the binary representation of a number between 0 and 1.
- * If number is over 32 digits long, throw error. */
+/**
+ * Prints the binary representation of a number between 0 and 1. If number
+ * is over 32 digits long, throw error.
+ */
 string print_binary(double num)
 {
     string s = "0.";
@@ -13,7 +15,7 @@ string print_binary(double num)
         return "Error";
     while (num)
     {
-        /* Setting a limit on length: 32 characters */
+        /* Setting a limit on length: 32 characters. */
         if (s.length() >= 32)
             return "Error";
         double r = num * 2;

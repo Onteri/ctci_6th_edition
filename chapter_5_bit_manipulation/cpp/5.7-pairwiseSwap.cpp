@@ -1,6 +1,8 @@
 #include "helper.h"
 
-/* Swap odd and even bits with as few instructions as possible */
+/**
+ * Swap odd and even bits with as few instructions as possible.
+ */
 int swap_odd_even_bits(int n)
 {
     /* 0xaaaaaaaa = 10101010101010101010101010101010 */
