@@ -1,13 +1,22 @@
-const { TreeNode } = require("./tree")
+const { TreeNode } = require('./tree')
 
-/* Create a string representation of binary with a pre-order traversal.
- * All null attributes are replaced with 'X' */
+/**
+ * Create a string representation of binary with a pre-order traversal.
+ * All null attributes are replaced with 'X'.
+ * @param   {TreeNode}  root
+ * @returns {string}
+ */
 const getOrderString = root => {
-  if (!root) return "X"
+  if (!root) return 'X'
   return root.value + getOrderString(root.left) + getOrderString(root.right)
 }
 
-/* Determines if a tree contains another tree */
+/**
+ * Determines if a tree contains another tree.
+ * @param   {TreeNode}  firstRoot
+ * @param   {TreeNode}  secondRoot
+ * @returns {boolean}
+ */
 const containsTree = (firstRoot, secondRoot) => {
   const str1 = getOrderString(firstRoot)
   const str2 = getOrderString(secondRoot)

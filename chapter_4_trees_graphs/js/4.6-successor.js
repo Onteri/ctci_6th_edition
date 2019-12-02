@@ -1,21 +1,30 @@
-const BinarySearchTree = require("./binarySearchTree")
+const BinarySearchTree = require('./binarySearchTree')
+const { TreeNode } = require('./tree')
 
-/* Returns the next in-order successive node */
+/**
+ * Returns the next in-order successive node.
+ * @param   {TreeNode}  node
+ * @returns {TreeNode}
+ */
 const nextSuccessor = node => {
-  /* If node has right child, traverse down and left */
+  /* If node has right child, traverse down and left. */
   if (node.right) return leftMostChild(node.right)
   let child = node
   let parent = child.parent
-  /* Traverse up to first parent whose left child
-   * is not original node or previous parent */
+  /* Traverse up to first parent whose left child is not original node or
+   * previous parent. */
   while (parent && parent.left != child) {
     child = parent
     parent = parent.parent
   }
-  return x
+  return parent
 }
 
-/* Traverse to most left child node */
+/**
+ * Traverse to most left child node.
+ * @param   {TreeNode}  node
+ * @returns {TreeNode}
+ */
 const leftMostChild = node => {
   while (node.left) node = node.left
   return node

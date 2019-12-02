@@ -1,9 +1,14 @@
-const { TreeNode } = require("./tree")
+const { TreeNode } = require('./tree')
 
 /* LINK TO PARENTS EXIST */
 
-/* Finds the first common ancestor of two nodes in a binary tree
- * if there are links to parents */
+/**
+ * Finds the first common ancestor of two nodes in a binary tree
+ * if there are links to parents.
+ * @param   {TreeNode}  p
+ * @param   {TreeNode}  q
+ * @returns {TreeNode}
+ */
 const firstCommonAncestor = (p, q) => {
   const delta = findDepth(p) - findDepth(q)
   p = delta > 0 ? p : q
@@ -16,7 +21,12 @@ const firstCommonAncestor = (p, q) => {
   return new_long && short ? short : null
 }
 
-/* Moves a node up by a given number of nodes */
+/**
+ * Moves a node up by a given number of nodes.
+ * @param   {TreeNode}  node
+ * @param   {number}    delta
+ * @returns {TreeNode}
+ */
 const moveUpBy = (node, delta) => {
   while (delta && node) {
     node = node.parent
@@ -25,7 +35,11 @@ const moveUpBy = (node, delta) => {
   return node
 }
 
-/* Finds the depth from a node of a binary tree */
+/**
+ * Finds the depth from a node of a binary tree.
+ * @param   {TreeNode}  node
+ * @returns {number}
+ */
 const findDepth = node => {
   depth = 0
   while (node) {
@@ -37,14 +51,25 @@ const findDepth = node => {
 
 /* LINK TO PARENTS DOES NOT EXIST */
 
-/* Finds the first common ancestor of two nodes in a binary tree
- * if there are no links to parents */
+/**
+ * Finds the first common ancestor of two nodes in a binary tree
+ * if there are links to parents.
+ * @param   {TreeNode}  p
+ * @param   {TreeNode}  q
+ * @returns {TreeNode}
+ */
 const commonAncestor = (root, p, q) => {
   if (!covers(root, p) || !covers(root, q)) return null
   return commonAncestorHelper(root, p, q)
 }
 
-/* Helper */
+/**
+ * Helper.
+ * @param   {TreeNode}  root
+ * @param   {TreeNode}  p
+ * @param   {TreeNode}  q
+ * @returns {TreeNode}
+ */
 const commonAncestorHelper = (root, p, q) => {
   if (!root || root === p || root === q) return root
   is_p_left = covers(root.left, p)
@@ -54,7 +79,12 @@ const commonAncestorHelper = (root, p, q) => {
   return commonAncestorHelper(childSide, p, q)
 }
 
-/* Determines if a node has another node in subtree */
+/**
+ * Determines if a node has another node in subtree.
+ * @param   {TreeNode}  root
+ * @param   {TreeNode}  node
+ * @returns {boolean}
+ */
 const covers = (root, node) => {
   if (!root) return false
   if (root === node) return true

@@ -1,9 +1,13 @@
 const {
   SinglyLinkedList
-} = require("../../chapter_2_linked_lists/js/singlyLinkedList")
-const { TreeNode } = require("./tree")
+} = require('../../chapter_2_linked_lists/js/singlyLinkedList')
+const { TreeNode } = require('./tree')
 
-/* Creates a linked list out of every level in a binary tree */
+/**
+ * Creates a linked list out of every level in a binary tree.
+ * @param   {TreeNode}   root
+ * @returns {SinglyLinkedList[]}
+ */
 const createLevelLinkedList = root => {
   let result = []
   let current = new SinglyLinkedList()
@@ -12,7 +16,7 @@ const createLevelLinkedList = root => {
     result.push(current)
     tmp = current.head
     current = new SinglyLinkedList()
-    /* loop through all nodes in parent */
+    /* Loop through all nodes in parent. */
     while (tmp) {
       if (tmp.value.left) current.addNode(tmp.value.left)
       if (tmp.value.right) current.addNode(tmp.value.right)
@@ -22,12 +26,16 @@ const createLevelLinkedList = root => {
   return result
 }
 
+/**
+ * Prints all elements of a singly linked list.
+ * @param {SinglyLinkedList} list
+ */
 const printList = list => {
   let curr = list.head
-  let str = ""
+  let str = ''
   while (curr) {
     str += curr.value.value
-    str += curr.next ? " -> " : ""
+    str += curr.next ? ' -> ' : ''
     curr = curr.next
   }
   console.log(str)

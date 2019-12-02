@@ -1,6 +1,11 @@
-const { BinarySearchTree } = require("./bst")
+const { BinarySearchTree } = require('./bst')
+const { TreeNode } = require('./tree')
 
-/* Finds all possible arrays that could lead to BST */
+/**
+ * Finds all possible arrays that could lead to BST.
+ * @param   {TreeNode}    node
+ * @returns {number[][]}
+ */
 const allSequences = node => {
   const result = []
 
@@ -8,15 +13,12 @@ const allSequences = node => {
     result.push([])
     return result
   }
-
   const prefix = []
   prefix.push(node.value)
-
-  /* Recurse on left and right subtrees */
+  /* Recurse on left and right subtrees. */
   const leftSeq = allSequences(node.left)
   const rightSeq = allSequences(node.right)
-
-  /* Weave together each list from the left and right sides */
+  /* Weave together each list from the left and right sides. */
   for (let left of leftSeq) {
     for (let right of rightSeq) {
       const weaved = []
@@ -27,9 +29,15 @@ const allSequences = node => {
   return result
 }
 
-/* Weave lists together in all possible ways. This algorithm
- * works by removing the head from one list, recursing, and
- * then doing the same thing with the other list. */
+/**
+ * Weave lists together in all possible ways. This algorithm works by
+ * removing the head from one list, recursing, and then doing the same
+ * thing with the other list.
+ * @param   {number[]}    first
+ * @param   {number[]}    second
+ * @param   {number[]}    results
+ * @param   {number[]}    prefix
+ */
 const weaveLists = (first, second, results, prefix) => {
   /* One list is empty. Add remainder to [a cloned] prefix and
    * store result. */
@@ -41,17 +49,17 @@ const weaveLists = (first, second, results, prefix) => {
     return
   }
 
-  /* Recurse with head of first added to the prefix. Removing the
-   * head will damage first, so we'll need to put it back where
-   * we found it afterwards. */
+  /* Recurse with head of first added to the prefix. Removing the head
+   * will damage first, so we'll need to put it back where we found it
+   * afterwards. */
   let headFirst = first.shift()
   prefix.push(headFirst)
   weaveLists(first, second, results, prefix)
   prefix.pop()
   first.unshift(headFirst)
 
-  /* Do the same thing with the second, damaging and then
-   * restoring the list. */
+  /* Do the same thing with the second, damaging and then restoring the
+   * list. */
   let headSecond = second.shift()
   prefix.push(headSecond)
   weaveLists(first, second, results, prefix)

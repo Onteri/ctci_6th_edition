@@ -1,5 +1,8 @@
 class TreeNode {
-  /* Tree Node constructor */
+  /**
+   * Tree Node constructor.
+   * @param   {number}  value
+   */
   constructor(value) {
     this.value = value
     this.left = null
@@ -7,16 +10,21 @@ class TreeNode {
     this.parent = null
   }
 
+  /**
+   * Adds a node to the left.
+   * @param   {number} value
+   */
   addLeft(value) {
-    /* Adds a node to the left */
     const new_node = new TreeNode(value)
     new_node.parent = this
     this.left = new_node
     return new_node
   }
-
+  /**
+   * Adds a node to the right.
+   * @param   {number} value
+   */
   addRight(value) {
-    /* Adds a node to the right */
     const new_node = new TreeNode(value)
     new_node.parent = this
     this.right = new_node
@@ -24,7 +32,10 @@ class TreeNode {
   }
 }
 
-/* Prints current node before child nodes */
+/**
+ * Prints current node before child nodes.
+ * @param   {TreeNode} node
+ */
 const preOrderTraversal = node => {
   if (!node) return
   console.log(node.value)
@@ -32,7 +43,10 @@ const preOrderTraversal = node => {
   preOrderTraversal(node.right)
 }
 
-/* Prints left nodes, current node, and then right nodes */
+/**
+ * Prints left nodes, current node, and then right nodes.
+ * @param   {TreeNode} node
+ */
 const inOrderTraversal = node => {
   if (!node) return
   inOrderTraversal(node.left)
@@ -40,7 +54,10 @@ const inOrderTraversal = node => {
   inOrderTraversal(node.right)
 }
 
-/* Visits child nodes before current node */
+/**
+ * Visits child nodes before current node.
+ * @param   {TreeNode} node
+ */
 const postOrderTraversal = node => {
   if (!node) return
   postOrderTraversal(node.left)

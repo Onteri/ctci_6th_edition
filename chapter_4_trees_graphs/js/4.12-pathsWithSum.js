@@ -1,11 +1,23 @@
-const { TreeNode } = require("./tree")
+const { TreeNode } = require('./tree')
 
-/* Returns the amount of paths in a binary tree that equal a target sum */
+/**
+ * Returns the amount of paths in a binary tree that equal a target sum.
+ * @param   {TreeNode}  root
+ * @param   {number}    targetSum
+ * @returns {number}
+ */
 const countPathsWithSum = (root, targetSum) => {
   return cpwsHelper(root, targetSum, 0, {})
 }
 
-/* Helper */
+/**
+ * Helper.
+ * @param   {TreeNode}  node
+ * @param   {number}    targetSum
+ * @param   {number}    runningSum
+ * @param   {Object}    pathCount
+ * @returns {number}
+ */
 const cpwsHelper = (node, targetSum, runningSum, pathCount) => {
   if (!node) return 0
   /* Count paths with sum ending at the current node */
@@ -18,7 +30,7 @@ const cpwsHelper = (node, targetSum, runningSum, pathCount) => {
     totalPaths++
   }
 
-  /* Increment pathCount, recurse, then decrement pathCount */
+  /* Increment pathCount, recurse, then decrement pathCount. */
   modifyHashTable(pathCount, runningSum, 1) // Increment pathCount
   totalPaths += cpwsHelper(node.left, targetSum, runningSum, pathCount)
   totalPaths += cpwsHelper(node.right, targetSum, runningSum, pathCount)
@@ -26,11 +38,16 @@ const cpwsHelper = (node, targetSum, runningSum, pathCount) => {
   return totalPaths
 }
 
-/* Modifies a key in a hash table */
+/**
+ * Modifies a key in a hash table
+ * @param   {Object}    hashTable
+ * @param   {string}    key
+ * @param   {number}    delta
+ */
 const modifyHashTable = (hashTable, key, delta) => {
   const newCount = (hashTable[key] || 0) + delta
   if (!newCount)
-    // Remove when zero to reduce space usage
+    /* Remove when zero to reduce space usage. */
     delete hashTable[key]
   else hashTable[key] = newCount
 }

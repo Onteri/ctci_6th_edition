@@ -1,11 +1,21 @@
-const { TreeNode } = require("./tree")
+const { TreeNode } = require('./tree')
 
-/* Validates that a binary tree is a binary search tree */
+/**
+ * Validates that a binary tree is a binary search tree.
+ * @param   {TreeNode}  node
+ * @returns {boolean}
+ */
 const validateBST = node => {
   return validateBSTHelper(node, null, null)
 }
 
-/* Helper */
+/**
+ * Helper.
+ * @param   {TreeNode}  node
+ * @param   {number}    min
+ * @param   {number}    max
+ * @returns {boolean}
+ */
 const validateBSTHelper = (node, min, max) => {
   if (!node) return true
   if ((min && node.value <= min) || (max && node.value > max)) return false

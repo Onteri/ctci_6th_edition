@@ -1,12 +1,23 @@
-const { TreeNode } = require("./tree")
+const { TreeNode } = require('./tree')
 
-/* Determines if a binary tree is balanced */
+/**
+ * Determines if a binary tree is balanced.
+ * @param   {TreeNode}  root
+ * @returns {boolean}
+ */
 const checkBalanced = root => {
   return checkHeight(root) != Number.MIN_VALUE
 }
 
 /* Calculates differences between heights of left and right nodes.
  * If difference is greater than 1, return INT_MIN */
+
+/**
+ * Calculates differences between heights of left and right nodes.
+ * If difference is greater than 1, return INT_MIN.
+ * @param   {TreeNode}  root
+ * @returns {number}
+ */
 const checkHeight = root => {
   if (!root) return -1
   let leftHeight = checkHeight(root.left)

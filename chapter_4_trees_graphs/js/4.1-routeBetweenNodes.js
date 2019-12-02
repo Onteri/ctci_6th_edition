@@ -1,6 +1,12 @@
 const { Graph } = require('./graph')
 
-/* Searches a graph to see if there is a route between two nodes */
+/**
+ * Searches a graph to see if there is a route between two nodes.
+ * @param   {Graph}   graph
+ * @param   {number}  start
+ * @param   {number}  end
+ * @returns {boolean}
+ */
 const search = (graph, start, end) => {
   if (start === end) return true
   const queue = [start]
@@ -13,9 +19,7 @@ const search = (graph, start, end) => {
         if (!visited[neighbor.value]) {
           if (neighbor === end) {
             return true
-          } else {
-            queue.push(neighbor)
-          }
+          } else queue.push(neighbor)
         }
         visited[neighbor.value] = true
       }
