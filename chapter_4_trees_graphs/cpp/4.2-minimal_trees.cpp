@@ -1,22 +1,22 @@
 #include "tree.h"
 
-/* helper */
+/** 
+ * Helper.
+ */
 TreeNode *create_minimal_bst_helper(int *arr, int start, int end)
 {
-    int mid;
-    TreeNode *t;
-
     if (start > end)
         return nullptr;
-    mid = (start + end) / 2;
-    t = new TreeNode(arr[mid]);
+    int mid = (start + end) / 2;
+    TreeNode *t = new TreeNode(arr[mid]);
     t->left = create_minimal_bst_helper(arr, start, mid - 1);
     t->right = create_minimal_bst_helper(arr, mid + 1, end);
     return t;
 }
 
-/* Creates a binary search tree with minimal height 
- * out of sorted array */
+/**
+ * Creates a binary search tree with minimal height out of sorted array.
+ */
 TreeNode *create_minimal_bst(int *arr, int size)
 {
     return create_minimal_bst_helper(arr, 0, size - 1);
@@ -38,7 +38,6 @@ int main()
       1   6   9    19
                    /
                  21
-
     */
     return 0;
 }

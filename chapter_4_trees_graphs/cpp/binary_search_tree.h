@@ -19,19 +19,21 @@ private:
     void add_node(TreeNode *node, TreeNode *new_node);
 };
 
-/* Binary Search Tree constructor */
+/**
+ * Binary Search Tree constructor.
+ */
 BinarySearchTree::BinarySearchTree()
 {
     this->root = nullptr;
     this->size = 0;
 }
 
-/* Inserts a node into a Binary Search Tree */
+/**
+ * Inserts a node into a Binary Search Tree.
+ */
 TreeNode *BinarySearchTree::insert(int value)
 {
-    TreeNode *n;
-
-    n = new TreeNode(value);
+    TreeNode *n = new TreeNode(value);
     if (!this->root)
         this->root = n;
     else
@@ -40,33 +42,35 @@ TreeNode *BinarySearchTree::insert(int value)
     return n;
 }
 
-/* Inserts a node onto another node */
+/**
+ * Inserts a node onto another node.
+ */
 void BinarySearchTree::add_node(TreeNode *node, TreeNode *new_node)
 {
     if (node->value < new_node->value)
     {
-        /* insert in right side */
+        /* Insert in right side. */
         if (!node->right)
         {
-            /* if right node does not exist, insert */
+            /* If right node does not exist, insert. */
             node->right = new_node;
             new_node->parent = node;
         }
         else
-            /* recurse */
+            /* Recurse. */
             this->add_node(node->right, new_node);
     }
     else
     {
-        /* insert in left side */
+        /* Insert in left side. */
         if (!node->left)
         {
-            /* if left node does not exist, insert */
+            /* If left node does not exist, insert. */
             node->left = new_node;
             new_node->parent = node;
         }
         else
-            /* recurse */
+            /* Recurse. */
             this->add_node(node->left, new_node);
     }
 }

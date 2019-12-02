@@ -13,7 +13,9 @@ public:
     Node(TreeNode *value);
 };
 
-/* Node constructor */
+/**
+ * Node constructor.
+ */
 Node::Node(TreeNode *value)
 {
     this->value = value;
@@ -31,21 +33,23 @@ public:
     void print_list();
 };
 
-/* Singly linked list constructor */
+/**
+ * Singly linked list constructor.
+ */
 LinkedList::LinkedList()
 {
     this->head = NULL;
     this->length = 0;
 }
 
-/* Adds a new node to the head of a singly linked list */
+/**
+ * Adds a new node to the head of a singly linked list.
+ */
 Node *LinkedList::add_node(TreeNode *node)
 {
     Node *new_node = new Node(node);
     if (!this->head)
-    {
         this->head = new_node;
-    }
     else
     {
         new_node->next = this->head;
@@ -55,11 +59,12 @@ Node *LinkedList::add_node(TreeNode *node)
     return new_node;
 }
 
-/* Prints all elements of a singly linked list */
+/**
+ * Prints all elements of a singly linked list.
+ */
 void LinkedList::print_list()
 {
-    Node *curr;
-    curr = this->head;
+    Node *curr = this->head;
     while (curr->next)
     {
         cout << curr->value->value << " -> ";

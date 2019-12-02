@@ -1,6 +1,8 @@
 #include "tree.h"
 
-/* Helper */
+/**
+ * Helper.
+ */
 bool validate_bst_helper(TreeNode *root, int *min, int *max)
 {
     if (!root)
@@ -13,7 +15,9 @@ bool validate_bst_helper(TreeNode *root, int *min, int *max)
     return true;
 }
 
-/* Validates that a binary tree is a binary search tree */
+/**
+ * Validates that a binary tree is a binary search tree.
+ */
 bool validate_bst(TreeNode *root)
 {
     return validate_bst_helper(root, nullptr, nullptr);
@@ -27,7 +31,7 @@ int main()
     TreeNode *t4 = t2->add_left(5);
     TreeNode *t5 = t2->add_right(15);
     TreeNode *t6 = t3->add_left(25);
-    // TreeNode *t7 = t3->add_right(27); // 0
+    /* TreeNode *t7 = t3->add_right(27); 0 */
     TreeNode *t7 = t3->add_right(50);
 
     cout << validate_bst(t1) << endl; // 1

@@ -2,21 +2,21 @@
 #include "binary_search_tree.h"
 #include "singly_linked_list.h"
 
-/* Creates a linked list out of every level in a binary tree */
+/**
+ * Creates a linked list out of every level in a binary tree.
+ */
 vector<LinkedList *> create_level_linked_list(TreeNode *root)
 {
     vector<LinkedList *> res;
-    LinkedList *curr, *next;
-    Node *tmp;
 
-    curr = new LinkedList();
+    LinkedList *curr = new LinkedList();
     curr->add_node(root);
     while (curr->length)
     {
-        tmp = curr->head;
+        Node *tmp = curr->head;
         res.push_back(curr);
-        next = new LinkedList();
-        /* loop through all nodes in parent */
+        LinkedList *next = new LinkedList();
+        /* Loop through all nodes in parent. */
         while (tmp)
         {
             if (tmp->value->left)

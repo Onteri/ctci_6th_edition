@@ -2,7 +2,9 @@
 
 /* LINK TO PARENTS DOES NOT EXIST */
 
-/* Determines if a node has another node in subtree */
+/**
+ * Determines if a node has another node in subtree. 
+ */
 bool covers(TreeNode *root, TreeNode *node)
 {
     if (!root)
@@ -12,24 +14,25 @@ bool covers(TreeNode *root, TreeNode *node)
     return covers(root->left, node) || covers(root->right, node);
 }
 
-/* Helper */
+/**
+ * Helper.
+ */
 TreeNode *common_ancestor_helper(TreeNode *root, TreeNode *p, TreeNode *q)
 {
-    bool is_p_left, is_q_left;
-    TreeNode *child_side;
-
     if (!root || root == p || root == q)
         return root;
-    is_p_left = covers(root->left, p);
-    is_q_left = covers(root->left, q);
+    bool is_p_left = covers(root->left, p);
+    bool is_q_left = covers(root->left, q);
     if (is_p_left != is_q_left)
         return root;
-    child_side = is_p_left ? root->left : root->right;
+    TreeNode *child_side = is_p_left ? root->left : root->right;
     return common_ancestor_helper(child_side, p, q);
 }
 
-/* Finds the first common ancestor of two nodes in a binary tree
- * if there are no links to parents */
+/**
+ * Finds the first common ancestor of two nodes in a binary tree
+ * if there are no links to parents.
+ */
 TreeNode *common_ancestor(TreeNode *root, TreeNode *p, TreeNode *q)
 {
     if (!covers(root, p) || !covers(root, q))
@@ -39,7 +42,9 @@ TreeNode *common_ancestor(TreeNode *root, TreeNode *p, TreeNode *q)
 
 /* LINK TO PARENTS EXIST */
 
-/* Finds the depth from a node of a binary tree */
+/**
+ * Finds the depth from a node of a binary tree. 
+ */
 unsigned int find_depth(TreeNode *node)
 {
     unsigned int depth = 0;
@@ -52,7 +57,9 @@ unsigned int find_depth(TreeNode *node)
     return depth;
 }
 
-/* Moves a node up by a given number of nodes */
+/**
+ * Moves a node up by a given number of nodes.
+ */
 TreeNode *move_up_by(TreeNode *node, unsigned int delta)
 {
     TreeNode *curr = node;
@@ -65,16 +72,15 @@ TreeNode *move_up_by(TreeNode *node, unsigned int delta)
     return curr;
 }
 
-/* Finds the first common ancestor of two nodes in a binary tree
- * if there are links to parents */
+/**
+ * Finds the first common ancestor of two nodes in a binary tree
+ * if there are links to parents.
+ */
 TreeNode *find_common_ancestor(TreeNode *p, TreeNode *q)
 {
-    int delta;
-    TreeNode *first, *second;
-
-    delta = find_depth(p) - find_depth(q);
-    first = delta > 0 ? p : q;
-    second = delta > 0 ? q : p;
+    int delta = find_depth(p) - find_depth(q);
+    TreeNode *first = delta > 0 ? p : q;
+    TreeNode *second = delta > 0 ? q : p;
     first = move_up_by(first, abs(delta));
     while (first && second && first != second)
     {
@@ -86,8 +92,6 @@ TreeNode *find_common_ancestor(TreeNode *p, TreeNode *q)
 
 int main()
 {
-    TreeNode *solution;
-
     TreeNode *root = new TreeNode(1);
     TreeNode *n2 = root->add_left(2);
     TreeNode *n3 = root->add_right(3);
@@ -102,7 +106,7 @@ int main()
 
     TreeNode *n15 = new TreeNode(15);
 
-    solution = find_common_ancestor(n8, n11);
+    TreeNode *solution = find_common_ancestor(n8, n11);
     cout << solution->value << endl; // 2
     solution = find_common_ancestor(n8, n5);
     cout << solution->value << endl; // 2

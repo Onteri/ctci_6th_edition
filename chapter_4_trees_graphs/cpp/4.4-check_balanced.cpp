@@ -1,27 +1,29 @@
 #include "tree.h"
 #include <climits>
 
-/* Calculates differences between heights of left and right nodes.
- * If difference is greater than 1, return INT_MIN */
+/**
+ * Calculates differences between heights of left and right nodes.
+ * If difference is greater than 1, return INT_MIN.
+ */
 int check_height(TreeNode *root)
 {
-    int left_height, right_height, difference;
-
     if (!root)
         return -1;
-    left_height = check_height(root->left);
+    int left_height = check_height(root->left);
     if (left_height == INT_MIN)
         return INT_MIN;
-    right_height = check_height(root->right);
+    int right_height = check_height(root->right);
     if (right_height == INT_MIN)
         return INT_MIN;
-    difference = left_height - right_height;
+    int difference = left_height - right_height;
     if (abs(difference) > 1)
         return INT_MIN;
     return max(left_height, right_height) + 1;
 }
 
-/* Determines if a binary tree is balanced */
+/**
+ * Determines if a binary tree is balanced.
+ */
 bool check_balanced(TreeNode *root)
 {
     return check_height(root) != INT_MIN;

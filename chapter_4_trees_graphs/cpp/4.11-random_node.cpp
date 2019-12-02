@@ -16,7 +16,9 @@ public:
     TreeNode *get_ith_index(int index);
 };
 
-/* TreeNode constructor with size attribute */
+/**
+ * TreeNode constructor with size attribute.
+ */
 TreeNode::TreeNode(int value)
 {
     this->left = nullptr;
@@ -25,7 +27,9 @@ TreeNode::TreeNode(int value)
     this->value = value;
 }
 
-/* Inserts a node into correct place in Binary Search Tree */
+/**
+ * Inserts a node into correct place in Binary Search Tree.
+ */
 void TreeNode::insert_in_order(int value)
 {
     if (value < this->value)
@@ -45,7 +49,9 @@ void TreeNode::insert_in_order(int value)
     this->size++;
 }
 
-/* Retrieves the node at guven index */
+/**
+ * Retrieves the node at guven index.
+ */
 TreeNode *TreeNode::get_ith_index(int index)
 {
     int left_size;
@@ -71,14 +77,18 @@ private:
     int size;
 };
 
-/* Binary Search Tree constructor */
+/**
+ * Binary Search Tree constructor.
+ */
 BinarySearchTree::BinarySearchTree()
 {
     this->root = nullptr;
     this->size = 0;
 }
 
-/* Inserts a node into correct place in Binary Search Tree */
+/**
+ * Inserts a node into correct place in Binary Search Tree.
+ */
 void BinarySearchTree::insert_in_order(int value)
 {
     if (!this->root)
@@ -88,12 +98,12 @@ void BinarySearchTree::insert_in_order(int value)
     this->size++;
 }
 
-/* Retrieves a random node in Binary Search Tree */
+/**
+ * Retrieves a random node in Binary Search Tree. 
+ */
 TreeNode *BinarySearchTree::get_random_node()
 {
-    int index;
-
-    index = rand() % this->size;
+    int index = rand() % this->size;
     return this->root->get_ith_index(index);
 }
 
