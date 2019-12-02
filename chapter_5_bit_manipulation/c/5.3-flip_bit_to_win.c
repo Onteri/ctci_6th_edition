@@ -2,8 +2,9 @@
 
 #define MAX(x, y) ((x) > (y) ? (x) : (y))
 
-/* Calculates number of consecutive 1s if user if able to flip
- * 1 bit to 1 */
+/**
+ * Calculates number of consecutive 1s if user if able to flip 1 bit to 1.
+ */
 int flip_bits(int n)
 {
     int max_len, curr_len, prev_len;
@@ -17,7 +18,7 @@ int flip_bits(int n)
             curr_len++;
         else
         {
-            /* Update to 0 (if next bit is 0) or curr_len */
+            /* Update to 0 (if next bit is 0) or curr_len. */
             prev_len = n & 2 ? curr_len : 0;
             curr_len = 0;
         }

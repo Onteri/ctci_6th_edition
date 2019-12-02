@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Prints the binary representation of a number between 0 and 1.
- * If number is over 32 digits long, throw error. */
+/**
+ * Prints the binary representation of a number between 0 and 1. If number
+ * is over 32 digits long, throw error.
+ */
 char *print_binary(double num)
 {
     char *s;
@@ -14,7 +16,7 @@ char *print_binary(double num)
         exit(1);
     while (num)
     {
-        /* Setting a limit on length: 32 characters */
+        /* Setting a limit on length: 32 characters. */
         if (strlen(s) >= 32)
         {
             free(s);

@@ -1,19 +1,21 @@
 #include "helper.h"
 
-/* Insert m into n at bits i through j */
+/**
+ * Insert m into n at bits i through j.
+ */
 int insert_bits(int n, int m, int i, int j)
 {
     int all_ones, left, right, mask, n_cleared, m_shifted;
 
-    /* Create a mask to clear bits i through j in n. For simplicity,
-   * we'll use 16 bits for the example */
+    /* Create a mask to clear bits i through j in n. For simplicity, we'll use
+     * 16 bits for the example. */
     all_ones = ~0;
-    /* 1s before position j, then 0s */
+    /* 1s before position j, then 0s. */
     left = all_ones << (j + 1);
-    /* 1s after position i */
+    /* 1s after position i. */
     right = (1 << i) - 1;
     mask = left | right;
-    /* Clear bits j through i then put m in there */
+    /* Clear bits j through i then put m in there. */
     n_cleared = mask & n;
     m_shifted = m << i;
     return n_cleared | m_shifted;

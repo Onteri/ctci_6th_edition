@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-/* Determines if a number is a power of two */
+/**
+ * Determines if a number is a power of two.
+ */
 int is_power_of_two(unsigned int n)
 {
     return n && !(n & (n - 1));

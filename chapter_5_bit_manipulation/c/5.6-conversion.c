@@ -1,7 +1,9 @@
 #include "helper.h"
 
-/* Determines the number of bits that need to be flipped in order 
- * to convert a to b */
+/**
+ * Determines the number of bits that need to be flipped in order to convert
+ * a to b.
+ */
 int bit_swap_required(int a, int b)
 {
     int c, count = 0;
