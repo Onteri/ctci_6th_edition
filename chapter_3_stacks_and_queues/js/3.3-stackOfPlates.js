@@ -1,20 +1,29 @@
 const { Stack } = require("./stack")
 
 class StackWithCapacity extends Stack {
-  /* Stack with capacity constructor */
+  /**
+   * Stack with capacity constructor.
+   * @param   {number}  [capacity=5]
+   */
   constructor(capacity = 5) {
     super()
     this.capacity = capacity
   }
 
-  /* Pushes an element to the top of the stack */
+  /**
+   * Pushes an element to the top of the stack.
+   * @param   {number}  value
+   */
   push(value) {
     if (this.isFull()) throw new Error("stack is full")
     this.stack.push(value)
     this.length++
   }
 
-  /* Determines if a stack with capacity is full */
+  /**
+   * Determines if a stack with capacity is full.
+   * @returns {boolean}
+   */
   isFull() {
     return this.length === this.capacity
   }
@@ -26,27 +35,32 @@ swc.push(1)
 swc.push(1)
 swc.push(1)
 swc.push(1)
-// swc.push(1) // error
+/* swc.push(1) error */
 console.log(swc)
 /*
 StackWithCapacity { stack: [ 1, 1, 1, 1, 1 ], length: 5, capacity: 5 }
 */
 
 class SetOfStacks {
-  /* Set of stacks constructor */
+  /**
+   * Set of stacks constructor.
+   */
   constructor() {
     this.stacks = []
     this.stacksLength = 0
   }
 
-  /* Pushes an element to the top of the stack */
+  /**
+   * Pushes an element to the top of the stack.
+   * @param   {number}  value
+   */
   push(value) {
     const last = this.getLastStack()
     if (last != null && !last.isFull()) {
-      /* add to last stack */
+      /* Add to last stack. */
       last.push(value)
     } else {
-      /* create new stack */
+      /* Create new stack. */
       const newStack = new StackWithCapacity()
       newStack.push(value)
       this.stacks.push(newStack)
@@ -54,12 +68,15 @@ class SetOfStacks {
     }
   }
 
-  /* Pops an element off the top of the stack */
+  /**
+   * Pops an element off the top of the stack.
+   * @returns  {number}
+   */
   pop() {
     const last = this.getLastStack()
     if (last === null) throw new Error("empty stack of stacks")
     const value = last.pop()
-    /* If stack is empty, remove it from stacks */
+    /* If stack is empty, remove it from stacks. */
     if (last.isEmpty()) {
       this.stacks.pop()
       this.stacksLength--
@@ -67,7 +84,10 @@ class SetOfStacks {
     return value
   }
 
-  /* Returns the last stack in set of stacks */
+  /**
+   * Returns the last stack in set of stacks.
+   * @returns {StackWithCapacity}
+   */
   getLastStack() {
     if (this.stacksLength === 0) return null
     return this.stacks[this.stacksLength - 1]

@@ -1,29 +1,43 @@
-/* first in, first out */
+/* First in, first out. */
 class Queue {
-  /* Queue constructor */
+  /**
+   * Queue constructor.
+   */
   constructor() {
     this.queue = []
     this.length = 0
   }
 
-  /* Adds an element to the front of a queue */
+  /**
+   * Adds an element to the front of a queue.
+   * @param   {number}  value
+   */
   enqueue(value) {
     this.queue.push(value)
     this.length++
   }
 
-  /* Pops an element off the front of a queue */
+  /**
+   * Pops an element off the front of a queue.
+   * @returns {number}
+   */
   dequeue() {
     this.length--
     return this.queue.shift()
   }
 
-  /* Determines if a queue is empty */
+  /**
+   * Determines if a queue is empty.
+   * @returns {boolean}
+   */
   isEmpty() {
     return this.length == 0
   }
 
-  /* Peeks at the element at the front of the queue */
+  /**
+   * Peeks at the element at the front of the queue.
+   * @returns {number}
+   */
   peek() {
     return this.queue[0]
   }

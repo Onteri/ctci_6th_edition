@@ -1,19 +1,21 @@
 const { Stack } = require("./stack")
 
 class Stack_3_5 extends Stack {
-  /* Sorts a stack using a secondary stack as a buffer
-   * O(n**2) time complexity and O(n) space complexity */
+  /**
+   * Sorts a stack using a secondary stack as a buffer.
+   * O(n**2) time complexity and O(n) space complexity.
+   */
   sort() {
     const buffer = new Stack()
     while (!this.isEmpty()) {
       const tmp = this.pop()
       while (!buffer.isEmpty() && buffer.peek() < tmp) {
-        /* If peeked value in buffer is less than temp, place back in stack */
+        /* If peeked value in buffer is less than temp, place back in stack. */
         this.push(buffer.pop())
       }
       buffer.push(tmp)
     }
-    /* Place everything in buffer back into stack */
+    /* Place everything in buffer back into stack. */
     while (!buffer.isEmpty()) this.push(buffer.pop())
   }
 }

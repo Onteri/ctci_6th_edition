@@ -1,14 +1,21 @@
 class FixedMultiStack {
-  /* Fixed multi-stack constructor */
+  /**
+   * Fixed multi-stack constructor.
+   * @param   {number}  stackSize
+   */
   constructor(stackSize) {
     this.numberOfStacks = 3
     this.stackCapacity = stackSize
     this.values = Array(stackSize * 3).fill(0)
-    /* Array of sizes of sub-arrays */
+    /* Array of sizes of sub-arrays. */
     this.sizes = Array(3).fill(0)
   }
 
-  /* Pushes an element into a given stack */
+  /**
+   * Pushes an element into a given stack.
+   * @param   {number}  stackNum
+   * @param   {number}  value
+   */
   push(stackNum, value) {
     if (this.isFull(stackNum)) {
       throw new Error("stack is full")
@@ -18,7 +25,11 @@ class FixedMultiStack {
     this.values[index] = value
   }
 
-  /* Pops the top element off a fixed multi-stack */
+  /**
+   * Pops the top element off a fixed multi-stack.
+   * @param   {number}  stackNum
+   * @returns {number}
+   */
   pop(stackNum) {
     if (this.isEmpty(stackNum)) {
       throw new Error("stack is empty")
@@ -30,17 +41,29 @@ class FixedMultiStack {
     return value
   }
 
-  /* Determines if a fixed multi-stack is empty or not */
+  /**
+   * Determines if a fixed multi-stack is empty or not.
+   * @param   {number}  stackNum
+   * @returns {boolean}
+   */
   isEmpty(stackNum) {
     return this.sizes[stackNum] == 0
   }
 
-  /* Determines if a fixed multi-stack is full or not */
+  /**
+   * Determines if a fixed multi-stack is full or not.
+   * @param   {number}  stackNum
+   * @returns {boolean}
+   */
   isFull(stackNum) {
     return this.sizes[stackNum] == this.stackCapacity
   }
 
-  /* Returns the top index of a given stack */
+  /**
+   * Returns the top index of a given stack.
+   * @param   {number}  stackNum
+   * @returns {number}
+   */
   indexOfTop(stackNum) {
     const offset = stackNum * this.stackCapacity
     const size = this.sizes[stackNum]
@@ -65,10 +88,10 @@ fms.push(0, 8)
 fms.push(0, 4)
 fms.push(0, 2)
 fms.push(0, 1)
-// fms.push(0, -1) // error
+/* fms.push(0, -1) // error */
 fms.push(1, 99)
 fms.pop(1)
-// fms.pop(1) // error
+/* fms.pop(1) // error */
 console.log(fms)
 /*
 FixedMultiStack {

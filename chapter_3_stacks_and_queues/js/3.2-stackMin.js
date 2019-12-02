@@ -1,28 +1,39 @@
 const { Stack } = require("./stack")
 
 class StackWithMin extends Stack {
-  /* Stack with minimum constructor */
+  /**
+   * Stack with minimum constructor.
+   */
   constructor() {
     super()
-    /* new stack with minimums */
+    /* New stack with minimums. */
     this.s2 = new Stack()
   }
 
-  /* Pushes an element to the top of the stack */
+  /**
+   * Pushes an element to the top of the stack.
+   * @param   {number}  value
+   */
   push(value) {
     if (value < this.min()) this.s2.push(value)
     super.push(value)
   }
 
-  /* Pops an element off the top of the stack */
+  /**
+   * Pops an element off the top of the stack.
+   * @returns {number}
+   */
   pop() {
     const value = super.pop()
-    /* If min is getting popped, remove from second list also */
+    /* If min is getting popped, remove from second list also. */
     if (value == this.min()) this.s2.pop()
     return value
   }
 
-  /* Return the minimum value of the stack */
+  /**
+   * Return the minimum value of the stack.
+   * @returns {number}
+   */
   min() {
     return this.s2.isEmpty() ? Number.MAX_SAFE_INTEGER : this.s2.peek()
   }

@@ -1,24 +1,34 @@
 const { Stack } = require("./stack")
 
-/* first in, first out*/
+/* First in, first out. */
 class MyQueue {
-  /* Queue constructor */
+  /**
+   * Queue constructor.
+   */
   constructor() {
     this.newest = new Stack()
     this.oldest = new Stack()
   }
 
-  /* Returns the size of a queue */
+  /**
+   * Returns the size of a queue.
+   * @returns {number}
+   */
   size() {
     return this.newest.length + this.oldest.length
   }
 
-  /* Adds an element to the front of a queue */
+  /**
+   * Adds an element to the front of a queue.
+   * @param   {number}  value
+   */
   enqueue(value) {
     this.newest.push(value)
   }
 
-  /* Shift all elements from oldest stack to newest stack */
+  /**
+   * Shift all elements from oldest stack to newest stack.
+   */
   shiftStacks() {
     if (this.oldest.isEmpty()) {
       while (!this.newest.isEmpty()) {
@@ -27,13 +37,19 @@ class MyQueue {
     }
   }
 
-  /* Pops an element off the front of a queue */
+  /**
+   * Pops an element off the front of a queue.
+   * @returns {number}
+   */
   dequeue() {
     this.shiftStacks()
     return this.oldest.pop()
   }
 
-  /* Peeks at the element at the front of the queue */
+  /**
+   * Peeks at the element at the front of the queue.
+   * @returns {number}
+   */
   peek() {
     this.shiftStacks()
     return this.oldest.peek()
