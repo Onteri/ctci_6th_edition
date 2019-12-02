@@ -1,4 +1,8 @@
-/* Determines if a number is a power of two */
+/**
+ * Determines if a number is a power of two.
+ * @param   {number}  n
+ * @returns {boolean}
+ */
 const isPowerOfTwo = n => {
   return n && !(n & (n - 1))
 }

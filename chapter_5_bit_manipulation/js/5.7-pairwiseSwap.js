@@ -1,4 +1,8 @@
-/* Swap odd and even bits with as few instructions as possible */
+/**
+ * Swap odd and even bits with as few instructions as possible.
+ * @param   {number}  n
+ * @returns {number}
+ */
 const swap_odd_even_bits = n => {
   /* 0xaaaaaaaa = 10101010101010101010101010101010 */
   /* 0x55555555 = 01010101010101010101010101010101 */

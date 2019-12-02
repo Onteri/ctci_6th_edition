@@ -1,5 +1,10 @@
-/* Determines the number of bits that need to be flipped in order
- * to convert a to b */
+/**
+ * Determines the number of bits that need to be flipped in order to convert
+ * a to b.
+ * @param   {number}  a
+ * @param   {number}  b
+ * @returns {number}
+ */
 const bit_swap_required = (a, b) => {
   let count = 0
   /* c & (c -1) clears the least significant bit.
