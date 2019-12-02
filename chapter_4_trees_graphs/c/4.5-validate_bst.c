@@ -1,7 +1,9 @@
 #include "tree.h"
 #include "binary_search_tree.h"
 
-/* Helper */
+/**
+ * Helper.
+ */
 int validate_bst_helper(tree_node *node, int *min, int *max)
 {
     if (!node)
@@ -14,7 +16,9 @@ int validate_bst_helper(tree_node *node, int *min, int *max)
     return 1;
 }
 
-/* Validates that a binary tree is a binary search tree */
+/**
+ * Validates that a binary tree is a binary search tree. 
+ */
 int validate_bst(tree_node *root)
 {
     return validate_bst_helper(root, NULL, NULL);

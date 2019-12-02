@@ -10,7 +10,9 @@ typedef struct tree_node
     struct tree_node *right;
 } tree_node;
 
-/* Tree Node constructor */
+/**
+ * Tree Node constructor
+ */
 tree_node *create_node(int value)
 {
     tree_node *new_node;
@@ -23,7 +25,9 @@ tree_node *create_node(int value)
     return new_node;
 }
 
-/* Inserts a node into correct place in Binary Search Tree */
+/**
+ * Inserts a node into correct place in Binary Search Tree.
+ */
 void insert_in_order(tree_node *root, int value)
 {
     if (value < root->value)
@@ -43,7 +47,9 @@ void insert_in_order(tree_node *root, int value)
     root->size++;
 }
 
-/* Retrieves a random node in Binary Search Tree */
+/**
+ * Retrieves a random node in Binary Search Tree. 
+ */
 tree_node *get_random_node(tree_node *root)
 {
     int left_side, random;

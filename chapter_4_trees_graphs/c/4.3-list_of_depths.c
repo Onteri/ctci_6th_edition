@@ -2,7 +2,9 @@
 #include "binary_search_tree.h"
 #include "singly_linked_list.h"
 
-/* Creates a linked list out of every level in a binary tree */
+/**
+ * Creates a linked list out of every level in a binary tree.
+ */
 sll_node **create_level_linked_list(tree_node *root, int height)
 {
     sll_node **arr = malloc(sizeof(sll_node *) * height);
@@ -16,7 +18,7 @@ sll_node **create_level_linked_list(tree_node *root, int height)
         i++;
         tmp = head;
         head = NULL;
-        /* loop through all nodes in parent */
+        /* Loop through all nodes in parent. */
         while (tmp)
         {
             if (tmp->n->left)
@@ -44,12 +46,10 @@ int main(void)
     arr = create_level_linked_list(root, height);
     for (i = 0; i < height; i++)
         print_list(arr[i]);
-
     /* 
     20
     30 -> 10
     15 -> 5 -> 40 -> 25
     */
-
     return 0;
 }

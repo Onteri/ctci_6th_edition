@@ -2,8 +2,10 @@
 #include "binary_search_tree.h"
 #include "limits.h"
 
-/* Calculates differences between heights of left and right nodes.
- * If difference is greater than 1, return INT_MIN */
+/**
+ * Calculates differences between heights of left and right nodes.
+ * If difference is greater than 1, return INT_MIN.
+ */
 int check_height(tree_node *root)
 {
     int left_height, right_height, difference;
@@ -22,7 +24,9 @@ int check_height(tree_node *root)
     return MAX(left_height, right_height) + 1;
 }
 
-/* Determines if a binary tree is balanced */
+/**
+ * Determines if a binary tree is balanced. 
+ */
 int check_balanced(tree_node *root)
 {
     return check_height(root) != INT_MIN;

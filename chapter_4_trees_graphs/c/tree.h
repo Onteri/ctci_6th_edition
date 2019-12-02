@@ -14,7 +14,9 @@ typedef struct tree_node
     struct tree_node *parent;
 } tree_node;
 
-/* Tree Node constructor */
+/**
+ * Tree Node constructor.
+ */
 tree_node *create_node(int value)
 {
     tree_node *new_node;
@@ -27,7 +29,9 @@ tree_node *create_node(int value)
     return new_node;
 }
 
-/* Adds a node to the left */
+/**
+ * Adds a node to the left.
+ */
 tree_node *add_left(tree_node *root, int value)
 {
     tree_node *new_node;
@@ -38,7 +42,9 @@ tree_node *add_left(tree_node *root, int value)
     return new_node;
 }
 
-/* Adds a node to the right */
+/**
+ * Adds a node to the right.
+ */
 tree_node *add_right(tree_node *root, int value)
 {
     tree_node *new_node;
@@ -49,6 +55,9 @@ tree_node *add_right(tree_node *root, int value)
     return new_node;
 }
 
+/**
+ * Returns the height of the tree from the root.
+ */
 int find_height(tree_node *root)
 {
     int left, right;
@@ -60,7 +69,9 @@ int find_height(tree_node *root)
     return MAX(left, right) + 1;
 }
 
-/* Prints current node before child nodes */
+/**
+ * Prints current node before child nodes.
+ */
 void pre_order_traversal(tree_node *root)
 {
     if (!root)
