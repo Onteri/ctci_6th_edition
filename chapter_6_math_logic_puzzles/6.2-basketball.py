@@ -17,7 +17,8 @@ p > 3p**2 - 2p**3
 1 > 3p - 2p**2
 2p**2 - 3p + 1 > 0
 (2p - 1)(p - 1) > 0
-Both terms must be positive or both must be negative. But we know p < 1 so p - 1 < 0.
+Both terms must be positive or both must be negative. But we know p < 1 so
+p - 1 < 0.
 This means both terms must be negative.
 2p - 1 < 0
 2p < 1
