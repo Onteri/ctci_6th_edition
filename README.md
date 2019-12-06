@@ -18,7 +18,7 @@
 | [Chapter 12](./)                             | Java                               |
 | [Chapter 13](./)                             | C++                                |
 | [Chapter 14](./chapter_14_databases)         | Databases                          |
-| [Chapter 5](./chapter_15_threads_locks)      | Threads and                        |
+| [Chapter 15](./chapter_15_threads_locks)     | Threads and Locks                  |
 
 ## Author
 
