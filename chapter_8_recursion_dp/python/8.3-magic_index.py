@@ -24,7 +24,8 @@ def mfh(arr: List, start: int, end: int) -> int:
 
 def magic_fast(arr: List) -> int:
     """
-    Finds the magic index where index == val at index.
+    Finds the magic index where index == val at index. Values do NOT have to
+    be distinct.
     """
     return mfh(arr, 0, len(arr) - 1)
 
