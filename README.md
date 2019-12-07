@@ -1,7 +1,6 @@
 # Cracking the Coding Interview 6th Edition
 
-- This repository contains my solutions for the problems in this book written in Javascript, Python, C++ and C.
-- Per Gayle's request, the files only contain code and not the actual questions. Please support her by purchasing the book!
+- This repository contains my solutions for this book written in Javascript, Python, C++ and C.
 
 | Chapter                                      | Description                        |
 | :------------------------------------------- | :--------------------------------- |
@@ -19,7 +18,7 @@
 | [Chapter 12](./)                             | Java                               |
 | [Chapter 13](./)                             | C++                                |
 | [Chapter 14](./chapter_14_databases)         | Databases                          |
-| [Chapter 5](./chapter_15_threads_locks)      | Threads and                        |
+| [Chapter 15](./chapter_15_threads_locks)     | Threads and Locks                  |
 
 ## Author
 
