@@ -1,18 +1,15 @@
 from typing import List
 
-arr = [1, 2, 3, 4, 5]
 
-
-def get_subsets(my_set: List, index: int):
+def get_subsets(arr: List, index: int):
     """
     Returns all subsets of a set.
     """
-    if len(my_set) == index:  # base case, add empty set
-        all_subsets = []
-        all_subsets.append([])
+    if len(arr) == index:  # Base case, add empty set.
+        all_subsets = [[]]
     else:
-        all_subsets = get_subsets(my_set, index + 1)
-        item = my_set[index]
+        all_subsets = get_subsets(arr, index + 1)
+        item = arr[index]
         more_subsets = []
         for subset in all_subsets:
             new_subset = []
@@ -21,6 +18,9 @@ def get_subsets(my_set: List, index: int):
             more_subsets.append(new_subset)
         all_subsets.extend(more_subsets)
     return all_subsets
+
+
+arr = [1, 2, 3, 4, 5]
 
 
 for sub in get_subsets(arr, 0):
