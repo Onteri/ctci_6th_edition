@@ -18,7 +18,8 @@ def memoize(func):
 
 def count_ways(n: int) -> int:
     """
-    Count the possible ways a child can run up the stairs if they can take either 1, 2, or 3 steps at a time.
+    Count the possible ways a child can run up the stairs if they can take
+    either 1, 2, or 3 steps at a time.
     O(3**n) solution.
     """
     if n < 0:
@@ -31,14 +32,17 @@ def count_ways(n: int) -> int:
 @memoize
 def count_ways_memo(n: int) -> int:
     """
-    Count the possible ways a child can run up the stairs if they can take either 1, 2, or 3 steps at a time.
+    Count the possible ways a child can run up the stairs if they can take
+    either 1, 2, or 3 steps at a time.
     O(n) solution
     """
     if n < 0:
         return 0
     if n == 0:
         return 1
-    return count_ways_memo(n - 1) + count_ways_memo(n - 2) + count_ways_memo(n - 3)
+    return (count_ways_memo(n - 1) +
+            count_ways_memo(n - 2) +
+            count_ways_memo(n - 3))
 
 
 ex = 25
