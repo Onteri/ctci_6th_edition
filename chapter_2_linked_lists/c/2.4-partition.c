@@ -6,9 +6,9 @@
  * the right.
  * This solution is unstable, but performs at O(n) time complexity.
  */
-void partition(node **head, int partition)
+void partition(sll_node **head, int partition)
 {
-    node *start, *end, *curr, *next;
+    sll_node *start, *end, *curr, *next;
 
     start = end = curr = *head;
     while (curr)
@@ -32,7 +32,7 @@ void partition(node **head, int partition)
 
 int main()
 {
-    node *head = NULL;
+    sll_node *head = NULL;
     int arr[] = {1, 100, 2, 4, 102, 104, 10, 8};
     int i, size = sizeof(arr) / sizeof(int);
 

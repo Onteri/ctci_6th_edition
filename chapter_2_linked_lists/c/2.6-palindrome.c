@@ -4,10 +4,10 @@
  * Determines if a linked list is a palindrome.
  * O(n) time and space complexity.
  */
-int is_palindrome(node **head)
+int is_palindrome(sll_node **head)
 {
-    node *slow = *head, *fast = *head, *prev = *head;
-    node *second = NULL, *mid = NULL;
+    sll_node *slow = *head, *fast = *head, *prev = *head;
+    sll_node *second = NULL, *mid = NULL;
     int res = 0;
 
     if (!fast || !fast->next)
@@ -41,7 +41,7 @@ int is_palindrome(node **head)
 
 int main()
 {
-    node *head = NULL;
+    sll_node *head = NULL;
     int arr[] = {1, 2, 4, 8, 4, 2, 1};
     int i, size = sizeof(arr) / sizeof(int);
 
@@ -49,7 +49,7 @@ int main()
         add_nodeint(&head, arr[i]);
     printf("%i\n", is_palindrome(&head)); // 1
 
-    node *head2 = NULL;
+    sll_node *head2 = NULL;
     int arr2[] = {1, 2, 4, 4, 2, 1};
     size = sizeof(arr2) / sizeof(int);
 
@@ -57,7 +57,7 @@ int main()
         add_nodeint(&head2, arr2[i]);
     printf("%i\n", is_palindrome(&head2)); // 1
 
-    node *head3 = NULL;
+    sll_node *head3 = NULL;
     int arr3[] = {1, 2, 4, 8, 16, 4, 2, 1};
     size = sizeof(arr3) / sizeof(int);
 

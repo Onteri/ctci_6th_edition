@@ -4,9 +4,9 @@
  * Returns the kth element from last node.
  * O(n) time complexity.
  */
-node *kth_to_last(node *head, int index)
+sll_node *kth_to_last(sll_node *head, int index)
 {
-    node *curr, *kth;
+    sll_node *curr, *kth;
 
     curr = kth = head;
     while (index)
@@ -24,14 +24,14 @@ node *kth_to_last(node *head, int index)
 
 int main()
 {
-    node *head = NULL;
+    sll_node *head = NULL;
     int arr[] = {1, 2, 4, 8, 16, 32};
     int i, size = sizeof(arr) / sizeof(int);
 
     for (i = 0; i < size; i++)
         add_nodeint(&head, arr[i]);
     print_list(head); // 32 -> 16 -> 8 -> 4 -> 2 -> 1
-    node *kth = kth_to_last(head, 2);
+    sll_node *kth = kth_to_last(head, 2);
     printf("%i\n", kth->n); // 2
 
     return 0;

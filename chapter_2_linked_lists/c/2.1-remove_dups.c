@@ -4,9 +4,9 @@
  * Delete nodes with duplicate values in a linked list.
  * O(n) time complexity.
  */
-void remove_dups(node **head)
+void remove_dups(sll_node **head)
 {
-    node *slow, *fast;
+    sll_node *slow, *fast;
     int slow_index, fast_index;
 
     slow = *head;
@@ -31,7 +31,7 @@ void remove_dups(node **head)
 
 int main()
 {
-    node *head = NULL;
+    sll_node *head = NULL;
     int arr[] = {8, 1, 4, 1, 1, 4, 8, 8};
     int i, size = sizeof(arr) / sizeof(int);
 

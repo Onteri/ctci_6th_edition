@@ -3,7 +3,7 @@
 /**
  * Prints all elements of a singly linked list.
  */
-size_t print_list(const node *h)
+size_t print_list(const sll_node *h)
 {
     size_t count = 0;
 
@@ -22,7 +22,7 @@ size_t print_list(const node *h)
 /**
  * Returns the number of elements in a singly linked list.
  */
-size_t list_len(const node *h)
+size_t list_len(const sll_node *h)
 {
     size_t count = 0;
 
@@ -37,9 +37,9 @@ size_t list_len(const node *h)
 /**
  * Adds a new node to the head of a singly linked list.
  */
-node *add_nodeint(node **head, const int n)
+sll_node *add_nodeint(sll_node **head, const int n)
 {
-    node *new_node = (node *)malloc(sizeof(node));
+    sll_node *new_node = (sll_node *)malloc(sizeof(node));
 
     if (!head || !new_node)
         return (NULL);
@@ -54,10 +54,10 @@ node *add_nodeint(node **head, const int n)
 /**
  * Deletes a node at a given index.
  */
-int delete_nodeint_at_index(node **head, unsigned int index)
+int delete_nodeint_at_index(sll_node **head, unsigned int index)
 {
-    node *current;
-    node *next;
+    sll_node *current;
+    sll_node *next;
 
     unsigned int i;
 
@@ -83,10 +83,10 @@ int delete_nodeint_at_index(node **head, unsigned int index)
 /**
  * Frees a singly linked list.
  */
-void free_listint(node **head)
+void free_listint(sll_node **head)
 {
-    node *current;
-    node *tmp;
+    sll_node *current;
+    sll_node *tmp;
 
     if (!head)
         return;
@@ -104,11 +104,11 @@ void free_listint(node **head)
 /**
  * Reverses a singly linked list.
  */
-void reverse_linked_list(node **head)
+void reverse_linked_list(sll_node **head)
 {
-    node *prev = NULL;
-    node *current = *head;
-    node *next;
+    sll_node *prev = NULL;
+    sll_node *current = *head;
+    sll_node *next;
 
     while (current)
     {
@@ -123,10 +123,10 @@ void reverse_linked_list(node **head)
 /**
  * Compares two singly linked lists for differences.
  */
-int compare_linked_list(node *head1, node *head2)
+int compare_linked_list(sll_node *head1, sll_node *head2)
 {
-    node *temp1 = head1;
-    node *temp2 = head2;
+    sll_node *temp1 = head1;
+    sll_node *temp2 = head2;
 
     while (temp1 && temp2)
     {
