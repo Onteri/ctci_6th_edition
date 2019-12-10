@@ -1,4 +1,4 @@
-#include "helper.h"
+#include "helper.c"
 
 /**
  * Gets next biggest integer with same amount of 1s in binary representation.

@@ -1,4 +1,4 @@
-#include "helper.h"
+#include "helper.c"
 
 /**
  * Determines the number of bits that need to be flipped in order to convert

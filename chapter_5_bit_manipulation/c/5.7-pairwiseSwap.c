@@ -1,4 +1,4 @@
-#include "helper.h"
+#include "helper.c"
 
 /**
  * Swap odd and even bits with as few instructions as possible.
