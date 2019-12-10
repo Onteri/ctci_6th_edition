@@ -1,8 +1,8 @@
-#ifndef SINGLY_LINKED_LISTS
+#ifndef SINGLY_LINKED_LISTS_
+#define SINGLY_LINKED_LISTS_
 
 #include <iostream>
-
-using namespace std;
+#include "tree.h"
 
 class Node
 {
@@ -11,15 +11,6 @@ public:
     Node *next;
 
     Node(TreeNode *value);
-};
-
-/**
- * Node constructor.
- */
-Node::Node(TreeNode *value)
-{
-    this->value = value;
-    this->next = NULL;
 };
 
 class LinkedList
@@ -32,45 +23,5 @@ public:
     Node *add_node(TreeNode *node);
     void print_list();
 };
-
-/**
- * Singly linked list constructor.
- */
-LinkedList::LinkedList()
-{
-    this->head = NULL;
-    this->length = 0;
-}
-
-/**
- * Adds a new node to the head of a singly linked list.
- */
-Node *LinkedList::add_node(TreeNode *node)
-{
-    Node *new_node = new Node(node);
-    if (!this->head)
-        this->head = new_node;
-    else
-    {
-        new_node->next = this->head;
-        this->head = new_node;
-    }
-    this->length++;
-    return new_node;
-}
-
-/**
- * Prints all elements of a singly linked list.
- */
-void LinkedList::print_list()
-{
-    Node *curr = this->head;
-    while (curr->next)
-    {
-        cout << curr->value->value << " -> ";
-        curr = curr->next;
-    }
-    cout << curr->value->value << endl;
-}
 
 #endif
