@@ -1,6 +1,6 @@
 # Cracking the Coding Interview 6th Edition
 
-- This repository contains my solutions for this book written in Javascript, Python, C++ and C.
+- This repository contains my solutions for CtCI written in Javascript, Python, C++ and C.
 
 | Chapter                                      | Description                        |
 | :------------------------------------------- | :--------------------------------- |
