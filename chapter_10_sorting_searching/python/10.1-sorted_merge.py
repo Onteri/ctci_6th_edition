@@ -20,5 +20,5 @@ def merge(a: List, b: List, last_a: int, last_b: int):
 
 a = [0, 2, 4, 6, 8, 0, 0, 0, 0, 0, 0]
 b = [-1, 1, 3, 6, 9, 12]
-merge(a, b, 5, 5)
-print(a)  # [-1, 0, 1, 2, 3, 4, 6, 6, 8, 9, 0]
+merge(a, b, 5, 6)
+print(a)  # [-1, 0, 1, 2, 3, 4, 6, 6, 8, 9, 12]
