@@ -1,5 +1,3 @@
-from typing import List
-
 # INT_MAX = 2**31 - 1
 # bitfield = [0] * INT_MAX // 8
 # If using proper byte array, bitfield can store up 8 billion bits with 1 GB
