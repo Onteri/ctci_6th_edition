@@ -3,7 +3,7 @@ from typing import List
 
 def sort_anagrams(arr: List[str]) -> List[str]:
     """
-    Sort an array of strings so that all anagrams are next to each other.
+    Sorts an array of strings so that all anagrams are next to each other.
     """
     hash_table = {}
     res = []

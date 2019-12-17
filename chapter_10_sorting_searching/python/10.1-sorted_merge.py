@@ -3,7 +3,7 @@ from typing import List
 
 def merge(a: List, b: List, last_a: int, last_b: int):
     """
-    Merge two sorted arrays using first array as a buffer.
+    Merges two sorted arrays using first array as a buffer.
     """
     i = last_a + last_b - 1
     last_a -= 1

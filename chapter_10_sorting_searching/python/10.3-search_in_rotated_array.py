@@ -4,10 +4,10 @@ from typing import List
 def search(arr: List, n: int) -> int:
     """
     Given a sorted array of n integers that has been rotated an unknown number
-    of times, find an element in the array.
-    You may assume that the array was originally sorted in increasing order.
+    of times, finds an element in the array. The array is originally sorted
+    in increasing order.
     Time complexity is O(log(n)) although worse case can be closer to O(n) if
-    an array has a lot of duplicates.
+    the array has a lot of duplicates.
     """
     return search_helper(arr, 0, len(arr) - 1, n)
 
