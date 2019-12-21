@@ -16,7 +16,7 @@
 | [Chapter 10](./chapter_10_sorting_searching) | Sorting and Searching              |
 | [Chapter 11](./chapter_11_testing)           | Testing                            |
 | [Chapter 12](./chapter_12_c_cpp)             | C++                                |
-| [Chapter 13]                                 | Java                               |
+| Chapter 13                                   | Java                               |
 | [Chapter 14](./chapter_14_databases)         | Databases                          |
 | [Chapter 15](./chapter_15_threads_locks)     | Threads and Locks                  |
 
