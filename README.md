@@ -1,6 +1,6 @@
 # Cracking the Coding Interview 6th Edition
 
-- This repository contains my solutions for CtCI written in Javascript, Python, C++ and C.
+- This repository contains my solutions for CtCI written in Python, Javascript, C++ and C.
 
 | Chapter                                      | Description                        |
 | :------------------------------------------- | :--------------------------------- |
@@ -15,8 +15,8 @@
 | [Chapter 9](./chapter_9_system_design)       | System Design and Scalability      |
 | [Chapter 10](./chapter_10_sorting_searching) | Sorting and Searching              |
 | [Chapter 11](./chapter_11_testing)           | Testing                            |
-| [Chapter 12](./)                             | Java                               |
-| [Chapter 13](./)                             | C++                                |
+| [Chapter 12](./chapter_12_c_cpp)             | C++                                |
+| [Chapter 13]                                 | Java                               |
 | [Chapter 14](./chapter_14_databases)         | Databases                          |
 | [Chapter 15](./chapter_15_threads_locks)     | Threads and Locks                  |
 
